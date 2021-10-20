@@ -2,11 +2,15 @@
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: #22272E;
+}
+
 nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #000000;
+    background-color: #2D333B;
     color: #FFFFFF;
     height: 64px;
 }
@@ -16,6 +20,7 @@ details {
     line-height: 36px;
     position: relative;
     margin-left: 2.5%;
+    color: #ADBAC7;
 }
 
 ol {
@@ -33,4 +38,3 @@ ol {
     font-family: 'Poppins', sans-serif;
     font: 2em sans-serif;
 }
-
