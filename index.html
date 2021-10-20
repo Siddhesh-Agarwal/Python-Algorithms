@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Cheatsheet</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="prism.css" rel="stylesheet">
+    <script src="prism.js"></script>
+</head>
+<body>
+    <nav>
+        <span class="logo">
+            <img src="Python_logo.png" height="50" width="50" alt="HTML logo">
+        </span>
+        <div class="content center">
+            Python Cheatsheet
+        </div>
+    </nav>
+    <div class="container">
+        <details>
+            <summary>Sorting Techniques</summary>
+            <ol>
+                <li>Bubble Sort</li>
+                <pre class="language-py"><code>def bubble_sort(arr):
+    for iter_num in range(len(arr) - 1, 0, -1):
+        for i in range(iter_num):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]</code></pre>
+
+                <li>Insertion Sort</li>
+                <pre class="language-py"><code>def insertion_sort(arr):
+    for i in range(1, len(arr)):                  
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j] :
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key</code></pre>
+                <li>Shell Sort</li>
+                <pre class="language-py"><code>def shell_sort(arr):
+    gap = len(arr) // 2
+    while gap > 0:
+        for i in range(gap, len(arr)):
+            temp = arr[i]
+            j = i
+    while j >= gap and arr[j - gap] > temp:
+        arr[j] = arr[j - gap]
+        j = j-gap
+        arr[j] = temp
+    gap = gap//2</code></pre>
+                <li>Counting Sort</li>
+                <pre class="language-py"><code>def counting_sort(arr):
+    maxEl = max(arr)
+    countArrayLength = maxEl+1
+    countArray = [0] * countArrayLength
+
+    for el in arr: 
+        countArray[el] += 1
+
+    for i in range(1, countArrayLength):
+        countArray[i] += countArray[i-1]
+
+    outputArray = [0] * len(arr)
+    i = len(arr) - 1
+
+    while i >= 0:
+        currentEl = arr[i]
+        countArray[currentEl] -= 1
+        newPosition = countArray[currentEl]
+        outputArray[newPosition] = currentEl
+        i -= 1
+
+    return outputArray
+                </code></pre>
+            </ul>
+        </details>
+        <details>
+            <summary>Searching Techniques</summary>
+            <ol>
+                <li>Linear search</li>
+                <pre class="language-py"><code># Linear Search - time complexity: O(n)
+def LinearSearch(array, element):
+    for i in range(len(array)):
+        if arr[i] == element:
+            return i
+    return -1</code></pre>
+                <li>Binary search</li>
+                <pre class="language-py"><code># Binary Search - time complexity: O(log(n) base 2)
+def BinarySearch(array, element):
+    LOW = 0
+    TOP = len(array)-1
+    while LOW <= TOP:
+        MID = (TOP + LOW)//2
+        if element > array[MID]:
+            LOW += 1
+        elif element < array[MID]:
+            TOP -= 1
+        else:
+            return MID
+    return -1</code></pre>
+            </ol>
+        </details>
+        <details>
+            <summary>Data structures</summary>
+            <details>
+                <summary>Stack</summary>
+            </details>
+            <details>
+                <summary>Queue</summary>
+            </details>
+        </details>
+    </div>
+</body>
+</html>

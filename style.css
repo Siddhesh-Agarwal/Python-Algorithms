@@ -1,0 +1,33 @@
+* {
+    scroll-behavior: smooth;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    color: #FFFFFF;
+    height: 56px;
+}
+
+details {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+ol {
+    position: relative;
+    margin-left: 2.5%;
+}
+
+.container {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.content {
+    font-family: 'Poppins', sans-serif;
+    font: 2em sans-serif;
+}
+
