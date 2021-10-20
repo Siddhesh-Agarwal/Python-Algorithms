@@ -8,21 +8,24 @@ nav {
     justify-content: center;
     background-color: #000000;
     color: #FFFFFF;
-    height: 56px;
+    height: 64px;
 }
 
 details {
     font-size: 24px;
     line-height: 36px;
+    position: relative;
+    margin-left: 2.5%;
 }
 
 ol {
     position: relative;
     margin-left: 2.5%;
+    font-size: 18px;
 }
 
 .container {
-    margin-left: 15%;
+    margin-left: 12.5%;
     margin-right: 15%;
 }
 
