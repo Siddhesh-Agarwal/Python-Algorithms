@@ -14,48 +14,141 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
+    <!-- Header -->
+    <header>
         <span class="logo">
             <img src="Python_logo.png" height="50" width="50" alt="HTML logo">
         </span>
         <div class="content center">
             Python Algorithms
         </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav>
+        <ul>
+            <li><a href="#Data-structures">Data structures</a></li>
+            <li><a href="#">Sorting techniques</a></li>
+            <li><a href="#">Searching techniques</a></li>
+        </ul>
     </nav>
+
+    <!-- Content -->
     <div class="container">
-        <details>
-            <summary>Sorting Techniques</summary>
-            <ol>
-                <li>Bubble Sort</li>
-                <pre class="language-py"><code>def bubble_sort(arr):
+        <h1>Data structures</h1>
+        <ol>
+            <li>Binary tree</li>
+            <pre class="language-py"><code>class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left: Node | None = None
+        self.right: Node | None = None
+    
+    def __str__(self):
+        value = str(self.value) + " "
+        left = str(self.left or "")
+        right = str(self.right or "")
+        return value + left + right</code></pre>
+            <li>Queue</li>
+            <pre class="language-py"><code>class Queue:
+    def __init__(self):
+        self.queue = []
+        self.length = 0
+        self.front = 0
+                
+    def __str__(self):
+        return str(self.queue)
+                
+    def put(self, item):
+        self.queue.append(item)
+        self.length = self.length + 1
+                
+    def get(self):
+        self.length = self.length - 1
+        dequeued = self.queue[self.front]
+        self.queue = self.queue[1:]
+        return dequeued
+                
+    def reverse(self):
+        reversed = Queue()
+        for i in self.queue:
+            reversed.put(i)
+        return reversed
+                
+    def get_front(self):
+        return self.queue[0]
+                
+    def __len__(self):
+        return self.length</code></pre>
+            <li>Stack</li>
+            <pre class="language-py"><code>class StackOverflowError(BaseException):
+    pass
+  
+class Stack:
+    def __init__(self, **stack, limit = 10):
+        self.limit = limit
+        if len(stack) > self.limit:
+            raise StackOverflowError
+        else:
+            self.stack = list(stack)
+
+    def __str__(self):
+        return str(self.stack)
+
+    def __len__(self):
+        """Return the size of the stack."""
+        return len(self.stack)
+
+    def __contains__(self, item):
+        """Check if item is in stack"""
+        return item in self.stack
+
+    def push(self, data):
+        """Push an element to the top of the stack."""
+        if len(self.stack) >= self.limit:
+            raise StackOverflowError
+        self.stack.append(data)
+
+    def pop(self):
+        """Pop an element off of the top of the stack."""
+        return self.stack.pop()
+
+    def peek(self):
+        """Peek at the top-most element of the stack."""
+        return self.stack[-1]
+
+    def show(self):
+        """Show the stack."""
+        return self.stack
+
+    def is_empty(self):
+        """Check if a stack is empty."""
+        return bool(self.stack)
+
+    def is_full(self):
+        """Check if a stack is full."""
+        return self.__len__() == self.limit</code></pre>
+        </ol>
+        <h1>Sorting Techniques</h1>
+        <ol>
+            <li>Bead sort</li>
+            <pre class="language-py"><code>def bead_sort(arr):
+    if any(not isinstance(x, int) or x < 0 for x in arr):
+        raise TypeError("Sequence must be list of non-negative integers")
+    for _ in range(len(arr)):
+        for i, (rod_upper, rod_lower) in enumerate(zip(arr, arr[1:])):
+            if rod_upper > rod_lower:
+                arr[i] -= rod_upper - rod_lower
+                arr[i + 1] += rod_upper - rod_lower
+    return arr</code></pre>
+            <li>Bubble sort</li>
+            <pre class="language-py"><code>def bubble_sort(arr):
     for iter_num in range(len(arr) - 1, 0, -1):
         for i in range(iter_num):
             if arr[i] > arr[i + 1]:
                 arr[i], arr[i + 1] = arr[i + 1], arr[i]</code></pre>
-
-                <li>Insertion Sort</li>
-                <pre class="language-py"><code>def insertion_sort(arr):
-    for i in range(1, len(arr)):                  
-        key = arr[i]
-        j = i - 1
-        while j >= 0 and key < arr[j] :
-            arr[j + 1] = arr[j]
-            j -= 1
-        arr[j + 1] = key</code></pre>
-                <li>Shell Sort</li>
-                <pre class="language-py"><code>def shell_sort(arr):
-    gap = len(arr) // 2
-    while gap > 0:
-        for i in range(gap, len(arr)):
-            temp = arr[i]
-            j = i
-    while j >= gap and arr[j - gap] > temp:
-        arr[j] = arr[j - gap]
-        j = j-gap
-        arr[j] = temp
-    gap = gap//2</code></pre>
-                <li>Counting Sort</li>
-                <pre class="language-py"><code>def counting_sort(arr):
+            <li>Counting sort</li>
+            <pre class="language-py"><code>def counting_sort(arr):
     maxEl = max(arr)
     countArrayLength = maxEl+1
     countArray = [0] * countArrayLength
@@ -77,20 +170,57 @@
         i -= 1
 
     return outputArray</code></pre>
-            </ul>
-        </details>
-        <details>
-            <summary>Searching Techniques</summary>
-            <ol>
-                <li>Linear search</li>
-                <pre class="language-py"><code># Linear Search - time complexity: O(n)
-def LinearSearch(array, element):
-    for i in range(len(array)):
-        if arr[i] == element:
-            return i
-    return -1</code></pre>
-                <li>Binary search</li>
-                <pre class="language-py"><code># Binary Search - time complexity: O(log(n) base 2)
+            <li>Insertion sort</li>
+            <pre class="language-py"><code>def insertion_sort(arr):
+    for i in range(1, len(arr)):                  
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j] :
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key</code></pre>
+            <li>merge sort</li>
+            <pre class="language-py"><code>def merge_sort(arr):
+    def merge(left, right):
+        def _merge():
+            while left and right:
+                yield (left if left[0] <= right[0] else right).pop(0)
+            yield from left
+            yield from right
+
+        return list(_merge())
+
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    return merge(merge_sort(arr[:mid]), merge_sort(arr[mid:]))</code></pre>
+            <li>shell sort</li>
+            <pre class="language-py"><code>def shell_sort(arr):
+    gap = len(arr) // 2
+    while gap > 0:
+        for i in range(gap, len(arr)):
+            temp = arr[i]
+            j = i
+            while j >= gap and arr[j - gap] > temp:
+                arr[j] = arr[j - gap]
+                j -= gap
+            arr[j] = temp
+        gap = gap//2</code></pre>
+            <li>quick sort</li>
+            <pre class="language-py"><code>def quick_sort(arr):
+    if len(arr) < 2:
+        return arr
+    pivot = arr.pop()
+    greater: list[int] = []
+    lesser: list[int] = []
+    for element in arr:
+        (greater if element > pivot else lesser).append(element)
+    return quick_sort(lesser) + [pivot] + quick_sort(greater)</code></pre>
+        </ol>
+        <h1>Searching Techniques</h1>
+        <ol>
+            <li>Binary search</li>
+            <pre class="language-py"><code># Binary Search - time complexity: O(log(n) base 2)
 def BinarySearch(array, element):
     LOW = 0
     TOP = len(array)-1
@@ -103,17 +233,33 @@ def BinarySearch(array, element):
         else:
             return MID
     return -1</code></pre>
-            </ol>
-        </details>
-        <details>
-            <summary>Data structures</summary>
-            <details>
-                <summary>Stack</summary>
-            </details>
-            <details>
-                <summary>Queue</summary>
-            </details>
-        </details>
+                <li>Jump search</li>
+                <pre class="language-py"><code># Jump Search - time complexity: O(n^1/2)
+def jump_search(arr, x: int):
+    n = len(arr)
+    step = int(math.floor(math.sqrt(n)))
+    prev = 0
+    while arr[min(step, n) - 1] < x:
+        prev = step
+        step += int(math.floor(math.sqrt(n)))
+        if prev >= n:
+            return -1
+                
+    while arr[prev] < x:
+        prev = prev + 1
+        if prev == min(step, n):
+            return -1
+    if arr[prev] == x:
+        return prev
+    return -1</code></pre>
+                <li>Linear search</li>
+                <pre class="language-py"><code># Linear Search - time complexity: O(n)
+def LinearSearch(array, element):
+    for i in range(len(array)):
+    if arr[i] == element:
+        return i
+    return -1</code></pre>
+        </ol>
     </div>
 </body>
 </html>
