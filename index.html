@@ -221,41 +221,41 @@ class Stack:
         <ol>
             <li>Binary search</li>
             <pre class="language-py"><code># Binary Search - time complexity: O(log(n) base 2)
-def BinarySearch(array, element):
+def BinarySearch(arr, element):
     LOW = 0
-    TOP = len(array)-1
+    TOP = len(arr)-1
     while LOW <= TOP:
         MID = (TOP + LOW)//2
-        if element > array[MID]:
+        if element > arr[MID]:
             LOW += 1
-        elif element < array[MID]:
+        elif element < arr[MID]:
             TOP -= 1
         else:
             return MID
     return -1</code></pre>
                 <li>Jump search</li>
                 <pre class="language-py"><code># Jump Search - time complexity: O(n^1/2)
-def jump_search(arr, x: int):
+def jump_search(arr, element):
     n = len(arr)
     step = int(math.floor(math.sqrt(n)))
     prev = 0
-    while arr[min(step, n) - 1] < x:
+    while arr[min(step, n) - 1] < element:
         prev = step
         step += int(math.floor(math.sqrt(n)))
         if prev >= n:
             return -1
                 
-    while arr[prev] < x:
+    while arr[prev] < element:
         prev = prev + 1
         if prev == min(step, n):
             return -1
-    if arr[prev] == x:
+    if arr[prev] == element:
         return prev
     return -1</code></pre>
                 <li>Linear search</li>
                 <pre class="language-py"><code># Linear Search - time complexity: O(n)
-def LinearSearch(array, element):
-    for i in range(len(array)):
+def LinearSearch(arr, element):
+    for i in range(len(arr)):
     if arr[i] == element:
         return i
     return -1</code></pre>
