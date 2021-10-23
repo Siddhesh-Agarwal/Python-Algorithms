@@ -34,11 +34,13 @@ nav {
     border: 1px solid #444C56;
     top: 64px;
     position: sticky;
+    margin: 0px;
 }
 
 nav ul {
     list-style-type: none;
     align-self: start;
+    display: inline-block;
 }
 
 a {
@@ -81,6 +83,7 @@ li {
 }
 
 .content {
-    font-family: 'Poppins', sans-serif;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
     font: 2em sans-serif;
 }
+
