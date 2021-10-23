@@ -8,10 +8,9 @@
     <meta name="author" content="Siddhesh Agarwal">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python Algorithms</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <link href="prism.css" rel="stylesheet">
     <script src="prism.js"></script>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
@@ -19,7 +18,7 @@
         <span class="logo">
             <img src="Python_logo.png" height="50" width="50" alt="HTML logo">
         </span>
-        <div class="content center">
+        <div class="content">
             Python Algorithms
         </div>
     </header>
@@ -27,15 +26,15 @@
     <!-- Sidebar -->
     <nav>
         <ul>
-            <li><a href="#Data-structures">Data structures</a></li>
-            <li><a href="#">Sorting techniques</a></li>
-            <li><a href="#">Searching techniques</a></li>
+            <li><a href="#data-structures">Data structures</a></li>
+            <li><a href="#searching-techniques">Searching techniques</a></li>
+            <li><a href="#sorting-techniques">Sorting techniques</a></li>
         </ul>
     </nav>
 
     <!-- Content -->
     <div class="container">
-        <h1>Data structures</h1>
+        <h1 id="data-structures">Data Structures</h1>
         <ol>
             <li>Binary tree</li>
             <pre class="language-py"><code>class Node:
@@ -129,7 +128,50 @@ class Stack:
         """Check if a stack is full."""
         return self.__len__() == self.limit</code></pre>
         </ol>
-        <h1>Sorting Techniques</h1>
+        <h1 id="searching-techniques">Searching Techniques</h1>
+        <ol>
+            <li>Binary search</li>
+            <pre class="language-py"><code># Binary Search - time complexity: O(log(n) base 2)
+def BinarySearch(arr, element):
+    LOW = 0
+    TOP = len(arr)-1
+    while LOW <= TOP:
+        MID = (TOP + LOW)//2
+        if element > arr[MID]:
+            LOW += 1
+        elif element < arr[MID]:
+            TOP -= 1
+        else:
+            return MID
+    return -1</code></pre>
+                <li>Jump search</li>
+                <pre class="language-py"><code># Jump Search - time complexity: O(n^1/2)
+def jump_search(arr, element):
+    n = len(arr)
+    step = int(math.floor(math.sqrt(n)))
+    prev = 0
+    while arr[min(step, n) - 1] < element:
+        prev = step
+        step += int(math.floor(math.sqrt(n)))
+        if prev >= n:
+            return -1
+                
+    while arr[prev] < element:
+        prev = prev + 1
+        if prev == min(step, n):
+            return -1
+    if arr[prev] == element:
+        return prev
+    return -1</code></pre>
+                <li>Linear search</li>
+                <pre class="language-py"><code># Linear Search - time complexity: O(n)
+def LinearSearch(arr, element):
+    for i in range(len(arr)):
+    if arr[i] == element:
+        return i
+    return -1</code></pre>
+        </ol>
+        <h1 id="sorting-techniques">Sorting Techniques</h1>
         <ol>
             <li>Bead sort</li>
             <pre class="language-py"><code>def bead_sort(arr):
@@ -216,49 +258,6 @@ class Stack:
     for element in arr:
         (greater if element > pivot else lesser).append(element)
     return quick_sort(lesser) + [pivot] + quick_sort(greater)</code></pre>
-        </ol>
-        <h1>Searching Techniques</h1>
-        <ol>
-            <li>Binary search</li>
-            <pre class="language-py"><code># Binary Search - time complexity: O(log(n) base 2)
-def BinarySearch(arr, element):
-    LOW = 0
-    TOP = len(arr)-1
-    while LOW <= TOP:
-        MID = (TOP + LOW)//2
-        if element > arr[MID]:
-            LOW += 1
-        elif element < arr[MID]:
-            TOP -= 1
-        else:
-            return MID
-    return -1</code></pre>
-                <li>Jump search</li>
-                <pre class="language-py"><code># Jump Search - time complexity: O(n^1/2)
-def jump_search(arr, element):
-    n = len(arr)
-    step = int(math.floor(math.sqrt(n)))
-    prev = 0
-    while arr[min(step, n) - 1] < element:
-        prev = step
-        step += int(math.floor(math.sqrt(n)))
-        if prev >= n:
-            return -1
-                
-    while arr[prev] < element:
-        prev = prev + 1
-        if prev == min(step, n):
-            return -1
-    if arr[prev] == element:
-        return prev
-    return -1</code></pre>
-                <li>Linear search</li>
-                <pre class="language-py"><code># Linear Search - time complexity: O(n)
-def LinearSearch(arr, element):
-    for i in range(len(arr)):
-    if arr[i] == element:
-        return i
-    return -1</code></pre>
         </ol>
     </div>
 </body>
