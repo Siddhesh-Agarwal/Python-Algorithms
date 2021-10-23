@@ -1,6 +1,6 @@
 /* PrismJS 1.25.0
 https://prismjs.com/download.html#themes=prism-twilight&languages=python&plugins=line-numbers+highlight-keywords+normalize-whitespace+toolbar+copy-to-clipboard */
-code[class*=language-],pre[class*=language-]{color:#fff;background:0 0;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;text-shadow:0 -.1em .2em #000;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}
+code[class*=language-],pre[class*=language-]{color:#fff;background:0 0;font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:12px;text-align:left;text-decoration:none solid rgb(173,186,199);white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:20px;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}
 :not(pre)>code[class*=language-],pre[class*=language-]{background:#22272E}
 pre[class*=language-]{border-radius:.5em;border:1px solid #444C56;margin: -1px -1px 0 -1px;overflow:auto;padding:1em}
 pre[class*=language-]::-moz-selection{background:#27292a}
@@ -37,6 +37,6 @@ div.code-toolbar:hover>.toolbar{opacity:1}
 div.code-toolbar:focus-within>.toolbar{opacity:1}
 div.code-toolbar>.toolbar>.toolbar-item{display:inline-block}
 div.code-toolbar>.toolbar>.toolbar-item>a{cursor:pointer}
-div.code-toolbar>.toolbar>.toolbar-item>button{background:0 0;border:0;color:inherit;font:inherit;line-height:normal;overflow:visible;padding:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}
+div.code-toolbar>.toolbar>.toolbar-item>button{background:0 0;border:0;color:inherit;font:inherit;line-height:normal;overflow:visible;padding:0;user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}
 div.code-toolbar>.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar>.toolbar-item>span{color:#bbb;font-size:.8em;padding:0 .5em;background:#f5f2f0;background:rgba(224,224,224,.2);box-shadow:0 2px 0 0 rgba(0,0,0,.2);border-radius:.5em}
 div.code-toolbar>.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar>.toolbar-item>span:hover{color:inherit;text-decoration:none}
