@@ -63,6 +63,27 @@
                     self.right.insert(data)
         else:
             self.data = data</code></pre>
+            <li>Linked list</li>
+            <pre class="language-py"><code>class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+    def __repr__(self):
+        return self.data
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def __repr__(self):
+        node = self.head
+        nodes = []
+        while node is not None:
+            nodes.append(node.data)
+            node = node.next
+        nodes.append("None")
+        return " -> ".join(nodes)</code></pre>
             <li>Queue</li>
             <pre class="language-py"><code>class Queue:
     def __init__(self):
