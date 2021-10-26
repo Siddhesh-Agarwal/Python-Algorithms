@@ -62,7 +62,15 @@
                 else:
                     self.right.insert(data)
         else:
-            self.data = data</code></pre>
+            self.data = data
+
+    def inorderTraversal(self, root):
+        res = []
+        if root:
+            res = self.inorderTraversal(root.left)
+            res.append(root.data)
+            res = res + self.inorderTraversal(root.right)
+        return res</code></pre>
             <li>Linked list</li>
             <pre class="language-py"><code>class Node:
     def __init__(self, data):
@@ -89,7 +97,42 @@ class LinkedList:
             nodes.append(node.data)
             node = node.next
         nodes.append("None")
-        return " -> ".join(nodes)</code></pre>
+        return " -> ".join(nodes)
+
+    def __iter__(self):
+        node = self.head
+        while node is not None:
+            yield node
+            node = node.next
+
+    def add_first(self, node):
+        node.next = self.head
+        self.head = node
+
+    def add_last(self, node):
+        if self.head is None:
+            self.head = node
+            return
+        for current_node in self:
+            pass
+        current_node.next = node
+
+    def remove_node(self, target_node_data):
+        if self.head is None:
+            raise Exception("List is empty")
+    
+        if self.head.data == target_node_data:
+            self.head = self.head.next
+            return
+    
+        previous_node = self.head
+        for node in self:
+            if node.data == target_node_data:
+                previous_node.next = node.next
+                return
+            previous_node = node
+    
+        raise Exception(f"Node with data '{target_node_data}' not found")</code></pre>
             <li>Queue</li>
             <pre class="language-py"><code>class Queue:
     def __init__(self):
@@ -137,37 +180,29 @@ class Stack:
         return str(self.stack)
 
     def __len__(self):
-        """Return the size of the stack."""
         return len(self.stack)
 
     def __contains__(self, item):
-        """Check if item is in stack"""
         return item in self.stack
 
     def push(self, data):
-        """Push an element to the top of the stack."""
         if len(self.stack) >= self.limit:
             raise StackOverflowError
         self.stack.append(data)
 
     def pop(self):
-        """Pop an element off of the top of the stack."""
         return self.stack.pop()
 
     def peek(self):
-        """Peek at the top-most element of the stack."""
         return self.stack[-1]
 
     def show(self):
-        """Show the stack."""
         return self.stack
 
     def is_empty(self):
-        """Check if a stack is empty."""
         return bool(self.stack)
 
     def is_full(self):
-        """Check if a stack is full."""
         return self.__len__() == self.limit</code></pre>
         </ol>
         <h1 id="searching-techniques">Searching Techniques</h1>
