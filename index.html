@@ -24,13 +24,11 @@
     </header>
 
     <!-- Sidebar -->
-    <nav>
-        <ul>
-            <li><a href="#data-structures">Data structures</a></li>
-            <li><a href="#searching-techniques">Searching techniques</a></li>
-            <li><a href="#sorting-techniques">Sorting techniques</a></li>
-        </ul>
-    </nav>
+    <div class="sidenav">
+        <a href="#data-structures">Data structures</a></>
+        <a href="#searching-techniques">Searching techniques</a>
+        <a href="#sorting-techniques">Sorting techniques</a>
+    </div>
 
     <!-- Content -->
     <div class="container">
@@ -42,13 +40,13 @@
         self.data = data
         self.left: Node | None = None
         self.right: Node | None = None
-    
+
     def __str__(self):
         value = str(self.value) + " "
         left = str(self.left or "")
         right = str(self.right or "")
         return value + left + right
-        
+
     def insert(self, data):
         if self.data:
             if data < self.data:
@@ -64,7 +62,7 @@
         else:
             self.data = data
 
-    def inorderTraversal(self, root):
+    def inorder_traversal(self, root):
         res = []
         if root:
             res = self.inorderTraversal(root.left)
@@ -120,18 +118,18 @@ class LinkedList:
     def remove_node(self, target_node_data):
         if self.head is None:
             raise Exception("List is empty")
-    
+
         if self.head.data == target_node_data:
             self.head = self.head.next
             return
-    
+
         previous_node = self.head
         for node in self:
             if node.data == target_node_data:
                 previous_node.next = node.next
                 return
             previous_node = node
-    
+
         raise Exception(f"Node with data '{target_node_data}' not found")</code></pre>
             <li>Queue</li>
             <pre class="language-py"><code>class Queue:
@@ -139,31 +137,35 @@ class LinkedList:
         self.queue = []
         self.length = 0
         self.front = 0
-                
+
     def __str__(self):
         return str(self.queue)
-                
+
+    def __len__(self):
+        return self.length
+
     def put(self, item):
+        """Put an item into the queue"""
         self.queue.append(item)
         self.length = self.length + 1
-                
+
     def get(self):
+        """Get the front item of the queue"""
         self.length = self.length - 1
         dequeued = self.queue[self.front]
         self.queue = self.queue[1:]
         return dequeued
-                
+
     def reverse(self):
+        """Reverse the queue"""
         reversed = Queue()
         for i in self.queue:
             reversed.put(i)
         return reversed
-                
+
     def get_front(self):
-        return self.queue[0]
-                
-    def __len__(self):
-        return self.length</code></pre>
+        """Returns the front of the stack"""
+        return self.queue[0]</code></pre>
             <li>Stack</li>
             <pre class="language-py"><code>class StackOverflowError(BaseException):
     pass
@@ -186,23 +188,29 @@ class Stack:
         return item in self.stack
 
     def push(self, data):
+        """Add a new item to the end of the stack"""
         if len(self.stack) >= self.limit:
             raise StackOverflowError
         self.stack.append(data)
 
     def pop(self):
+        """Remove the top item from the stack"""
         return self.stack.pop()
 
     def peek(self):
+        """Peek the top item of the stack"""
         return self.stack[-1]
 
     def show(self):
+        """Show the stack"""
         return self.stack
 
     def is_empty(self):
+        """Check if the stack is empty"""
         return bool(self.stack)
 
     def is_full(self):
+        """Check if the stack is full"""
         return self.__len__() == self.limit</code></pre>
         </ol>
         <h1 id="searching-techniques">Searching Techniques</h1>
