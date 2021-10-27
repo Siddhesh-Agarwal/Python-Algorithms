@@ -101,31 +101,34 @@ li {
 
 @media only screen and (max-width: 750px) {
     header {
-        height: auto;
-        padding: 0, 0;
-        z-index: 1;
-    }
-    .sidenav {  
         width: 100%;
         height: auto;
-        position: absolute;
+        padding: 0, 0;
+        z-index: 2;
+        font-size: 1em;
+    }
+    .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
         padding: 0, 0;
         z-index: 0;
+        top: 57px;
     }
 
     .container {
         z-index: 0;
         position: relative;
-        margin-left: 0%;
-        margin-right: 0%;
-        margin-top: 220px;
+        margin-left: 2px;
+        margin-right: 12px;
+        margin-top: 54px;
         width: auto;
     }
-    h1 {
+    .container h1 {
         margin-left: 0;
-        margin-right:0;
+        margin-right: 0;
     }
-    ol {
-        margin-left: 2.5%;
+    .container ol {
+        margin-left: 2%;
     }
 }
