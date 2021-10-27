@@ -25,7 +25,8 @@
 
     <!-- Sidebar -->
     <div class="sidenav">
-        <a href="#data-structures">Data structures</a></>
+        <a href="#data-structures">Data structures</a>
+        <a href="#primes">Primes</a>
         <a href="#searching-techniques">Searching techniques</a>
         <a href="#sorting-techniques">Sorting techniques</a>
     </div>
@@ -212,6 +213,19 @@ class Stack:
     def is_full(self):
         """Check if the stack is full"""
         return self.__len__() == self.limit</code></pre>
+        </ol>
+        <h1 id="primes">Primes</h1>
+        <ol>
+            <li>Sieve of Eratosthenes</li>
+            <pre class="language-py"><code>def SieveOfEratosthenese(n: int):
+    sieve = [num for num in range(2, n)]
+    key = 0
+    while key < len(sieve):
+        prime = sieve[key]
+        for i in range(2 * prime, n, prime):
+            if i in sieve:
+                sieve.remove(i)
+    return sieve</code></pre>
         </ol>
         <h1 id="searching-techniques">Searching Techniques</h1>
         <ol>
