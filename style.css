@@ -9,38 +9,48 @@ body {
 header {
     box-sizing: border-box;
     display: flex;
-    height: 64px;
-    padding: 16px 32px 16px 32px;
+    padding: 0 20px;
     align-items: center;
     justify-content: center;
     background-color: #2D333B;
     background-position: 0% 0%;
     color: #FFFFFF;
     text-decoration: none solid rgba(205, 217, 229, 0.7);
-    word-spacing: 0%;
-    z-index: 32;
+    z-index: 1;
     border: 1px solid #444C56;
     top: 0px;
-    position: sticky;
+    left: 0px;
+    position: fixed;
+    width: 100%;
+    height: 64px;
 }
 
-nav {
-    float: left;
+.sidenav {
+    height: 100%;
     width: 17.5%;
-    height: 692px;
-    background-color: #22272E;
-    color: #ADBAC7;
-    padding: 0px 32px 0px 32px;
-    border: 1px solid #444C56;
+    position: fixed;
+    z-index: 1;
     top: 64px;
-    position: sticky;
-    margin: 0px;
+    left: 0px;
+    background-color: #22272E;
+    overflow-x: hidden;
+    padding-top: 20px;
+    border: 1px solid #444C56;
 }
 
-nav ul {
-    list-style-type: none;
-    align-self: start;
-    display: inline-block;
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: underline solid rgb(83, 155, 245);
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 35px;
+    color: #539BF5;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #F1F1F1;
+    text-decoration: underline solid #F1F1F1;
 }
 
 a {
@@ -80,10 +90,10 @@ li {
 .container {
     margin-left: 15%;
     margin-right: 15%;
+    margin-top: 64px;
 }
 
 .content {
     font-family: Tahoma, Arial, Helvetica, sans-serif;
     font: 2em sans-serif;
 }
-
