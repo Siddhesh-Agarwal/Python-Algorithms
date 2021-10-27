@@ -25,10 +25,10 @@
 
     <!-- Sidebar -->
     <div class="sidenav">
-        <a href="#data-structures">Data structures</a>
+        <a href="#data-structures">Data Structures</a>
         <a href="#primes">Primes</a>
-        <a href="#searching-techniques">Searching techniques</a>
-        <a href="#sorting-techniques">Sorting techniques</a>
+        <a href="#searching-techniques">Searching Techniques</a>
+        <a href="#sorting-techniques">Sorting Techniques</a>
     </div>
 
     <!-- Content -->
@@ -216,8 +216,56 @@ class Stack:
         </ol>
         <h1 id="primes">Primes</h1>
         <ol>
-            <li>Sieve of Eratosthenes</li>
+            <li>Mersene Primes</li>
+            <pre class="language-py"><code>def is_prime(num):
+    for i in range(2, num // 2):
+        if num % i == 0:
+            return False
+    return True
+
+def mersene_prime(num):
+    """Returns prime number (of the form 2^k - 1) less than or equal to the given number
+    >>> mersene_prime(10)
+    [3, 7]
+    >>> mersene_prime(100)
+    [3, 7, 31]
+    """
+    arr = []
+    power = 1
+    value = 2 ** power
+    while value < num:
+        if is_prime(value):
+            arr.append(value)
+        value += 1
+    return arr</code></pre>
+            <li>Palindrome Primes</li>
+            <pre class="language-py"><code>def is_palindrome(num):
+    num = str(num)
+    return num == num[::-1]
+
+def palindrome_prime(num):
+    """Returns the prime numbers less than or equal to the given number which are palindromes
+    >>> palindrome_prime(10)
+    [2, 3, 5, 7]
+    >>> palindrome_prime(20)
+    [2, 3, 5, 7, 11]
+    """
+    prime = [True] * (n + 1)
+    p = 2
+    while (p * p <= n):
+        if prime[p]:
+            for i in range(p * 2, n + 1, p):
+                prime[i] = False
+        p += 1
+
+    arr = []
+    for p in range(2, n + 1):
+        if (prime[p] and isPal(p)):
+            arr.append(p)
+    return arr</code></pre>
+                <li>Sieve of Eratosthenes</li>
             <pre class="language-py"><code>def SieveOfEratosthenese(n: int):
+    """Returns a list of prime numbers less than or equal to the given number."""
     sieve = [num for num in range(2, n)]
     key = 0
     while key < len(sieve):
@@ -226,6 +274,30 @@ class Stack:
             if i in sieve:
                 sieve.remove(i)
     return sieve</code></pre>
+            <li>Sophie Germain Primes</li>
+            <pre class="language-py"><code>def sieve(n, prime) :
+    p = 2
+    while p ** 2 <= n:
+        if prime[p]:
+            for i in range(p * 2, n, p):
+                prime[i] = False   
+        p += 1
+
+def sophie_germain_prime(n):
+    """Returns all Sophie Germain Prime numbers less than or equal to the given number.
+    A prime number p is called Sophie Germain Prime number if 2*p + 1 is also prime.
+    >>> sophie_germain_prime(25)
+    [2, 3, 5, 11, 23]
+    >>> sophie_germain_prime(50)
+    [2, 3, 5, 11, 23, 29, 41]
+    """
+    prime = [True]*(2 * n + 1)
+    sieve(2 * n + 1, prime)
+    arr = []
+    for i in range(2, n + 1) :
+        if (prime[i] and prime[2 * i + 1]) :
+            arr.append(i)
+    return arr</code></pre>
         </ol>
         <h1 id="searching-techniques">Searching Techniques</h1>
         <ol>
