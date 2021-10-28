@@ -12,12 +12,8 @@ body {
 }
 
 ::-webkit-scrollbar-button:single-button {
-    width: 16px;
-    height: 16px;
     display: block;
-    border-style: none;
     background-color: #424242;
-    color: #686868;
 }
   
 ::-webkit-scrollbar-track {
@@ -26,8 +22,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background:  #686868;
-    border-left: 1px solid #424242;
-    border-right: 1px solid #424242;
+    border: 1px solid #424242;
 }
 
 header {
@@ -46,12 +41,13 @@ header {
     height: 64px;
 }
 
-header .content {
+header .content a{
     font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     font-size: 2em;
     font-weight: 400;
     color: #FFFFFF;
     text-decoration: none solid rgba(205, 217, 229, 0.7);
+    margin-left: 12px;
 }
 
 .sidenav {
@@ -156,7 +152,7 @@ header .content {
         top: 57px;
         padding-top: 0;
         border-top: none;
-        margin-bottom: 6px;
+        margin-bottom: 12px;
     }
 
     .sidenav a {
