@@ -26,6 +26,7 @@
     <!-- Sidebar -->
     <div class="sidenav">
         <a href="#data-structures">Data Structures</a>
+        <a href="#math">Math</a>
         <a href="#primes">Primes</a>
         <a href="#regex">Regex</a>
         <a href="#searching-techniques">Searching Techniques</a>
@@ -214,6 +215,38 @@ class Stack:
     def is_full(self):
         """Check if the stack is full"""
         return self.__len__() == self.limit</code></pre>
+        </ol>
+        <hr>
+        <h1 id="math">Math</h1>
+        <ol>
+            <li>Euclid's Division Lemma</li>
+            <pre class="language-py"><code>def euclid_division_lemma(a, b):
+    r = a % b
+    if r == 0:
+        return b
+    else:
+        return euclid_division_lemma(b, r)</code></pre>
+            <li>Factorial</li>
+            <pre class="language-py"><code>def factorial(n):
+    fact = 1
+    for i in range(2, n + 1):
+        fact = fact * i
+    return fact</code></pre>
+            <li>Fibonacci</li>
+            <pre class="language-py"><code>def fibonacci(n):
+    a, b = 0, 1
+    for i in range(n):
+        a, b = b, a + b
+    return a</code></pre>
+            
+            <li>GCD</li>
+            <pre class="language-py"><code>def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a</code></pre>
+            <li>LCM</li>
+            <pre class="language-py"><code>def lcm(a, b):
+    return (a * b // gcd(a, b))</code></pre>
         </ol>
         <hr>
         <h1 id="primes">Primes</h1>
