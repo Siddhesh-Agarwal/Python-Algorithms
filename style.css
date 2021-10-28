@@ -23,14 +23,16 @@ header {
 }
 
 header .content {
-    font-family: Tahoma, Arial, Helvetica, sans-serif;
-    font: 2em sans-serif;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 2em;
+    font-weight: 400;
     color: #FFFFFF;
     text-decoration: none solid rgba(205, 217, 229, 0.7);
 }
 
 .sidenav {
     font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-weight: 400;
     height: 100%;
     width: 17.5%;
     position: fixed;
@@ -41,7 +43,6 @@ header .content {
     overflow-x: hidden;
     padding-top: 20px;
     border: 1px solid #444C56;
-    border-top: 1px solid  #373E47;
 }
 
 .sidenav a {
@@ -53,7 +54,6 @@ header .content {
     font-weight: 400;
     line-height: 30px;
     display: block;
-    border: 1px solid #444C56;
 }
 
 .sidenav a:hover {
@@ -64,8 +64,8 @@ header .content {
 .container {
     position: relative;
     margin-left: 15%;
-    margin-right: 15%;
-    margin-top: 72px;
+    margin-right: 10%;
+    margin-top: 64px;
 }
 
 .container hr {
@@ -125,12 +125,15 @@ header .content {
         padding: 0, 0;
         z-index: 0;
         top: 57px;
-        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
     }
 
     .sidenav a {
         padding-top: 4px;
         padding-bottom: 4px;
+        margin-top: 0;
+        border-top: 1px solid  #373E47;
     }
 
     .container {
