@@ -6,6 +6,30 @@ body {
     background-color: #1C2128;
 }
 
+::-webkit-scrollbar {
+    width: 16px;
+    border: 1px solid #424242;
+}
+
+::-webkit-scrollbar-button:single-button {
+    width: 16px;
+    height: 16px;
+    display: block;
+    border-style: none;
+    background-color: #424242;
+    color: #686868;
+}
+  
+::-webkit-scrollbar-track {
+    background: #424242;
+}
+
+::-webkit-scrollbar-thumb {
+    background:  #686868;
+    border-left: 1px solid #424242;
+    border-right: 1px solid #424242;
+}
+
 header {
     box-sizing: border-box;
     display: flex;
@@ -118,6 +142,11 @@ header .content {
         z-index: 2;
         font-size: 1em;
     }
+
+    ::-webkit-scrollbar {
+        width: thin;
+    }
+
     .sidenav {
         width: 100%;
         height: auto;
@@ -127,6 +156,7 @@ header .content {
         top: 57px;
         padding-top: 0;
         border-top: none;
+        margin-bottom: 6px;
     }
 
     .sidenav a {
@@ -141,7 +171,6 @@ header .content {
         position: relative;
         margin-left: 2px;
         margin-right: 12px;
-        margin-top: 54px;
         width: auto;
     }
     .container h1 {
