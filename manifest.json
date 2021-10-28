@@ -1,0 +1,16 @@
+{
+    "name": "Python Algorithms",
+    "short_name": "Python DSA",
+    "start_url": "./",
+    "scope": ".",
+    "background_color": "#1C2128",
+    "theme_color": "#1C2128",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "images/Python_logo.png",
+            "sizes": "5000x4981",
+            "type": "image/png"
+        }
+    ]
+}
