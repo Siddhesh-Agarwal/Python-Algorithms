@@ -79,6 +79,11 @@ header .content a{
     text-decoration: underline solid #539BF5;
 }
 
+.sidenav .active {
+    color: #539BF5;
+    text-decoration: underline solid #539BF5;
+}
+
 /* Style for Scroll-to-up Button */
 .arrow {
     width: auto;
