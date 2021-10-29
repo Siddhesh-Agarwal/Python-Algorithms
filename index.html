@@ -28,6 +28,7 @@
 
     <!-- Sidebar -->
     <div class="sidenav">
+        <a href="basics.html">Basics</a>
         <a href="#base-conversions">Base Conversions</a>
         <a href="#data-structures">Data Structures</a>
         <a href="#math">Math</a>
@@ -43,7 +44,7 @@
         <h1 id="base-conversions">Base Conversions</h1>
         <ol>
             <li>Decimal to Binary</li>
-            <pre class="line-numbers"><code class="language-python"># convert decimal numbers to binary numbers
+            <pre class="line-numbers"><code class="language-py"># convert decimal numbers to binary numbers
 def decimal_to_binary(decimal_number):
     binary_number = ''
     while decimal_number > 0:
@@ -51,7 +52,7 @@ def decimal_to_binary(decimal_number):
         decimal_number = decimal_number // 2
     return binary_number</code></pre>
             <li>Decimal to Octal</li>
-            <pre class="line-numbers"><code class="language-python"># convert decimal numbers to octal numbers
+            <pre class="line-numbers"><code class="language-py"># convert decimal numbers to octal numbers
 def decimal_to_octal(decimal_number):
     octal_number = ''
     while decimal_number > 0:
@@ -59,7 +60,7 @@ def decimal_to_octal(decimal_number):
         octal_number = decimal_number // 8
     return octal_number</code></pre>
             <li>Decimal to Hexadecimal</li>
-            <pre class="line-numbers"><code class="language-python"># convert decimal numbers to hexadecimal numbers
+            <pre class="line-numbers"><code class="language-py"># convert decimal numbers to hexadecimal numbers
 def decimal_to_hexadecimal(decimal_number):
     hexadecimal_number = ''
     hexadecimal_number_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
@@ -67,12 +68,8 @@ def decimal_to_hexadecimal(decimal_number):
         hexadecimal_number = hexadecimal_number_list[decimal_number % 16] + hexadecimal_number
         decimal_number = decimal_number // 16
     return hexadecimal_number</code></pre>
-            <li>Binary to Octal</li>
-            <pre class="line-numbers"><code class="language-python"># convert binary numbers to octal numbers
-def binary_to_octal(binary_number):
-    return decimal_to_octal(binary_to_decimal(binary_number))</code></pre>
             <li>Binary to Decimal</li>
-            <pre class="line-numbers"><code class="language-python"># convert binary numbers to decimal numbers
+            <pre class="line-numbers"><code class="language-py"># convert binary numbers to decimal numbers
 def binary_to_decimal(binary_number):
     decimal_number = 0
     power = 0
@@ -80,16 +77,8 @@ def binary_to_decimal(binary_number):
         decimal_number += int(binary_number[i]) * (2 ** power)
         power += 1
     return decimal_number</code></pre>
-            <li>Binary to Hexadecimal</li>
-            <pre class="line-numbers"><code class="language-python"># convert binary numbers to hexadecimal numbers
-def binary_to_hexadecimal(binary_number):
-    return decimal_to_hexadecimal(binary_to_decimal(binary_number))</code></pre>
-            <li>Octal to Binary</li>
-            <pre class="line-numbers"><code class="language-python"># convert octal numbers to binary numbers
-def octal_to_binary(octal_number):
-    return decimal_to_binary(octal_to_decimal(octal_number))</code></pre>
             <li>Octal to Decimal</li>
-            <pre class="line-numbers"><code class="language-python"># convert octal numbers to decimal numbers
+            <pre class="line-numbers"><code class="language-py"># convert octal numbers to decimal numbers
 def octal_to_decimal(octal_number):
     decimal_number = 0
     power = 0
@@ -97,20 +86,8 @@ def octal_to_decimal(octal_number):
         decimal_number += int(octal_number[i]) * (8 ** power)
         power += 1
     return decimal_number</code></pre>
-            <li>Octal to Hexadecimal</li>
-            <pre class="line-numbers"><code class="language-python"># convert octal numbers to hexadecimal numbers
-def octal_to_hexadecimal(octal_number):
-    return decimal_to_hexadecimal(octal_to_decimal(octal_number))</code></pre>
-            <li>Hexadecimal to Binary</li>
-            <pre class="line-numbers"><code class="language-python"># convert hexadecimal numbers to binary numbers
-def hexadecimal_to_binary(hexadecimal_number):
-    return decimal_to_binary(hexadecimal_to_decimal(hexadecimal_number))</code></pre>
-            <li>Hexadecimal to Octal</li>
-            <pre class="line-numbers"><code class="language-python"># convert hexadecimal numbers to octal numbers
-def hexadecimal_to_octal(hexadecimal_number):
-    return decimal_to_octal(hexadecimal_to_decimal(hexadecimal_number))</code></pre>
             <li>Hexadecimal to Decimal</li>
-            <pre class="line-numbers"><code class="language-python"># convert hexadecimal numbers to decimal numbers
+            <pre class="line-numbers"><code class="language-py"># convert hexadecimal numbers to decimal numbers
 def hexadecimal_to_decimal(hexadecimal_number):
     decimal_number = 0
     hexadecimal_number_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
@@ -119,16 +96,38 @@ def hexadecimal_to_decimal(hexadecimal_number):
         decimal_number += hexadecimal_number_list.index(hexadecimal_number[i]) * (16 ** power)
         power += 1
     return decimal_number</code></pre>
-
-            
-            
+            <li>Binary to Octal</li>
+            <pre class="line-numbers"><code class="language-py"># convert binary numbers to octal numbers
+def binary_to_octal(binary_number):
+    return decimal_to_octal(binary_to_decimal(binary_number))</code></pre>
+            <li>Binary to Hexadecimal</li>
+            <pre class="line-numbers"><code class="language-py"># convert binary numbers to hexadecimal numbers
+def binary_to_hexadecimal(binary_number):
+    return decimal_to_hexadecimal(binary_to_decimal(binary_number))</code></pre>
+            <li>Octal to Binary</li>
+            <pre class="line-numbers"><code class="language-py"># convert octal numbers to binary numbers
+def octal_to_binary(octal_number):
+    return decimal_to_binary(octal_to_decimal(octal_number))</code></pre>
+            <li>Octal to Hexadecimal</li>
+            <pre class="line-numbers"><code class="language-py"># convert octal numbers to hexadecimal numbers
+def octal_to_hexadecimal(octal_number):
+    return decimal_to_hexadecimal(octal_to_decimal(octal_number))</code></pre>
+            <li>Hexadecimal to Binary</li>
+            <pre class="line-numbers"><code class="language-py"># convert hexadecimal numbers to binary numbers
+def hexadecimal_to_binary(hexadecimal_number):
+    return decimal_to_binary(hexadecimal_to_decimal(hexadecimal_number))</code></pre>
+            <li>Hexadecimal to Octal</li>
+            <pre class="line-numbers"><code class="language-py"># convert hexadecimal numbers to octal numbers
+def hexadecimal_to_octal(hexadecimal_number):
+    return decimal_to_octal(hexadecimal_to_decimal(hexadecimal_number))</code></pre>
         </ol>
         <hr>
+        
         <!-- Data Structures -->
         <h1 id="data-structures">Data Structures</h1>
         <ol>
             <li>Binary tree</li>
-            <pre class="line-numbers"><code class="language-python">class Node:
+            <pre class="line-numbers"><code class="language-py">class Node:
     def __init__(self, data):
         self.data = data
         self.left: Node | None = None
@@ -163,7 +162,7 @@ def hexadecimal_to_decimal(hexadecimal_number):
             res = res + self.inorderTraversal(root.right)
         return res</code></pre>
             <li>Linked list</li>
-            <pre class="line-numbers"><code class="language-python">class Node:
+            <pre class="line-numbers"><code class="language-py">class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
@@ -225,7 +224,7 @@ class LinkedList:
 
         raise Exception(f"Node with data '{target_node_data}' not found")</code></pre>
             <li>Queue</li>
-            <pre class="line-numbers"><code class="language-python">class Queue:
+            <pre class="line-numbers"><code class="language-py">class Queue:
     def __init__(self):
         self.queue = []
         self.length = 0
@@ -260,7 +259,7 @@ class LinkedList:
         """Returns the front of the stack"""
         return self.queue[0]</code></pre>
             <li>Stack</li>
-            <pre class="line-numbers"><code class="language-python">class StackOverflowError(BaseException):
+            <pre class="line-numbers"><code class="language-py">class StackOverflowError(BaseException):
     pass
   
 class Stack:
@@ -312,7 +311,7 @@ class Stack:
         <h1 id="math">Math</h1>
         <ol>
             <li>Euclid's Division Lemma</li>
-            <pre class="line-numbers"><code class="language-python">def euclid_division_lemma(a, b):
+            <pre class="line-numbers"><code class="language-py">def euclid_division_lemma(a, b):
     if b > a:
         a, b = b, a
     r = a % b
@@ -321,13 +320,13 @@ class Stack:
     else:
         return euclid_division_lemma(b, r)</code></pre>
             <li>Factorial</li>
-            <pre class="line-numbers"><code class="language-python">def factorial(n):
+            <pre class="line-numbers"><code class="language-py">def factorial(n):
     fact = 1
     for i in range(2, n + 1):
         fact = fact * i
     return fact</code></pre>
             <li>Fibonacci</li>
-            <pre class="line-numbers"><code class="language-python">def fibonacci(n):
+            <pre class="line-numbers"><code class="language-py">def fibonacci(n):
     """returns n terms from the series of Fibonacci numbers"""
     a, b = 0, 1
     arr = []
@@ -337,12 +336,12 @@ class Stack:
     return arr</code></pre>
             
             <li>GCD</li>
-            <pre class="line-numbers"><code class="language-python">def gcd(a, b):
+            <pre class="line-numbers"><code class="language-py">def gcd(a, b):
     while b:
         a, b = b, a % b
     return a</code></pre>
             <li>LCM</li>
-            <pre class="line-numbers"><code class="language-python">def lcm(a, b):
+            <pre class="line-numbers"><code class="language-py">def lcm(a, b):
     return (a * b // gcd(a, b))</code></pre>
         </ol>
         <hr>
@@ -351,7 +350,7 @@ class Stack:
         <h1 id="primes">Primes</h1>
         <ol>
             <li>Mersene Primes</li>
-            <pre class="line-numbers"><code class="language-python">def is_prime(num: int):
+            <pre class="line-numbers"><code class="language-py">def is_prime(num: int):
 	i = 2
 	while i ** 2 <= num:
 		if 	num % i == 0:
@@ -377,7 +376,7 @@ def mersenne_prime(num):
         value = 2 ** power - 1
     return arr</code></pre>
             <li>Palindrome Primes</li>
-            <pre class="line-numbers"><code class="language-python">def is_palindrome(num):
+            <pre class="line-numbers"><code class="language-py">def is_palindrome(num):
     num = str(num)
     return num == num[::-1]
 
@@ -403,7 +402,7 @@ def palindrome_prime(num):
             arr.append(p)
     return arr</code></pre>
                 <li>Sieve of Eratosthenes</li>
-            <pre class="line-numbers"><code class="language-python">def sieve_of_eratosthenese(num):
+            <pre class="line-numbers"><code class="language-py">def sieve_of_eratosthenese(num):
     """Returns a list of prime numbers less than or equal to the given number."""
     sieve = [num for num in range(2, num)]
     key = 0
@@ -414,7 +413,7 @@ def palindrome_prime(num):
                 sieve.remove(i)
     return sieve</code></pre>
             <li>Sophie Germain Primes</li>
-            <pre class="line-numbers"><code class="language-python">def sophie_germain_prime(num):
+            <pre class="line-numbers"><code class="language-py">def sophie_germain_prime(num):
     """Returns all Sophie Germain Prime numbers less than or equal to the given number.
     A prime number p is called Sophie Germain Prime number if (2*p + 1) is also prime.
     >>> sophie_germain_prime(25)
@@ -435,14 +434,14 @@ def palindrome_prime(num):
         <h1 id="regex">Regex</h1>
         <ol>
             <li>Address Validation</li>
-            <pre class="line-numbers"><code class="language-python">import regex as re
+            <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for address validation
 def address_validation(address):
     regex = r'^[a-zA-Z0-9\s,.-]{2,}$'
     return re.search(regex, address)</code></pre>
             <li>Credit Card Validation</li>
-            <pre class="line-numbers"><code class="language-python">import regex as re
+            <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for credit card validation - American Express
 def credit_card_validation_american_express(credit_card):
@@ -568,56 +567,56 @@ def credit_card_validation(credit_card):
     else:
         return 'Unknown'</code></pre>
             <li>Date Validation</li>
-            <pre class="line-numbers"><code class="language-python">import regex as re
+            <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for date validation (DD/MM/YYYY)
 def date_validation(date):
     regex = r'^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/[0-9]{4}$'
     return re.search(regex, date)</code></pre>
             <li>Email Validation</li>
-            <pre class="line-numbers"><code class="language-python">import regex as re
+            <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for email validation
 def email_validation(email):
     regex = r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)'
     return re.search(regex, email)</code></pre>
             <li>Name Validation</li>
-            <pre class="line-numbers"><code class="language-python">import regex as re
+            <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for name validation
 def name_validation(name):
     regex = r'^[a-zA-Z]{2,}$'
     return re.search(regex, name)</code></pre>
             <li>Password Validation</li>
-            <pre class="line-numbers"><code class="language-python">import regex as re
+            <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for password validation
 def password_validation(password):
     regex = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
     return re.search(regex, password)</code></pre>
             <li>Phone Number Validation</li>
-            <pre class="line-numbers"><code class="language-python">import regex as re
+            <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for phone number validation
 def phone_validation(phone):
     regex = r'^[0-9]{10}$'
     return re.search(regex, phone)</code></pre>
             <li>Time Validation</li>
-            <pre class="line-numbers"><code class="language-python">import regex as re
+            <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for time validation HH:MM:SS
 def time_validation(time):
     regex = r'^([0-1]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$'
     return re.search(regex, time)</code></pre>
             <li>URL Validation</li>
-            <pre class="line-numbers"><code class="language-python">import regex as re
+            <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for url validation
 def URL_validation(url):
     regex = r'^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&\'\(\)\*\+,;=.]+$'
     return re.search(regex, url)</code></pre>
             <li>IP Address Validation</li>
-            <pre class="line-numbers"><code class="language-python">import regex as re
+            <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for IP address validation IPv4
 def IP_validation(IP):
@@ -630,7 +629,7 @@ def IP_validation(IP):
         <h1 id="searching-techniques">Searching Techniques</h1>
         <ol>
             <li>Binary search</li>
-            <pre class="line-numbers"><code class="language-python"># Binary Search - time complexity: O(log(n) base 2)
+            <pre class="line-numbers"><code class="language-py"># Binary Search - time complexity: O(log(n) base 2)
 def BinarySearch(arr, element):
     LOW = 0
     TOP = len(arr)-1
@@ -644,7 +643,7 @@ def BinarySearch(arr, element):
             return MID
     return -1</code></pre>
                 <li>Jump search</li>
-                <pre class="line-numbers"><code class="language-python"># Jump Search - time complexity: O(n^1/2)
+                <pre class="line-numbers"><code class="language-py"># Jump Search - time complexity: O(n^1/2)
 def jump_search(arr, element):
     n = len(arr)
     step = int(math.floor(math.sqrt(n)))
@@ -663,7 +662,7 @@ def jump_search(arr, element):
         return prev
     return -1</code></pre>
                 <li>Linear search</li>
-                <pre class="line-numbers"><code class="language-python"># Linear Search - time complexity: O(n)
+                <pre class="line-numbers"><code class="language-py"># Linear Search - time complexity: O(n)
 def LinearSearch(arr, element):
     for i in range(len(arr)):
         if arr[i] == element:
@@ -676,7 +675,7 @@ def LinearSearch(arr, element):
         <h1 id="sorting-techniques">Sorting Techniques</h1>
         <ol>
             <li>Bead sort</li>
-            <pre class="line-numbers"><code class="language-python">def bead_sort(arr):
+            <pre class="line-numbers"><code class="language-py">def bead_sort(arr):
     if any(not isinstance(x, int) or x < 0 for x in arr):
         raise TypeError("Sequence must be list of non-negative integers")
     for _ in range(len(arr)):
@@ -686,13 +685,13 @@ def LinearSearch(arr, element):
                 arr[i + 1] += rod_upper - rod_lower
     return arr</code></pre>
             <li>Bubble sort</li>
-            <pre class="line-numbers"><code class="language-python">def bubble_sort(arr):
+            <pre class="line-numbers"><code class="language-py">def bubble_sort(arr):
     for iter_num in range(len(arr) - 1, 0, -1):
         for i in range(iter_num):
             if arr[i] > arr[i + 1]:
                 arr[i], arr[i + 1] = arr[i + 1], arr[i]</code></pre>
             <li>Counting sort</li>
-            <pre class="line-numbers"><code class="language-python">def counting_sort(arr):
+            <pre class="line-numbers"><code class="language-py">def counting_sort(arr):
     maxEl = max(arr)
     countArrayLength = maxEl+1
     countArray = [0] * countArrayLength
@@ -715,7 +714,7 @@ def LinearSearch(arr, element):
 
     return outputArray</code></pre>
             <li>Insertion sort</li>
-            <pre class="line-numbers"><code class="language-python">def insertion_sort(arr):
+            <pre class="line-numbers"><code class="language-py">def insertion_sort(arr):
     for i in range(1, len(arr)):                  
         key = arr[i]
         j = i - 1
@@ -724,7 +723,7 @@ def LinearSearch(arr, element):
             j -= 1
         arr[j + 1] = key</code></pre>
             <li>merge sort</li>
-            <pre class="line-numbers"><code class="language-python">def merge_sort(arr):
+            <pre class="line-numbers"><code class="language-py">def merge_sort(arr):
     def merge(left, right):
         def _merge():
             while left and right:
@@ -739,7 +738,7 @@ def LinearSearch(arr, element):
     mid = len(arr) // 2
     return merge(merge_sort(arr[:mid]), merge_sort(arr[mid:]))</code></pre>
             <li>shell sort</li>
-            <pre class="line-numbers"><code class="language-python">def shell_sort(arr):
+            <pre class="line-numbers"><code class="language-py">def shell_sort(arr):
     gap = len(arr) // 2
     while gap > 0:
         for i in range(gap, len(arr)):
@@ -751,7 +750,7 @@ def LinearSearch(arr, element):
             arr[j] = temp
         gap = gap//2</code></pre>
             <li>quick sort</li>
-            <pre class="line-numbers"><code class="language-python">def quick_sort(arr):
+            <pre class="line-numbers"><code class="language-py">def quick_sort(arr):
     if len(arr) < 2:
         return arr
     pivot = arr.pop()
@@ -761,6 +760,10 @@ def LinearSearch(arr, element):
         (greater if element > pivot else lesser).append(element)
     return quick_sort(lesser) + [pivot] + quick_sort(greater)</code></pre>
         </ol>
+    </div>
+
+    <div class="arrow">
+        <button><a href="#">Up</a></button>
     </div>
 </body>
 </html>
