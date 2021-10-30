@@ -84,6 +84,13 @@ header .content a{
     text-decoration: underline solid #539BF5;
 }
 
+.sidenav .disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+    text-decoration: none;
+}
+
 /* Style for Scroll-to-up Button */
 .arrow {
     width: auto;
@@ -93,6 +100,7 @@ header .content a{
     right: 40px;
     z-index: 2;
     background-color: #22272E;
+    border-radius: 0.5em;
     border: 1px solid #444C56;
 }
 
@@ -102,6 +110,7 @@ header .content a{
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
+    display: inline-block;
     padding-inline: 3px;
 }
 
