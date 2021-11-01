@@ -1,5 +1,5 @@
-/* PrismJS 1.25.0
-https://prismjs.com/download.html#themes=prism-twilight&languages=python&plugins=line-numbers+highlight-keywords+normalize-whitespace+toolbar+copy-to-clipboard */
+/* Style for Code blocks - GitHub Theme */
+
 code[class*=language-],pre[class*=language-]{color:#fff;background:0 0;font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:12px;text-align:left;text-decoration:none solid rgb(173,186,199);white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:20px;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}
 :not(pre)>code[class*=language-],pre[class*=language-]{background:#22272E}
 pre[class*=language-]{border-radius:.5em;border:1px solid #444C56;margin: -1px -1px 0 -1px;overflow:auto;padding:1em}

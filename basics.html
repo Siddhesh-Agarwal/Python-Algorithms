@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Python Basics">
-    <meta name="keywords" content="python, basics, beginner">
+    <meta name="keywords" content="python, basics, introduction">
     <meta name="author" content="Siddhesh Agarwal">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1e2327">
     <meta name="color-scheme" content="dark light">
-    <title>Python Algorithms</title>
+    <title>Python Basics</title>
     <link href="/manifest.json" rel="manifest" crossorigin="use-credentials">
     <link href="style.css" rel="stylesheet">
     <link href="prism.css" rel="stylesheet">
@@ -29,9 +29,10 @@
     <!-- Collapsible Sidebar -->
     <div class="sidenav">
         <a href="index.html" class="active">DSA</a>
-        <a href="#input-output">Input/Output</a>
-        <a href="#data-types">Data Types</a>
         <a href="#variables">Variables</a>
+        <a href="#input-output">Input/Output</a>
+        <a href="#comments">Comments</a>
+        <a href="#data-types">Data Types</a>
         <a href="#operators">Operators</a>
         <a href="#control-flow">Control Flow</a>
         <a href="#functions">Functions</a>
@@ -40,9 +41,49 @@
 
     <!-- Main Content -->
     <div class="container">
-        <h1 id="input-output">Input/Output</h1>
-        <h1 id="data-types">Data Types</h1>
         <h1 id="variables">Variables</h1>
+        <h1 id="input-output">Input/Output</h1>
+        <ol>
+            <li>Input</li>
+            <pre class="line-numbers"><code class="language-py">var01 = input()                                    # Used to input strings
+var02 = input("Enter your name: ")                 # Used to input strings with a prompt
+var03 = int(input("Enter a number: "))             # Used to input numbers with a prompt
+var04 = float(input("Enter a decimal number: "))   # Used to input decimal numbers with a prompt
+var05 = complex(input("Enter a complex number: ")) # Used to input complex numbers with a prompt
+var06 = bool(input("Enter a boolean value: "))     # Used to input boolean values with a prompt
+var07 = list(input("Enter a list: "))              # Used to input lists with a prompt
+var08 = tuple(input("Enter a tuple: "))            # Used to input tuples with a prompt
+var09 = set(input("Enter a set: "))                # Used to input sets with a prompt
+var10 = dict(input("Enter a dictionary: "))        # Used to input dictionaries with a prompt
+var11 = bin(input("Enter a binary number: "))      # Used to input binary numbers with a prompt
+var12 = eval(input("Enter an expression: "))       # Used to input expressions with a prompt</code></pre>
+            <li>Output</li>
+            <pre class="line-numbers"><code class="language-py">print("Hello World!")            # Used to output strings
+print("Hello World!", end="")    # Used to output strings without a new line
+print("Hello World!", end="\n")  # Used to output strings with a new line
+print("Hello World!", end="\t")  # Used to output strings with a tab
+print("Hello World!", end="\r")  # Used to output strings with a carriage return
+print("Hello World!", end="\f")  # Used to output strings with a form feed
+print("Hello World!", end="\a")  # Used to output strings with an alert
+print("Hello World!", end="\b")  # Used to output strings with a backspace
+print("Hello World!", end="\v")  # Used to output strings with a vertical tab
+print(1, 2, 3, sep="-")          # Used to output multiple values with a separator between them
+</code></pre>
+            <li>Input/Output</li>
+            <pre class="line-numbers"><code class="language-py">print(input())                          # Used to output strings
+print(input("Enter your name: "))       # Used to output strings with a prompt</code></pre>
+        </ol>
+        <h1 id="comments">Comments</h1>
+        <ol>
+            <li>Single Line Comments</li>
+            <pre class="line-numbers"><code class="language-py"># This is a single-line comment</code></pre>
+            <li>Multi Line Comments</li>
+            <pre class="line-numbers"><code class="language-py">"""This         
+is a 
+multi-line 
+comment"""</code></pre>
+        </ol>
+        <h1 id="data-types">Data Types</h1>
         <h1 id="operators">Operators</h1>
         <h1 id="control-flow">Control Flow</h1>
         <h1 id="functions">Functions</h1>

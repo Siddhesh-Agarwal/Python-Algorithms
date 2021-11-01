@@ -60,6 +60,7 @@ header .content a{
     overflow-x: hidden;
     padding-top: 20px;
     border: 1px solid #444C56;
+    border-top: none;
 }
 
 .sidenav a {
