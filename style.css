@@ -5,6 +5,7 @@
 body {
     background-color: #1C2128;
     font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-weight: 400;
 }
 
 /* Style for the Scrollbar */
@@ -19,7 +20,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background:  #686868;
-    border: 1px solid #424242;
+    border-inline: 2px solid #424242;
 }
 
 /* Style for the top header */
@@ -41,7 +42,6 @@ header {
 
 header .content a{
     font-size: 2em;
-    font-weight: 400;
     color: #FFFFFF;
     text-decoration: none solid rgba(205, 217, 229, 0.7);
     margin-left: 12px;
@@ -49,7 +49,6 @@ header .content a{
 
 /* Style the side navigation bar */
 .sidenav {
-    
     height: 100%;
     width: 17.5%;
     position: fixed;
@@ -65,13 +64,12 @@ header .content a{
 
 .sidenav a {
     font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
+    line-height: 28px;
     color: #ADBAC7;
     text-decoration: solid #ADBAC7;
     display: block;
     padding-left: 12px;
-    padding-top: 16px;
+    padding-top: 12px;
 }
 
 .sidenav a:hover {
@@ -80,8 +78,14 @@ header .content a{
 }
 
 .sidenav .active {
+    color: #1E5AA3;
+    text-decoration: underline solid #1E5AA3;
+}
+
+.sidenav .active:hover {
     color: #539BF5;
     text-decoration: underline solid #539BF5;
+    opacity: 2;
 }
 
 .sidenav .disabled {
@@ -89,6 +93,13 @@ header .content a{
     cursor: default;
     opacity: 0.5;
     text-decoration: none;
+}
+
+.sidenav .sub {
+    position: relative;
+    padding-left: 10%;
+    font-size: 18px;
+    line-height: 24px;
 }
 
 /* Style for Scroll-to-up Button */
@@ -126,28 +137,43 @@ header .content a{
 /* Style for the Main Content */
 .container {
     position: relative;
-    margin-left: 15%;
+    margin-left: 25%;
     margin-right: 10%;
     margin-top: 64px;
 }
 
 .container hr {
     border: 1px solid #444C56;
-    margin-left: 10%;
 }
 
 .container h1 {
     font-size: 24px;
     line-height: 36px;
     position: relative;
-    margin-left: 10%;
+    /*margin-left: 10%;*/
     color: #ADBAC7;
+}
+
+.container h2 {
+    font-size: 20px;
+    line-height: 30px;
+    position: relative;
+    color: #ADBAC7;
+}
+
+.container p {
+    font-size: 18px;
+    line-height: 30px;
+    margin-left: 0%;
+    color: #ADBAC7;
+    opacity: 0.8;
+    position: relative;
 }
 
 .container ol {
     font-size: 18px;
     position: relative;
-    margin-left: 11%;
+    margin-left: 2%;
 }
 
 .container ol li {
@@ -155,6 +181,17 @@ header .content a{
     font-weight: 800;
     line-height: 48px;
     color: #ADBAC7;
+}
+
+.container ol ol {
+    font-size: 18px;
+    position: relative;
+    margin-left: 0%;
+}
+
+.subcontainer {
+    position: relative;
+    margin-left: 5%;
 }
 
 /* Style change for tablets and small screen laptops*/

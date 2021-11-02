@@ -34,6 +34,12 @@
         <a href="#input-output">Input/Output</a>
         <a href="#operators">Operators</a>
         <a href="#data-types">Data Types</a>
+        <a href="#numbers" class="sub">Numbers</a>
+        <a href="#strings" class="sub">Strings</a>
+        <a href="#lists" class="sub">Lists</a>
+        <a href="#tuples" class="sub">Tuples</a>
+        <a href="#dictionaries" class="sub">Dictionaries</a>
+        <a href="#sets" class="sub">Sets</a>
         <a href="#control-flow">Control Flow</a>
         <a href="#functions">Functions</a>
         <a href="#exception-handling">Exception Handling</a>
@@ -45,24 +51,62 @@
         <p>Comments are used to explain the code. They are not executed.</p>
         <ol>
             <li>Single Line Comments</li>
-            <pre class="line-numbers"><code class="language-py"># This is a single-line comment</code></pre>
+            <pre class="line-numbers"><code class="language-py"># This is the preferred method to write single-line comments
+"This is also a single-line comment"
+'This is also a single-line comment'</code></pre>
             <li>Multi Line Comments</li>
             <pre class="line-numbers"><code class="language-py">"""This         
 is a 
 multi-line 
 comment"""</code></pre>
         </ol>
+        <hr>
+
+        <!-- Variables -->
         <h1 id="variables">Variables</h1>
         <p>Variables are used to store values. They are declared using the keyword <code>var</code>.</p>
         <ol>
             <li>Declaring Variables</li>
+            <p>Python has no command for declaring a variable. This means that variables are created when you first assign a value to them.</p> 
             <pre class="line-numbers"><code class="language-py">x = 5
 y = "Hello World!"
 z = [1, 2, 3]</code></pre>
-            <li>Assigning Values</li>
+            <li>Type of variables</li>
+            <p>Python supports the following data types:</p>
             <pre class="line-numbers"><code class="language-py">x = 5
-x = x + 1      # new value of x is 6</code></pre>
+y = "Hello World!"
+z = [1, 2, 3]
+print(type(x)) # class 'int'
+print(type(y)) # class 'str'
+print(type(z)) # class 'list'</code></pre>
+            <li>Assigning values to variables</li>
+            <p>You can assign values to variables using the assignment operator <code>=</code>.</p>
+            <pre class="line-numbers"><code class="language-py">x = 5
+x = "Hello World!" # This is a new value for x
+# Notice both values of x have a different type?
+# This is because python is dynamically typed.</code></pre>
+            <li>Allowed variable names</li>
+            <p>Variable names can contain letters, numbers, and underscores. They cannot start with a number.</p>
+            <pre class="line-numbers"><code class="language-py">x = 5
+y = "Hello World!"
+z = [1, 2, 3]
+# These are valid variable names but it is not a good practice to use 
+# variable names that are reserved words (or single-lettered) in python</code></pre>
+            <li>Variable names cannot contain spaces</li>
+            <p>Variable names cannot contain spaces. This is because spaces are used to identify words in the code.</p>
+            <pre class="line-numbers"><code class="language-py">x y = 5
+# This is not a valid variable name because it contains a space</code></pre>
+            <li>Variable names cannot contain special characters</li>
+            <p>Variable names cannot contain special characters. This is because many special characters are used to denote operations.</p>
+            <pre class="line-numbers"><code class="language-py">x? = 5
+# This is not a valid variable name because it contains a special character</code></pre>
+            <li>Variable names cannot start with numbers</li>
+            <pre class="line-numbers"><code class="language-py">1x = 5
+# This is not a valid variable name because it starts with a number</code></pre>
         </ol>
+        <hr>
+
+        <!-- Input and Output -->
         <h1 id="input-output">Input/Output</h1>
         <p>Input and Output are used to interact with the user. They are used to get and set values.</p>
         <ol>
@@ -94,6 +138,9 @@ print(1, 2, 3, sep="-")          # Used to output multiple values with a separat
             <pre class="line-numbers"><code class="language-py">print(input())                          # Used to output strings
 print(input("Enter your name: "))       # Used to output strings with a prompt</code></pre>
         </ol>
+        <hr>
+
+        <!-- Operators -->
         <h1 id="operators">Operators</h1>
         <p>Operators are used to perform operations on values. They are used to perform arithmetic, relational, logical, and bitwise operations.</p>
         <ol>
@@ -129,9 +176,106 @@ z2 = x | y    # bitwise or
 z3 = x ^ y    # bitwise xor
 z4 = ~x       # bitwise not</code></pre>
         </ol>
+        <hr>
+
+        <!-- Data Types -->
         <h1 id="data-types">Data Types</h1>
+        <p>Data types are used to store values. They are used to store numbers, strings, lists, tuples, sets, and dictionaries.</p>
+        <div class="subcontainer">
+            <h2 id="numbers">Numbers</h2>
+            <p>Numbers are used to store integers and decimals.</p>
+            <ol type="i">
+                <li>Integer</li>
+                <pre class="line-numbers"><code class="language-py">x = 5
+    print(type(x))
+    # class 'int'</code></pre>
+                <li>Decimal</li>
+                <pre class="line-numbers"><code class="language-py">x = 5.5
+    print(type(x))
+    # class 'float'</code></pre>
+                <li>Complex</li>
+                <pre class="line-numbers"><code class="language-py">x = 5 + 5j
+    print(type(x))
+    # class 'complex'</code></pre>
+            </ol>
+        
+            <h2 id="strings">Strings</h2>
+            <p>Strings are used to store text.</p>
+            <ol type="i">
+                <li>Declaration</li>
+                <pre class="line-numbers"><code class="language-py">x = 'Hello World!'      # Single quoted strings
+    y = "Hello World!"      # Double quotes are used to store text with single quotes
+    z = '''Hello World!'''  # Triple quotes allow text for multiple lines</code></pre>
+                <li>Indexing/Slicing</li>
+                <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
+    print(x[0])                 # Prints 'H'
+    print(x[-1])                # Prints '!'
+    print(x[0:5])               # Prints 'Hello'
+    print(x[:5])                # Prints 'Hello'
+    print(x[5:])                # Prints ' World!'</code></pre>
+                <li>Concatenation</li>
+                <pre class="line-numbers"><code class="language-py">x = 'Hello'
+    y = 'World!'
+    z = x + y
+    print(z)                   # Prints 'HelloWorld!'</code></pre>
+                <li>Repetition</li>
+                <pre class="line-numbers"><code class="language-py">x = 'Hello'
+    y = x * 3
+    print(y)                   # Prints 'HelloHelloHello'</code></pre>
+                <li>Formatting</li>
+                <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
+    print(x.upper())           # Prints 'HELLO WORLD!'
+    print(x.lower())           # Prints 'hello world!'
+    print(x.capitalize())      # Prints 'Hello world!'
+    print(x.swapcase())        # Prints 'hELLO wORLD!'
+    print(x.title())           # Prints 'Hello World!'
+    print(x.split())           # Prints ['Hello', 'World!']
+    print(x.split(' '))        # Prints ['Hello', 'World!']
+    print(x.split('l'))        # Prints ['He', 'o Wor', 'd!']
+    print(x.split('l', 1))     # Prints ['He', 'o Wor', 'd!']</code></pre>
+                <li>Length/Count</li>
+                <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
+    print(len(x))              # Prints 12
+    print(x.count('l'))        # Prints 3</code></pre>
+                <li>Replace</li>
+                <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
+    print(x.replace('H', 'J')) # Prints 'Jello World!'</code></pre>
+                <li>String Methods (Basics)</li>
+                <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
+    print(x.find('H'))         # Prints 0
+    print(x.find('o'))         # Prints 4
+    print(x.find('o', 5))      # Prints 7
+    print(x.rfind('o'))        # Prints 7
+    print(x.rfind('o', 0, 5))  # Prints 4
+    print(x.index('o'))        # Prints 4
+    print(x.find('B'))         # Throws an error because it can't find 'B'
+    print(x.index('B'))        # Prints -1</code></pre>
+                <li>String Methods (Advanced)</li>
+                <pre class="line-numbers"><code class="language-py">x = '   Hello World!   '
+    print(x.strip())           # Prints 'Hello World!'
+    print(x.rstrip())          # Prints '   Hello World!'
+    print(x.lstrip())          # Prints 'Hello World!   '
+    print(x.startswith('H'))   # Prints True
+    print(x.endswith('!'))     # Prints True
+    print(x.isalpha())         # Prints False because it contains a space
+    print(x.strip().isalpha()) # Prints True because it doesn't contain a space</code></pre>
+            </ol>
+            <h2 id="lists">Lists</h2>
+            <h2 id="tuples">Tuples</h2>
+            <h2 id="dictionaries">Dictionaries</h2>
+            <h2 id="sets">Sets</h2>
+        </div>
+        <hr>
+
+        <!-- Control Flow -->
         <h1 id="control-flow">Control Flow</h1>
+        <hr>
+
+        <!-- Functions -->
         <h1 id="functions">Functions</h1>
+        <hr>
+
+        <!-- Exception handling -->
         <h1 id="exception-handling">Exception Handling</h1>
     </div>
 
