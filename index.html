@@ -227,84 +227,101 @@ class LinkedList:
             <li>Queue</li>
             <pre class="line-numbers"><code class="language-py">class Queue:
     def __init__(self):
-        self.queue = []
-        self.length = 0
-        self.front = 0
+        self.items = []
+ 
+    def __repr__(self):
+        return str(self.items)
 
-    def __str__(self):
-        return str(self.queue)
+    def __getattr__(self, key):
+        return self.items[key]
 
     def __len__(self):
-        return self.length
+        return len(self.items)
 
-    def put(self, item):
-        """Put an item into the queue"""
-        self.queue.append(item)
-        self.length = self.length + 1
+    def __eq__(self, other):
+        return self.items == other.items
+    
+    def __contains__(self, item):
+        """Checks if an item is in the queue"""
+        return item in self.items
 
-    def get(self):
-        """Get the front item of the queue"""
-        self.length = self.length - 1
-        dequeued = self.queue[self.front]
-        self.queue = self.queue[1:]
-        return dequeued
+    def is_empty(self):
+        """Checks if a Queue is empty"""
+        return self.items == []
 
+    def enqueue(self, item):
+        """Adds an element at the end of the Queue"""
+        self.items.append(item)
+
+    def dequeue(self):
+        """Removes the element at the beginning of the queue"""
+        self.items = self.items[1:]
+        return self.items
+
+    def peek(self):
+        """Returns the element at the beginning of the queue"""
+        return self.items[-1]
+    
     def reverse(self):
-        """Reverse the queue"""
-        reversed = Queue()
-        for i in self.queue:
-            reversed.put(i)
-        return reversed
-
-    def get_front(self):
-        """Returns the front of the stack"""
-        return self.queue[0]</code></pre>
+        """Reverses the order of the elements in the queue"""
+        self.items.reverse()
+        return self.items</code></pre>
             <li>Stack</li>
-            <pre class="line-numbers"><code class="language-py">class StackOverflowError(BaseException):
-    pass
-  
-class Stack:
-    def __init__(self, **stack, limit = 10):
-        self.limit = limit
-        if len(stack) > self.limit:
-            raise StackOverflowError
-        else:
-            self.stack = list(stack)
+            <pre class="line-numbers"><code class="language-py">class Stack:
+    def __init__(self, size):
+        self.size = size
+        self.stack = []
 
     def __str__(self):
         return str(self.stack)
 
+    def __repr__(self):
+        return str(self.stack)
+
+    def __getattr__(self, key):
+        return self.stack[key]
+
     def __len__(self):
         return len(self.stack)
+
+    def __eq__(self, other):
+        return self.stack == other.stack
 
     def __contains__(self, item):
         return item in self.stack
 
-    def push(self, data):
-        """Add a new item to the end of the stack"""
-        if len(self.stack) >= self.limit:
-            raise StackOverflowError
-        self.stack.append(data)
+    def push(self, item):
+        """Adds an item to the top of the stack"""
+        if len(self.stack) == self.size:
+            raise IndexError("Stack is full")
+        else:
+            self.stack.append(item)
 
     def pop(self):
-        """Remove the top item from the stack"""
-        return self.stack.pop()
+        """Removes and returns the top item of the stack"""
+        if len(self.stack) == 0:
+            raise IndexError("Stack is empty")
+        else:
+            return self.stack.pop()
 
     def peek(self):
-        """Peek the top item of the stack"""
-        return self.stack[-1]
-
-    def show(self):
-        """Show the stack"""
-        return self.stack
+        """Returns the top item of the stack without removing it"""
+        if len(self.stack) == 0:
+            raise IndexError("Stack is empty")
+        else:
+            return self.stack[-1]
 
     def is_empty(self):
-        """Check if the stack is empty"""
-        return bool(self.stack)
+        """Returns True if the stack is empty, False otherwise"""
+        return len(self.stack) == 0
 
     def is_full(self):
-        """Check if the stack is full"""
-        return self.__len__() == self.limit</code></pre>
+        """Returns True if the stack is full, False otherwise"""
+        return len(self.stack) == self.size
+
+    def clear(self):
+        """Removes all items from the stack"""
+        self.stack = []</code></pre>
         </ol>
         <hr>
 
