@@ -134,7 +134,13 @@ print("Hello World!", end="\a")  # Used to output strings with an alert
 print("Hello World!", end="\b")  # Used to output strings with a backspace
 print("Hello World!", end="\v")  # Used to output strings with a vertical tab
 print(1, 2, 3, sep="-")          # Used to output multiple values with a separator between them</code></pre>
-            <li>Input/Output</li>
+            <li>Pretty print</li>
+            <pre class="line-numbers"><code class="language-py">from pprint import pprint
+var01 = [1, 2, 3]
+var02 = {1: "one", 2: "two", 3: "three"}
+pprint(var01) # Used just like the print statement
+pprint(var02) # It prints the output in a more readable format</code></pre>
+            <li>Input and Output</li>
             <pre class="line-numbers"><code class="language-py">print(input())                          # Used to output strings
 print(input("Enter your name: "))       # Used to output strings with a prompt</code></pre>
         </ol>
@@ -185,18 +191,15 @@ z4 = ~x       # bitwise not</code></pre>
             <h2 id="numbers">Numbers</h2>
             <p>Numbers are used to store integers and decimals.</p>
             <ol type="i">
-                <li>Integer</li>
+                <li>Integers</li>
                 <pre class="line-numbers"><code class="language-py">x = 5
-    print(type(x))
-    # class 'int'</code></pre>
-                <li>Decimal</li>
+print(type(x))  # class 'int'</code></pre>
+                <li>Decimals</li>
                 <pre class="line-numbers"><code class="language-py">x = 5.5
-    print(type(x))
-    # class 'float'</code></pre>
-                <li>Complex</li>
+print(type(x))  # class 'float'</code></pre>
+                <li>Complex numbers</li>
                 <pre class="line-numbers"><code class="language-py">x = 5 + 5j
-    print(type(x))
-    # class 'complex'</code></pre>
+print(type(x))  # class 'complex'</code></pre>
             </ol>
         
             <h2 id="strings">Strings</h2>
@@ -204,64 +207,130 @@ z4 = ~x       # bitwise not</code></pre>
             <ol type="i">
                 <li>Declaration</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello World!'      # Single quoted strings
-    y = "Hello World!"      # Double quotes are used to store text with single quotes
-    z = '''Hello World!'''  # Triple quotes allow text for multiple lines</code></pre>
+y = "Hello World!"      # Double quotes are used to store text with single quotes
+z = '''Hello World!'''  # Triple quotes allow text for multiple lines</code></pre>
                 <li>Indexing/Slicing</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
-    print(x[0])                 # Prints 'H'
-    print(x[-1])                # Prints '!'
-    print(x[0:5])               # Prints 'Hello'
-    print(x[:5])                # Prints 'Hello'
-    print(x[5:])                # Prints ' World!'</code></pre>
+print(x[0])                 # Prints 'H'
+print(x[-1])                # Prints '!'
+print(x[0:5])               # Prints 'Hello'
+print(x[:5])                # Prints 'Hello'
+print(x[5:])                # Prints ' World!'</code></pre>
                 <li>Concatenation</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello'
-    y = 'World!'
-    z = x + y
-    print(z)                   # Prints 'HelloWorld!'</code></pre>
+y = 'World!'
+z = x + y
+print(z)                   # Prints 'HelloWorld!'</code></pre>
                 <li>Repetition</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello'
-    y = x * 3
-    print(y)                   # Prints 'HelloHelloHello'</code></pre>
+y = x * 3
+print(y)                   # Prints 'HelloHelloHello'</code></pre>
                 <li>Formatting</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
-    print(x.upper())           # Prints 'HELLO WORLD!'
-    print(x.lower())           # Prints 'hello world!'
-    print(x.capitalize())      # Prints 'Hello world!'
-    print(x.swapcase())        # Prints 'hELLO wORLD!'
-    print(x.title())           # Prints 'Hello World!'
-    print(x.split())           # Prints ['Hello', 'World!']
-    print(x.split(' '))        # Prints ['Hello', 'World!']
-    print(x.split('l'))        # Prints ['He', 'o Wor', 'd!']
-    print(x.split('l', 1))     # Prints ['He', 'o Wor', 'd!']</code></pre>
+print(x.upper())           # Prints 'HELLO WORLD!'
+print(x.lower())           # Prints 'hello world!'
+print(x.capitalize())      # Prints 'Hello world!'
+print(x.swapcase())        # Prints 'hELLO wORLD!'
+print(x.title())           # Prints 'Hello World!'
+print(x.split())           # Prints ['Hello', 'World!']
+print(x.split(' '))        # Prints ['Hello', 'World!']
+print(x.split('l'))        # Prints ['He', 'o Wor', 'd!']
+print(x.split('l', 1))     # Prints ['He', 'o Wor', 'd!']</code></pre>
                 <li>Length/Count</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
-    print(len(x))              # Prints 12
-    print(x.count('l'))        # Prints 3</code></pre>
+print(len(x))              # Prints 12
+print(x.count('l'))        # Prints 3</code></pre>
                 <li>Replace</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
-    print(x.replace('H', 'J')) # Prints 'Jello World!'</code></pre>
+print(x.replace('H', 'J')) # Prints 'Jello World!'</code></pre>
                 <li>String Methods (Basics)</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
-    print(x.find('H'))         # Prints 0
-    print(x.find('o'))         # Prints 4
-    print(x.find('o', 5))      # Prints 7
-    print(x.rfind('o'))        # Prints 7
-    print(x.rfind('o', 0, 5))  # Prints 4
-    print(x.index('o'))        # Prints 4
-    print(x.find('B'))         # Throws an error because it can't find 'B'
-    print(x.index('B'))        # Prints -1</code></pre>
+print(x.find('H'))         # Prints 0
+print(x.find('o'))         # Prints 4
+print(x.find('o', 5))      # Prints 7
+print(x.rfind('o'))        # Prints 7
+print(x.rfind('o', 0, 5))  # Prints 4
+print(x.index('o'))        # Prints 4
+print(x.find('B'))         # Throws an error because it can't find 'B'
+print(x.index('B'))        # Prints -1</code></pre>
                 <li>String Methods (Advanced)</li>
                 <pre class="line-numbers"><code class="language-py">x = '   Hello World!   '
-    print(x.strip())           # Prints 'Hello World!'
-    print(x.rstrip())          # Prints '   Hello World!'
-    print(x.lstrip())          # Prints 'Hello World!   '
-    print(x.startswith('H'))   # Prints True
-    print(x.endswith('!'))     # Prints True
-    print(x.isalpha())         # Prints False because it contains a space
-    print(x.strip().isalpha()) # Prints True because it doesn't contain a space</code></pre>
+print(x.strip())           # Prints 'Hello World!'
+print(x.rstrip())          # Prints '   Hello World!'
+print(x.lstrip())          # Prints 'Hello World!   '
+print(x.startswith('H'))   # Prints True
+print(x.endswith('!'))     # Prints True
+print(x.isalpha())         # Prints False because it contains a space
+print(x.strip().isalpha()) # Prints True because it doesn't contain a space</code></pre>
             </ol>
             <h2 id="lists">Lists</h2>
             <p>Lists are used to store multiple values in a single variable. They are mutable, and can contain any type of data.</p>
+            <ol type="i">
+                <li>Declaration</li>
+                <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
+list2 = ['a', 'b', 'c']
+list3 = [1, 'a', 2, 'b', 3, 'c']</code></pre>
+                <li>Indexing/Slicing</li>
+                <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
+print(list1[0])              # Prints 1
+print(list1[-1])             # Prints 3
+print(list1[0:2])            # Prints [1, 2]
+print(list1[:2])             # Prints [1, 2]
+print(list1[2:])             # Prints [3]
+print(list1[:-1])            # Prints [1, 2]</code></pre>
+                <li>Concatenation</li>
+                <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+list3 = list1 + list2
+print(list3)                 # Prints [1, 2, 3, 4, 5, 6]</code></pre>
+                <li>Repetition</li>
+                <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
+list2 = list1 * 3
+print(list2)                 # Prints [1, 2, 3, 1, 2, 3, 1, 2, 3]</code></pre>
+                <li>for loop</li>
+                <pre class="line-numbers"><code class="language-py">list1 = [i for i in range(1, 11)]                # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+list2 = [i for i in range(1, 11) if i % 2 == 0]  # [2, 4, 6, 8, 10]</code></pre>
+                <li>Length/Count</li>
+                <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
+print(len(list1))            # Prints 3
+print(list1.count(1))        # Prints 1</code></pre>
+                <li>Sorting</li>
+                <pre class="line-numbers"><code class="language-py">list1 = [3, 1, 2, 0, -2, -3]
+list1.sort()
+print(list1)                 # Prints [-3, -2, 0, 1, 2, 3]
+list1.sort(reverse=True)     # Prints [3, 2, 1, 0, -2, -3]</code></pre>
+                <li>Reverse</li>
+                <pre class="line-numbers"><code class="language-py">list1 = [3, 1, 2, 0, -2, -3]
+list1.reverse()
+print(list1)                 # Prints [-3, -2, -1, 0, 1, 2]
+list1 = list1[::-1]
+print(list1)                # Prints [3, 1, 2, 0, -2, -3]</code></pre>
+                <li>List Methods (Basics)</li>
+                <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
+list1.append(4)              # Appends 4 to the end of the list
+print(list1)                 # Prints [1, 2, 3, 4]
+list1.insert(0, 0)           # Inserts 0 at the beginning of the list
+print(list1)                 # Prints [0, 1, 2, 3, 4]
+list1.remove(0)              # Removes the first occurrence of 0
+print(list1)                 # Prints [1, 2, 3, 4]
+list1.pop()                  # Removes the last element of the list
+print(list1)                 # Prints [1, 2, 3]
+list1.pop(0)                 # Removes the element at index 0
+print(list1)                 # Prints [2, 3]
+list1.clear()                # Removes all elements from the list
+print(list1)                 # Prints []</code></pre>
+                <li>List Methods (Advanced)</li>
+                <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+list3 = list1 + list2
+print(list3)                 # Prints [1, 2, 3, 4, 5, 6]
+list2.extend(list1)          # Adds elememts of list1 to the end of list2
+print(list2)                 # Prints [4, 5, 6, 1, 2, 3]
+list2.append(list1)          # Adds list1 to the end of list2
+print(list2)                 # Prints [4, 5, 6, 1, 2, 3, [1, 2, 3]]
+list4 = list1.copy()         # Creates a copy of list1
+print(list4)                 # Prints [1, 2, 3]</code></pre>
+            </ol>
             <h2 id="tuples">Tuples</h2>
             <p>Tuples are used to store multiple values in a single variable. They are immutable, which means they can't be changed.</p>
             <h2 id="dictionaries">Dictionaries</h2>
