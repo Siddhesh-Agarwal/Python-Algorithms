@@ -119,7 +119,6 @@ header .content a{
     color:#ADBAC7;
     text-decoration: none solid #ADBAC7;
     font-size: 20px;
-    font-weight: 400;
     line-height: 30px;
     display: inline-block;
     padding-inline: 3px;
@@ -139,7 +138,8 @@ header .content a{
     position: relative;
     margin-left: 25%;
     margin-right: 10%;
-    margin-top: 64px;
+    margin-top: 72px;
+    padding-bottom: 64px;
 }
 
 .container hr {
@@ -171,21 +171,19 @@ header .content a{
 }
 
 .container ol {
-    font-size: 18px;
     position: relative;
     margin-left: 2%;
 }
 
 .container ol li {
     font-size: 18px;
-    font-weight: 800;
     line-height: 48px;
     color: #ADBAC7;
 }
 
 .subcontainer {
     position: relative;
-    margin-left: 5%;
+    margin-left: 2%;
 }
 
 /* Style change for tablets and small screen laptops*/
@@ -204,12 +202,10 @@ header .content a{
 }
 
 /* Style change for mobile devices */
-@media only screen and (max-width: 750px) {
+@media (max-width: 750px) {
     header {
-        width: 100%;
         height: auto;
-        padding: 0, 0;
-        z-index: 2;
+        padding: 0px;
     }
 
     header .content a {
@@ -240,11 +236,15 @@ header .content a{
         border-top: 1px solid  #373E47;
     }
 
+    .sidenav .sub {
+        padding-left: 32px;
+    }
+
     .container {
         z-index: 0;
         position: relative;
         margin-left: 2px;
-        margin-right: 12px;
+        margin-right: 4px;
         width: auto;
     }
     .container h1 {
@@ -252,6 +252,6 @@ header .content a{
         margin-right: 0;
     }
     .container ol {
-        margin-left: 2%;
+        margin-left: 4px;
     }
 }
