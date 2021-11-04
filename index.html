@@ -583,11 +583,6 @@ def credit_card_validation_solo(credit_card):
     regex = r'^(6334|6767)[0-9]{12}|(6334|6767)[0-9]{14}|(6334|6767)[0-9]{15}$'
     return re.search(regex, credit_card)
 
-# regex for credit card validation - Switch
-def credit_card_validation_switch(credit_card):
-    regex = r'^(4903|4905|4911|4936|6333|6759)[0-9]{12}|(4903|4905|4911|4936|6333|6759)[0-9]{14}|(4903|4905|4911|4936|6333|6759)[0-9]{15}|564182[0-9]{10}|564182[0-9]{12}|564182[0-9]{13}|633110[0-9]{10}|633110[0-9]{12}|633110[0-9]{13}$'
-    return re.search(regex, credit_card)
-
 # regex for credit card validation - UnionPay
 def credit_card_validation_unionPay(credit_card):
     regex = r'^(62[0-9]{14,17})$'
@@ -631,8 +626,6 @@ def credit_card_validation(credit_card):
         return 'Mastercard'
     elif credit_card_validation_solo(credit_card):
         return 'Solo'
-    elif credit_card_validation_switch(credit_card):
-        return 'Switch'
     elif credit_card_validation_unionPay(credit_card):
         return 'UnionPay'
     elif credit_card_validation_visa(credit_card):
