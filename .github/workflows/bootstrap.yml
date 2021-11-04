@@ -1,0 +1,27 @@
+name: Bootstrap Repository
+on: [push]
+
+jobs:
+  bootstrap:
+    if: endsWith(github.ref, '/master') && github.repository != 'octodemo/awesome-actions' && !startsWith(github.repository,'jonico/')
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Create Issue From File
+      uses: peter-evans/create-issue-from-file@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ISSUE_TITLE: Welcome ${{github.actor}}
+        ISSUE_CONTENT_FILEPATH: ./new-issue.md
+        ISSUE_LABELS: report, automated issue
+
+    - name: Add a project board
+      run: ./create-board.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Remove bootstrap workflow file from master branch
+      run: ./scripts/remove-bootstrap-workflow.sh
+      env:
+        GITHUB_COM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
