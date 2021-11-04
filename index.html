@@ -478,13 +478,14 @@ def palindrome_prime(num):
                 <li>Sieve of Eratosthenes</li>
             <pre class="line-numbers"><code class="language-py">def sieve_of_eratosthenese(num):
     """Returns a list of prime numbers less than or equal to the given number."""
-    sieve = [num for num in range(2, num)]
+    sieve = [i for i in range(2, num + 1)]
     key = 0
     while key < len(sieve):
         prime = sieve[key]
-        for i in range(2 * prime, num, prime):
+        for i in range(2 * prime, num + 1, prime):
             if i in sieve:
                 sieve.remove(i)
+        key += 1
     return sieve</code></pre>
             <li>Sophie Germain Primes</li>
             <pre class="line-numbers"><code class="language-py">def sophie_germain_prime(num):
@@ -703,7 +704,7 @@ def IP_validation(IP):
         <h1 id="searching-techniques">Searching Techniques</h1>
         <ol>
             <li>Binary search</li>
-            <pre class="line-numbers"><code class="language-py"># Binary Search - time complexity: O(log(n) base 2)
+            <pre class="line-numbers"><code class="language-py"># Binary Search - time complexity: O(log(n))
 def BinarySearch(arr, element):
     LOW = 0
     TOP = len(arr)-1
