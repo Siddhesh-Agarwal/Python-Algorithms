@@ -296,27 +296,33 @@ print(len(list1))            # Prints 3
 print(list1.count(1))        # Prints 1</code></pre>
                 <li>Sorting</li>
                 <pre class="line-numbers"><code class="language-py">list1 = [3, 1, 2, 0, -2, -3]
-list1.sort()
-print(list1)                 # Prints [-3, -2, 0, 1, 2, 3]
-list1.sort(reverse=True)     # Prints [3, 2, 1, 0, -2, -3]</code></pre>
+print(list1.sort())                 # Prints [-3, -2, 0, 1, 2, 3]
+print(list1.sort(reverse=True))     # Prints [3, 2, 1, 0, -2, -3]</code></pre>
                 <li>Reverse</li>
-                <pre class="line-numbers"><code class="language-py">list1 = [3, 1, 2, 0, -2, -3]
-list1.reverse()
-print(list1)                 # Prints [-3, -2, -1, 0, 1, 2]
-list1 = list1[::-1]
-print(list1)                # Prints [3, 1, 2, 0, -2, -3]</code></pre>
+                <pre class="line-numbers"><code class="language-py"># method 1
+list1 = [3, 1, 2, 0, -2, -3]
+print(list1.reverse())       # Prints [-3, -2, -1, 0, 1, 2]
+
+# method 2
+list1 = [3, 1, 2, 0, -2, -3]
+print(list1[::-1])           # Prints [3, 1, 2, 0, -2, -3]</code></pre>
                 <li>List Methods (Basics)</li>
                 <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
 list1.append(4)              # Appends 4 to the end of the list
 print(list1)                 # Prints [1, 2, 3, 4]
+
 list1.insert(0, 0)           # Inserts 0 at the beginning of the list
 print(list1)                 # Prints [0, 1, 2, 3, 4]
+
 list1.remove(0)              # Removes the first occurrence of 0
 print(list1)                 # Prints [1, 2, 3, 4]
+
 list1.pop()                  # Removes the last element of the list
 print(list1)                 # Prints [1, 2, 3]
+
 list1.pop(0)                 # Removes the element at index 0
 print(list1)                 # Prints [2, 3]
+
 list1.clear()                # Removes all elements from the list
 print(list1)                 # Prints []</code></pre>
                 <li>List Methods (Advanced)</li>
@@ -324,15 +330,68 @@ print(list1)                 # Prints []</code></pre>
 list2 = [4, 5, 6]
 list3 = list1 + list2
 print(list3)                 # Prints [1, 2, 3, 4, 5, 6]
+
 list2.extend(list1)          # Adds elememts of list1 to the end of list2
 print(list2)                 # Prints [4, 5, 6, 1, 2, 3]
-list2.append(list1)          # Adds list1 to the end of list2
+
+list2.append(list1)          # Adds list1 (as a list) to the end of list2
 print(list2)                 # Prints [4, 5, 6, 1, 2, 3, [1, 2, 3]]
+
 list4 = list1.copy()         # Creates a copy of list1
 print(list4)                 # Prints [1, 2, 3]</code></pre>
             </ol>
             <h2 id="tuples">Tuples</h2>
             <p>Tuples are used to store multiple values in a single variable. They are immutable, which means they can't be changed.</p>
+            <ol>
+                <li>Declaration</li>
+                <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)           # Direct declaration
+tuple2 = ('a', 'b', 'c')     # Direct declaration
+tuple3 = tuple([1, 2, 3])    # Converting a list
+tuple4 = (1,)                # This is a tuple with one element
+var = (1)                    # This is an integer (not a tuple)</code></pre>
+                <li>Indexing/Slicing</li>
+                <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)
+print(tuple1[0])             # Prints 1
+print(tuple1[-1])            # Prints 3
+print(tuple1[0:2])           # Prints (1, 2)
+print(tuple1[:2])            # Prints (1, 2)
+print(tuple1[2:])            # Prints (3)
+print(tuple1[:-1])           # Prints (1, 2)</code></pre>
+                <li>Concatenation</li>
+                <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+tuple3 = tuple1 + tuple2
+print(tuple3)                # Prints (1, 2, 3, 4, 5, 6)</code></pre>
+                <li>Repetition</li>
+                <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)
+tuple2 = tuple1 * 3
+print(tuple2)                # Prints (1, 2, 3, 1, 2, 3, 1, 2, 3)</code></pre>
+                <li>for loop</li>
+                <pre class="line-numbers"><code class="language-py">tuple1 = tuple(i for i in range(1, 11))
+tuple2 = tuple(i for i in range(1, 11) if i % 2 == 0)</code></pre>
+                <li>Length/Count</li>
+                <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)
+print(len(tuple1))           # Prints 3
+print(tuple1.count(1))       # Prints 1</code></pre>
+                <li>Sorting</li>
+                <pre class="line-numbers"><code class="language-py">tuple1 = (3, 1, 2, 0, -2, -3)
+print(sorted(tuple1))                # Prints [-3, -2, 0, 1, 2, 3]
+print(sorted(tuple1, reverse=True))  # Prints [3, 2, 1, 0, -2, -3]</code></pre>
+                <li>Reverse</li>
+                <pre class="line-numbers"><code class="language-py"># method 1
+tuple1 = (3, 1, 2, 0, -2, -3)
+print(tuple(reversed(tuple1)))
+
+# method 2
+tuple1 = (3, 1, 2, 0, -2, -3)
+print(tuple1[::-1])</code></pre>
+                <li>Tuple Methods</li>
+                <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3, 1, 1, 2)
+print(tuple1.index(1))        # Prints 0
+print(tuple1.index(1, 1))     # Prints 3
+print(tuple1.count(1))        # Prints 3
+print(tuple1.count(2))        # Prints 2</code></pre>
+            </ol>
             <h2 id="dictionaries">Dictionaries</h2>
             <p>Dictionaries are used to store key-value pairs. They are used to store data in a structured way.</p>
             <h2 id="sets">Sets</h2>
