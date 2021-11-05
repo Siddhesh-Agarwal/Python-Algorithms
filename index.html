@@ -37,6 +37,7 @@
         <a href="#regex">Regex</a>
         <a href="#searching-techniques">Searching Techniques</a>
         <a href="#sorting-techniques">Sorting Techniques</a>
+        <a href="#statistics">Statistics</a>
         <a href="#misc">Miscellaneous</a>
     </div>
 
@@ -424,6 +425,36 @@ list_sum = lambda arr: reduce(lambda x, y: x + y, arr)
         <!-- Primes -->
         <h1 id="primes">Primes</h1>
         <ol>
+            <li>Fermat's prime</li>
+            <pre class="line-numbers"><code class="language-py"># A prime number of the form (2^2^n) + 1 for some non-negative integer n.
+# The first few fermat numbers are 3, 5, 17, 257, 65537, 4294967297, 18446744073709551617
+  
+def factors(x):
+    factors = []
+    i = 2
+    s = int(x ** 0.5)
+    while i < s:
+        if x % i == 0:
+            factors.append(i)
+            x = int(x / i)
+            s = int(x ** 0.5)
+        i += 1
+    factors.append(x)
+    return factors
+ 
+print("First 10 Fermat numbers:")
+for i in range(10):
+    fermat = 2 ** 2 ** i + 1
+    print(f"F{chr(i + 0x2080)} = {fermat}")
+ 
+print("\nFactors of first few Fermat numbers:")
+for i in range(10):
+    fermat = 2 ** 2 ** i + 1
+    fac = factors(fermat)
+    if len(fac) == 1:
+        print(f"F{chr(i + 0x2080)} -> IS PRIME")
+    else:
+        print(f"F{chr(i + 0x2080)} -> FACTORS: {fac}")</code></pre>
             <li>Mersene Primes</li>
             <pre class="line-numbers"><code class="language-py">def is_prime(num: int):
 	i = 2
@@ -681,19 +712,39 @@ def IP_validation(IP):
         <ol>
             <li>Binary search</li>
             <pre class="line-numbers"><code class="language-py"># Binary Search - time complexity: O(log(n))
-def binary_search(list1, n):  
-    LOW = 0  
-    TOP = len(list1) - 1  
-    MID = 0  
-    while LOW <= TOP:  
-        MID = (TOP + LOW) // 2
-        if list1[MID] < n:
-            LOW = MID + 1
-        elif list1[MID] > n:
-            TOP = MID - 1
+# NOTE: This works only for sorted arrays
+# Iterative method
+def binary_search(l, value):
+    LOW = 0
+    TOP = len(l)-1
+    while LOW <= TOP: 
+        MID = (LOW + TOP) // 2
+        if l[MID] > value:
+            TOP = MID-1
+        elif l[MID] < value:
+            LOW = MID+1
         else:
             return MID
-    return -1</code></pre>
+    return -1
+
+# Recursive method
+def binary_search(l, value, LOW = 0, TOP = -1):
+    if not l:
+        return -1
+    if TOP == -1:
+        TOP = len(l)-1
+    if LOW >= TOP:
+        if l[LOW] == value:
+            return LOW
+        else:
+            return -1
+    MID = (LOW + TOP) // 2
+    if l[MID] > value:
+        return binary_search(l, value, LOW, MID-1)
+    elif l[MID] < value:
+        return binary_search(l, value, MID+1, TOP)
+    else:
+        return MID</code></pre>
                 <li>Jump search</li>
                 <pre class="line-numbers"><code class="language-py"># Jump Search - time complexity: O(n^1/2)
 def jump_search(arr, element):
@@ -742,6 +793,18 @@ def linear_search(arr, element):
         for i in range(iter_num):
             if arr[i] > arr[i + 1]:
                 arr[i], arr[i + 1] = arr[i + 1], arr[i]</code></pre>
+            <li>Cocktail sort</li>
+            <pre class="line-numbers"><code class="language-py">def cocktailSort(A):
+    up = range(len(A)-1)
+    while True:
+        for indices in (up, reversed(up)):
+            swapped = False
+            for i in indices:
+                if A[i] > A[i+1]:  
+                    A[i], A[i+1] =  A[i+1], A[i]
+                    swapped = True
+            if not swapped:
+                return</code></pre>
             <li>Counting sort</li>
             <pre class="line-numbers"><code class="language-py">def counting_sort(arr):
     maxEl = max(arr)
@@ -765,6 +828,30 @@ def linear_search(arr, element):
         i -= 1
 
     return outputArray</code></pre>
+            <li>Heap sort</li>
+            <pre class="line-numbers"><code class="language-py">def siftdown(lst, start, end):
+    root = start
+    while True:
+        child = root * 2 + 1
+        if child > end:
+            break
+        if child + 1 <= end and lst[child] < lst[child + 1]:
+            child += 1
+        if lst[root] < lst[child]:
+            lst[root], lst[child] = lst[child], lst[root]
+            root = child
+        else:
+            break
+
+def heapsort(lst):
+    # in pseudo-code, heapify only called once, so inline it here
+    for start in range((len(lst)-2)/2, -1, -1):
+        siftdown(lst, start, len(lst)-1)
+    
+    for end in range(len(lst)-1, 0, -1):
+        lst[end], lst[0] = lst[0], lst[end]
+        siftdown(lst, 0, end - 1)
+    return lst</code></pre>
             <li>Insertion sort</li>
             <pre class="line-numbers"><code class="language-py">def insertion_sort(arr):
     for i in range(1, len(arr)):                  
@@ -789,6 +876,16 @@ def linear_search(arr, element):
         return arr
     mid = len(arr) // 2
     return merge(merge_sort(arr[:mid]), merge_sort(arr[mid:]))</code></pre>
+            <li>quick sort</li>
+            <pre class="line-numbers"><code class="language-py">def quick_sort(arr):
+    if len(arr) < 2:
+        return arr
+    pivot = arr.pop()
+    greater: list[int] = []
+    lesser: list[int] = []
+    for element in arr:
+        (greater if element > pivot else lesser).append(element)
+    return quick_sort(lesser) + [pivot] + quick_sort(greater)</code></pre>
             <li>shell sort</li>
             <pre class="line-numbers"><code class="language-py">def shell_sort(arr):
     gap = len(arr) // 2
@@ -801,16 +898,115 @@ def linear_search(arr, element):
                 j -= gap
             arr[j] = temp
         gap = gap//2</code></pre>
-            <li>quick sort</li>
-            <pre class="line-numbers"><code class="language-py">def quick_sort(arr):
-    if len(arr) < 2:
-        return arr
-    pivot = arr.pop()
-    greater: list[int] = []
-    lesser: list[int] = []
-    for element in arr:
-        (greater if element > pivot else lesser).append(element)
-    return quick_sort(lesser) + [pivot] + quick_sort(greater)</code></pre>
+        </ol>
+        <hr>
+
+        <!-- Statistics -->
+        <h1 id="statistics">Statistics</h1>
+        <ol>
+            <li>Absolute value</li>
+            <pre class="line-numbers"><code class="language-py">def abs(x):
+    if isinstance(x, [int, float]):
+        return x if x >= 0 else -x
+    else:
+        raise TypeError(f"x must be an integer or float not {type(x)}")
+# abs() is also an in-built function in Python</code></pre>
+            <li>Arithmetic Mean</li>
+            <pre class="line-numbers"><code class="language-py">def arithmetic_mean(arr):
+    """Returns the Arithmetic mean of a list of numbers"""
+    return sqrt(sum(n*n for n in num)/len(num))</code></pre>
+            <li>Geometric Mean</li>
+            <pre class="line-numbers"><code class="language-py">def geometric_mean(arr):
+    """Returns the geometric mean of a list of numbers"""
+    return reduce(mul, num, 1) ** (1 / len(num))</code></pre>
+            <li>Harmonic Mean</li>
+            <pre class="line-numbers"><code class="language-py">def harmonic_mean(arr):
+    """Returns the harmonic mean of a list of numbers"""
+    return len(arr) / sum(1 / x for x in arr)</code></pre>
+            <li>Quadratic mean / Root mean square</li>
+            <pre class="line-numbers"><code class="language-py">from math import sqrt
+
+def quadratic_mean(array):
+    """calculate the root mean square of an array."""
+    sum = 0
+    length = 0
+    for i in range(len(array)):
+        sum += array[i] ** 2
+        length += 1
+    return sqrt(sum / length)</code></pre>
+            <li>Circular mean</li>
+            <pre class="line-numbers"><code class="language-py">def circular_mean(arr):
+    """Calculate the circular mean of a list of numbers."""
+    total = 0
+    for i in arr:
+        total += i
+    total %= 360
+    return total / len(arr)</code></pre>
+            <li>Median</li>
+            <pre class="line-numbers"><code class="language-py">def median(arr):
+    """Returns the median of a list of numbers"""
+    arr.sort()
+    if len(arr) % 2 == 0:
+        return (arr[len(arr) // 2] + arr[len(arr) // 2 - 1]) / 2
+    else:
+        return arr[len(arr) // 2]</code></pre>
+            <li>Mode</li>
+            <pre class="line-numbers"><code class="language-py">def mode(arr):
+    """Returns the mode of a list of numbers"""
+    arr.sort()
+    mode = arr[0]
+    frequency = 1
+    count = 1
+    for i in range(1, len(arr)):
+        if arr[i] == arr[i - 1]:
+            count += 1
+        else:
+            count = 1
+        if count > frequency:
+            mode = arr[i]
+            frequency = count
+    return mode</code></pre>
+            <li>Range</li>
+            <pre class="line-numbers"><code class="language-py">def range(arr):
+    """Returns the range of a list of numbers"""
+    arr.sort()
+    return arr[-1] - arr[0]</code></pre>
+            <li>Variance</li>
+            <pre class="line-numbers"><code class="language-py">def variance(arr):
+    """Returns the variance of a list of numbers"""
+    mean = mean(arr)
+    total = 0
+    length = 0
+    for i in arr:
+        total += (i - mean) ** 2
+        length += 1
+    return total / length</code></pre>
+            <li>Standard deviation</li>
+            <pre class="line-numbers"><code class="language-py">def standard_deviation(arr):
+    """Returns the standard deviation of a list of numbers"""
+    return variance(arr) ** 0.5</code></pre>
+            <li>Second smallest</li>
+            <pre class="line-numbers"><code class="language-py">def second_smallest(numbers):
+    """Find the second smallest number in a list of numbers"""
+    smallest = None
+    second_smallest = None
+    for number in numbers:
+        if smallest is None or number < smallest:
+            second_smallest, smallest = smallest, number
+        elif second_smallest is None or number < second_smallest:
+            second_smallest = number
+    return second_smallest</code></pre>
+            <li>Second largest</li>
+            <pre class="line-numbers"><code class="language-py">def second_largest(numbers):
+    """Find the second largest number in a list of numbers."""
+    largest = None
+    second_largest = None
+    for number in numbers:
+        if largest is None or number > largest:
+            second_largest, largest = largest, number
+        elif second_largest is None or number > second_largest:
+            second_largest = number
+    return second_largest</code></pre>
         </ol>
         <hr>
 
