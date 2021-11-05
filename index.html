@@ -37,6 +37,7 @@
         <a href="#regex">Regex</a>
         <a href="#searching-techniques">Searching Techniques</a>
         <a href="#sorting-techniques">Sorting Techniques</a>
+        <a href="#misc">Miscellaneous</a>
     </div>
 
     <!-- Content -->
@@ -635,7 +636,7 @@ def date_validation(date):
 
 # regex for email validation
 def email_validation(email):
-    regex = r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)'
+    regex = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
     return re.search(regex, email)</code></pre>
             <li>Password Validation</li>
             <pre class="line-numbers"><code class="language-py">import regex as re
@@ -810,6 +811,33 @@ def linear_search(arr, element):
     for element in arr:
         (greater if element > pivot else lesser).append(element)
     return quick_sort(lesser) + [pivot] + quick_sort(greater)</code></pre>
+        </ol>
+        <hr>
+
+        <!-- Miscellaneous -->
+        <h1 id="misc">Miscellaneous</h1>
+        <ol>
+            <li>Luhn's Algorithm</li>
+            <pre class="line-numbers"><code class="language-py">def luhns_algorithm(credit_card_number):
+    """Checks if a credit card number is valid"""
+    # convert the credit card number to a list of ints
+    credit_card_number_list = [int(x) for x in str(credit_card_number)]
+    # reverse the list
+    credit_card_number_list.reverse()
+    # initialize the total
+    total = 0
+    for i in range(len(credit_card_number_list)):
+        # every other element
+        if i % 2 == 0:
+            # double the value
+            credit_card_number_list[i] = credit_card_number_list[i] * 2
+        # add the digits if > 9
+        if credit_card_number_list[i] > 9:
+            credit_card_number_list[i] = credit_card_number_list[i] - 9
+        # add to the total
+        total = total + credit_card_number_list[i]
+    # if the total is a multiple of 10 the number is valid
+    return True if total % 10 == 0 else False</code></pre>
         </ol>
     </div>
 
