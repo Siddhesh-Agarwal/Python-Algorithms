@@ -361,20 +361,28 @@ def pi_value():
 
 # Taylor series of sin(x)
 def sin_value(x):
-    """Calculates the value of sin(x)"""
+    """Calculates the value of sine of a given number."""
     s = 0
     for k in range(10):    # 10 is arbitrary. increase to get more accuracy
         s += ((-1) ** k) * (x ** (1 + 2 * k)) / factorial(2 * k + 1)
-    return round(s, 8)     # 8 is arbitrary. increase to get more accuracy</code></pre>
+    return round(s, 8)     # 8 is arbitrary. increase to get more accuracy
+
+#sin_value(0)
+#from math import sin
+#sin(0)</code></pre>
             <li>Calculating the value of cos(x)</li>
             <pre class="line-numbers"><code class="language-py">from math import factorial
 
 def cos_value(x):
-    """Calculates the cosine value of a given number."""
+    """Calculates the value of cosine of a given number."""
     cosine = 0
     for i in range(0, 10):
         cosine += (-1) ** i * (x ** (2 * i)) / factorial(2 * i)
-    return round(cosine, 8)</code></pre>
+    return round(cosine, 8)
+
+#cos_value(0)
+#from math import cos
+#cos(0)</code></pre>
             <li>Euclid's Division Lemma</li>
             <pre class="line-numbers"><code class="language-py">def euclid_division_lemma(a, b):
     if b > a:
@@ -391,9 +399,9 @@ def cos_value(x):
         fact = fact * i
     return fact
 
-# Alternative method - using library function
-import math
-math.factorial(n)</code></pre>
+#factorial(n)
+#import math
+#math.factorial(n)</code></pre>
             <li>Fibonacci</li>
             <pre class="line-numbers"><code class="language-py">def fibonacci(n):
     """returns n terms from the series of Fibonacci numbers"""
@@ -411,9 +419,9 @@ math.factorial(n)</code></pre>
         a, b = b, a % b
     return a
     
-# using library function
-import math
-math.gcd(a, b)</code></pre>
+#gcd(a, b)
+#import math
+#math.gcd(a, b)</code></pre>
             <li>Least Common Multiple</li>
             <pre class="line-numbers"><code class="language-py">def lcm(a, b):
     """Returns the Lowest Common Multiple (LCM) of 2 numbers."""
@@ -449,42 +457,24 @@ now = lambda: datetime.now().strftime('%d-%m-%y %H:%M:%S')</code></pre>
             <pre class="line-numbers"><code class="language-py">is_palindrome = lambda s: s == s[::-1]
 # >>> is_palindrome("abdba")
 # True</code></pre>
-            <li>Find the index of an item in a list</li>
-            <pre class="line-numbers"><code class="language-py">lst.index(item)</code></pre>
-            <li>Find the last index of an item in a list</li>
-            <pre class="line-numbers"><code class="language-py">lst.index(item, start, end)</code></pre>
             <li>Flatten a list</li>
-            <pre class="line-numbers"><code class="language-py">[i for sublist in lst for i in sublist]</code></pre>
+            <a href="#flatten-list">See here for better solution</a>
+            <pre class="line-numbers"><code class="language-py">[i for sublist in lst for i in sublist]
+#works only if all elements are iterables
+# works with [[1], [2, 3], [4, 5, 6]]
+# but not [1, [2, 3], [4, 5, 6]]</code></pre>
             <li>Input space seperated integers</li>
             <pre class="line-numbers"><code class="language-py">list(map(int, input().split()))</code></pre>
-            <li>List comprehension</li>
-            <pre class="line-numbers"><code class="language-py">[i for i in range(10)]
-# [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-[i for i in range(10) if i % 2 == 0]
-# [0, 2, 4, 6, 8]
-
-[i for i in range(10) if i % 2 == 1]
-# [1, 3, 5, 7, 9]
-
-[i for i in range(10) if i % 2 == 0 and i % 3 == 0]
-# [0, 6]
-
-[i for i in range(10) if i % 2 == 0 or i % 3 == 0]
-# [0, 2, 3, 4, 6, 8, 9]</code></pre>
             <li>Sum of all the numbers in a list</li>
             <pre class="line-numbers"><code class="language-py">from functools import reduce
 list_sum = lambda arr: reduce(lambda x, y: x + y, arr)
 # >>> list_sum([2, 38, 267, 82])
 # 389</code></pre>
-            <li>Swap two variables</li>
-            <pre class="line-numbers"><code class="language-py">a, b = b, a</code></pre>
             <li>Read a file, line by line</li>
             <pre class="line-numbers"><code class="language-py">print([line.strip() for line in open("readFile.py")])</code></pre>
             <li>Reverse a string/list</li>
             <pre class="line-numbers"><code class="language-py">reverse = lambda s: s[::-1]
 #reverse("Hello, world!")</code></pre>
-
         </ol>
         <hr>
 
@@ -661,6 +651,7 @@ def address_validation(address):
     regex = r'^[a-zA-Z0-9\s,.-]{2,}$'
     return bool(re.search(regex, address))</code></pre>
             <li>Credit Card Validation</li>
+            <a href="#luhns-algorithm">See here for better solution</a>
             <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for credit card validation - American Express
@@ -1140,7 +1131,18 @@ def caesar(s, k, decode = False):
 #enc = caesar(msg, 11)
 #print(enc)
 #print(caesar(enc, 11, decode = True))</code></pre>
-            <li>Luhn's Algorithm</li>
+            <li id="flatten-list">Flatten a list</li>
+            <pre class="line-numbers"><code class="language-py"># flatten a list
+def flatten(lst):
+    result = []
+    for item in lst:
+        try:
+            for i in item:
+                result.append(i)
+        except TypeError:
+            result.append(item)
+    return result</code></pre>
+            <li id="luhns-algorithm">Luhn's Algorithm</li>
             <pre class="line-numbers"><code class="language-py">def luhns_algorithm(credit_card_number):
     """Checks if a credit card number is valid"""
     # convert the credit card number to a list of ints

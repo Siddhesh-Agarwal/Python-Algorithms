@@ -168,8 +168,15 @@ header .content a{
 
 .container ol li {
     font-size: 18px;
-    line-height: 48px;
+    line-height: 42px;
     color: #ADBAC7;
+}
+
+.container ol a {
+    font-size: 16px;
+    line-height: 32px;
+    color: #539BF5;
+    text-decoration: none;
 }
 
 .container .subcontainer {
