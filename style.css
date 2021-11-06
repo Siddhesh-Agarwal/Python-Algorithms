@@ -88,13 +88,6 @@ header .content a{
     opacity: 2;
 }
 
-.sidenav .disabled {
-    pointer-events: none;
-    cursor: default;
-    opacity: 0.5;
-    text-decoration: none;
-}
-
 .sidenav .sub {
     position: relative;
     padding-left: 10%;
@@ -107,21 +100,19 @@ header .content a{
     width: auto;
     height: auto;
     position: fixed;
-    bottom: 40px;
+    bottom: 72px;
     right: 40px;
     z-index: 2;
     background-color: #22272E;
-    border-radius: 0.5em;
     border: 1px solid #444C56;
 }
 
 .arrow a {
     color:#ADBAC7;
-    text-decoration: none solid #ADBAC7;
     font-size: 20px;
     line-height: 30px;
     display: inline-block;
-    padding-inline: 3px;
+    padding-inline: 4px;
 }
 
 .arrow:hover {
@@ -139,7 +130,7 @@ header .content a{
     margin-left: 25%;
     margin-right: 10%;
     margin-top: 72px;
-    padding-bottom: 64px;
+    padding-bottom: 32px;
 }
 
 .container hr {
@@ -181,7 +172,7 @@ header .content a{
     color: #ADBAC7;
 }
 
-.subcontainer {
+.container .subcontainer {
     position: relative;
     margin-left: 2%;
 }

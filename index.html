@@ -325,6 +325,56 @@ class LinkedList:
         <!-- Math -->
         <h1 id="math">Math</h1>
         <ol>
+            <li>Calculating the value of e</li>
+            <pre class="line-numbers"><code class="language-py"># Brother's formula of calculating e
+def e_value():
+    """Calculates the value of e"""
+    e0, e, n, fact = 0, 2, 0, 1
+    while e != e0:
+        e0 = e
+        n += 1
+        fact *= 2 * n * (2 * n + 1)
+        e += (2 * n + 2) / fact
+    return e
+
+#print("Computed e = ", e_value())
+#from math import e
+#print("Math library e = ", e)</code></pre>
+            <li>Calculating the value of pi</li>
+            <pre class="line-numbers"><code class="language-py">from math import sin
+
+# Newtons method of calculating pi
+def pi_value():
+    """Calculates the value of pi"""
+    pi = 3
+    while True:
+        pi += sin(pi)           # The value of this variable 'tends' to pi
+        if sin(pi) < 10 ** -15: # reduce limit for accuracy
+            break
+    return pi
+
+#print("Computed pi = ", pi_value())
+#from math import pi
+#print("Math library pi = ", pi)</code></pre>
+            <li>Calculating the value of sin(x)</li>
+            <pre class="line-numbers"><code class="language-py">from math import factorial
+
+# Taylor series of sin(x)
+def sin_value(x):
+    """Calculates the value of sin(x)"""
+    s = 0
+    for k in range(10):    # 10 is arbitrary. increase to get more accuracy
+        s += ((-1) ** k) * (x ** (1 + 2 * k)) / factorial(2 * k + 1)
+    return round(s, 8)     # 8 is arbitrary. increase to get more accuracy</code></pre>
+            <li>Calculating the value of cos(x)</li>
+            <pre class="line-numbers"><code class="language-py">from math import factorial
+
+def cos_value(x):
+    """Calculates the cosine value of a given number."""
+    cosine = 0
+    for i in range(0, 10):
+        cosine += (-1) ** i * (x ** (2 * i)) / factorial(2 * i)
+    return round(cosine, 8)</code></pre>
             <li>Euclid's Division Lemma</li>
             <pre class="line-numbers"><code class="language-py">def euclid_division_lemma(a, b):
     if b > a:
@@ -341,7 +391,7 @@ class LinkedList:
         fact = fact * i
     return fact
 
-# using library function
+# Alternative method - using library function
 import math
 math.factorial(n)</code></pre>
             <li>Fibonacci</li>
@@ -354,14 +404,30 @@ math.factorial(n)</code></pre>
         a, b = b, a + b
     return arr</code></pre>
             
-            <li>GCD</li>
+            <li>Greatest Common Divisor / Highest Common Factor</li>
             <pre class="line-numbers"><code class="language-py">def gcd(a, b):
+    """returns the Greatest Common Divisor (GCD) of 2 numbers."""
     while b:
         a, b = b, a % b
-    return a</code></pre>
-            <li>LCM</li>
+    return a
+    
+# using library function
+import math
+math.gcd(a, b)</code></pre>
+            <li>Least Common Multiple</li>
             <pre class="line-numbers"><code class="language-py">def lcm(a, b):
+    """Returns the Lowest Common Multiple (LCM) of 2 numbers."""
     return (a * b // gcd(a, b))</code></pre>
+            <li>Pascal's Triangle</li>
+            <pre class="line-numbers"><code class="language-py"># returns nth row of Pascal's triangle
+def pascals_triangle(n):
+    if n == 0:
+        return [1]
+    elif n == 1:
+        return [1, 1]
+    else:
+        prev = pascals_triangle(n - 1)
+        return [1] + [prev[i] + prev[i + 1] for i in range(len(prev) - 1)] + [1]</code></pre>
         </ol>
         <hr>
 
@@ -514,11 +580,58 @@ def palindrome_prime(num):
     key = 0
     while key < len(sieve):
         prime = sieve[key]
-        for i in range(2 * prime, num + 1, prime):
+        for i in range(prime * prime, num + 1, prime):
             if i in sieve:
                 sieve.remove(i)
         key += 1
-    return sieve</code></pre>
+    return sieve
+
+# The following code is faster than the above array version using only odd composite operations 
+# (for a factor of over two) and because it has been optimized to use slice operations for 
+# composite number culling to avoid extra work by the interpreter:
+def primes2(limit):
+    if limit < 2:    
+        return []
+    if limit < 3:
+        return [2]
+    lmtbf = (limit - 3) // 2
+    buf = [True] * (lmtbf + 1)
+    for i in range((int(limit ** 0.5) - 3) // 2 + 1):
+        if buf[i]:
+            p = i + i + 3
+            s = p * (i + 1) + i 
+            buf[s::p] = [False] * ((lmtbf - s) // p + 1)
+    return [2] + [2 * i + 3 for i, v in enumerate(buf) if v]            # return only odd numbers
+
+# This uses a 235 factorial wheel for further reductions in operations
+# the same techniques can be applied to the array version as well
+# it runs slightly faster and uses slightly less memory as compared to the odds-only algorithms:
+def primes235(limit):
+    yield 2
+    yield 3
+    yield 5
+    if limit < 7:
+        return
+    modPrms = [7,11,13,17,19,23,29,31]
+    gaps = [4,2,4,2,4,6,2,6,4,2,4,2,4,6,2,6]                              # 2 loops for overflow
+    ndxs = [0,0,0,0,1,1,2,2,2,2,3,3,4,4,4,4,5,5,5,5,5,5,6,6,7,7,7,7,7,7]  # 2 loops for overflow
+    lmtbf = (limit + 23) // 30 * 8 - 1                                    # integral number of wheels rounded up
+    lmtsqrt = (int(limit ** 0.5) - 7)                                     
+    lmtsqrt = lmtsqrt // 30 * 8 + ndxs[lmtsqrt % 30]                      # round down on the wheel
+    buf = [True] * (lmtbf + 1)
+    for i in range(lmtsqrt + 1):                                          
+        if buf[i]:
+            ci = i & 7
+            p = 30 * (i >> 3) + modPrms[ci]
+            s = p * p - 7
+            p8 = p << 3
+            for _ in range(8):
+                c = s // 30 * 8 + ndxs[s % 30]
+                buf[c::p8] = [False] * ((lmtbf - c) // p8 + 1)
+                s += p * gaps[ci]
+                ci += 1
+    for i in range(lmtbf - 6 + (ndxs[(limit - 7) % 30])):                 # adjust for extras
+        if buf[i]: yield (30 * (i >> 3) + modPrms[i & 7])</code></pre>
             <li>Sophie Germain Primes</li>
             <pre class="line-numbers"><code class="language-py">def sophie_germain_prime(num):
     """Returns all Sophie Germain Prime numbers less than or equal to the given number.
@@ -1013,6 +1126,20 @@ def quadratic_mean(array):
         <!-- Miscellaneous -->
         <h1 id="misc">Miscellaneous</h1>
         <ol>
+            <li>Caesar cipher</li>
+            <pre class="line-numbers"><code class="language-py">import string
+def caesar(s, k, decode = False):
+    if decode:
+        k = 26 - k
+    return s.translate(
+        str.maketrans(string.ascii_uppercase + string.ascii_lowercase,
+            string.ascii_uppercase[k:] + string.ascii_uppercase[:k] +
+            string.ascii_lowercase[k:] + string.ascii_lowercase[:k]))
+#msg = "The quick brown fox jumped over the lazy dogs"
+#print(msg)
+#enc = caesar(msg, 11)
+#print(enc)
+#print(caesar(enc, 11, decode = True))</code></pre>
             <li>Luhn's Algorithm</li>
             <pre class="line-numbers"><code class="language-py">def luhns_algorithm(credit_card_number):
     """Checks if a credit card number is valid"""
@@ -1040,5 +1167,9 @@ def quadratic_mean(array):
     <div class="arrow">
         <button><a href="">Top</a></button>
     </div>
+
+    <footer>
+        <p>lorem ipsum</p>
+    </footer>
 </body>
 </html>
