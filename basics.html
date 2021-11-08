@@ -68,19 +68,19 @@ comment"""</code></pre>
         <ol>
             <li>Declaring Variables</li>
             <p>Python has no command for declaring a variable. This means that variables are created when you first assign a value to them.</p> 
+            <p>You can assign values to variables using the assignment operator <code>=</code>.</p>
             <pre class="line-numbers"><code class="language-py">x = 5
 y = "Hello World!"
 z = [1, 2, 3]</code></pre>
             <li>Type of variables</li>
-            <p>Python supports the following data types:</p>
+            <p>Python supports all data types:</p>
             <pre class="line-numbers"><code class="language-py">x = 5
 y = "Hello World!"
 z = [1, 2, 3]
 print(type(x)) # class 'int'
 print(type(y)) # class 'str'
 print(type(z)) # class 'list'</code></pre>
-            <li>Assigning values to variables</li>
-            <p>You can assign values to variables using the assignment operator <code>=</code>.</p>
+            <li>Changing value in variables</li>
             <pre class="line-numbers"><code class="language-py">x = 5
 x = "Hello World!" # This is a new value for x
 # Notice both values of x have a different type?
@@ -206,62 +206,61 @@ print(type(x))  # class 'complex'</code></pre>
             <p>Strings are used to store text.</p>
             <ol type="i">
                 <li>Declaration</li>
-                <pre class="line-numbers"><code class="language-py">x = 'Hello World!'      # Single quoted strings
-y = "Hello World!"      # Double quotes are used to store text with single quotes
-z = '''Hello World!'''  # Triple quotes allow text for multiple lines</code></pre>
+                <pre class="line-numbers"><code class="language-py">x = 'Hello World!'             # Single quoted strings
+y = "Hello World!"             # Double quotes are used to store text with single quotes
+z = '''Hello World!'''         # Triple quotes allow text for multiple lines</code></pre>
                 <li>Indexing/Slicing</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
-print(x[0])                 # Prints 'H'
-print(x[-1])                # Prints '!'
-print(x[0:5])               # Prints 'Hello'
-print(x[:5])                # Prints 'Hello'
-print(x[5:])                # Prints ' World!'</code></pre>
+print(x[0])                    # Prints 'H'
+print(x[-1])                   # Prints '!'
+print(x[0:5])                  # Prints 'Hello'
+print(x[:5])                   # Prints 'Hello'
+print(x[5:])                   # Prints ' World!'</code></pre>
                 <li>Concatenation</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello'
 y = 'World!'
 z = x + y
-print(z)                   # Prints 'HelloWorld!'</code></pre>
+print(z)                       # Prints 'HelloWorld!'</code></pre>
                 <li>Repetition</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello'
 y = x * 3
-print(y)                   # Prints 'HelloHelloHello'</code></pre>
+print(y)                       # Prints 'HelloHelloHello'</code></pre>
                 <li>Formatting</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
-print(x.upper())           # Prints 'HELLO WORLD!'
-print(x.lower())           # Prints 'hello world!'
-print(x.capitalize())      # Prints 'Hello world!'
-print(x.swapcase())        # Prints 'hELLO wORLD!'
-print(x.title())           # Prints 'Hello World!'
-print(x.split())           # Prints ['Hello', 'World!']
-print(x.split(' '))        # Prints ['Hello', 'World!']
-print(x.split('l'))        # Prints ['He', 'o Wor', 'd!']
-print(x.split('l', 1))     # Prints ['He', 'o Wor', 'd!']</code></pre>
+print(x.upper())               # Prints 'HELLO WORLD!'
+print(x.lower())               # Prints 'hello world!'
+print(x.capitalize())          # Prints 'Hello world!'
+print(x.swapcase())            # Prints 'hELLO wORLD!'
+print(x.title())               # Prints 'Hello World!'
+print(x.split())               # Prints ['Hello', 'World!']
+print(x.split(' '))            # Prints ['Hello', 'World!']
+print(x.split('l'))            # Prints ['He', 'o Wor', 'd!']</code></pre>
                 <li>Length/Count</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
-print(len(x))              # Prints 12
-print(x.count('l'))        # Prints 3</code></pre>
+print(len(x))                  # Prints 12
+print(x.count('l'))            # Prints 3</code></pre>
                 <li>Replace</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
 print(x.replace('H', 'J')) # Prints 'Jello World!'</code></pre>
                 <li>String Methods (Basics)</li>
                 <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
-print(x.find('H'))         # Prints 0
-print(x.find('o'))         # Prints 4
-print(x.find('o', 5))      # Prints 7
-print(x.rfind('o'))        # Prints 7
-print(x.rfind('o', 0, 5))  # Prints 4
-print(x.index('o'))        # Prints 4
-print(x.find('B'))         # Throws an error because it can't find 'B'
-print(x.index('B'))        # Prints -1</code></pre>
+print(x.find('H'))             # Prints 0
+print(x.find('o'))             # Prints 4
+print(x.find('o', 5))          # Prints 7
+print(x.rfind('o'))            # Prints 7
+print(x.rfind('o', 0, 5))      # Prints 4
+print(x.index('o'))            # Prints 4
+print(x.find('B'))             # Throws an error because it can't find 'B'
+print(x.index('B'))            # Prints -1</code></pre>
                 <li>String Methods (Advanced)</li>
                 <pre class="line-numbers"><code class="language-py">x = '   Hello World!   '
-print(x.strip())           # Prints 'Hello World!'
-print(x.rstrip())          # Prints '   Hello World!'
-print(x.lstrip())          # Prints 'Hello World!   '
-print(x.startswith('H'))   # Prints True
-print(x.endswith('!'))     # Prints True
-print(x.isalpha())         # Prints False because it contains a space
-print(x.strip().isalpha()) # Prints True because it doesn't contain a space</code></pre>
+print(x.strip())               # Prints 'Hello World!'
+print(x.rstrip())              # Prints '   Hello World!'
+print(x.lstrip())              # Prints 'Hello World!   '
+print(x.startswith('H'))       # Prints True
+print(x.endswith('!'))         # Prints True
+print(x.isalpha())             # Prints False because it contains a space
+print(x.strip().isalpha())     # Prints True because it doesn't contain a space</code></pre>
             </ol>
             <h2 id="lists">Lists</h2>
             <p>Lists are used to store multiple values in a single variable. They are mutable, and can contain any type of data.</p>
@@ -272,107 +271,138 @@ list2 = ['a', 'b', 'c']
 list3 = [1, 'a', 2, 'b', 3, 'c']</code></pre>
                 <li>Indexing/Slicing</li>
                 <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
-print(list1[0])              # Prints 1
-print(list1[-1])             # Prints 3
-print(list1[0:2])            # Prints [1, 2]
-print(list1[:2])             # Prints [1, 2]
-print(list1[2:])             # Prints [3]
-print(list1[:-1])            # Prints [1, 2]</code></pre>
+print(list1[0])                # Prints 1
+print(list1[-1])               # Prints 3
+print(list1[0:2])              # Prints [1, 2]
+print(list1[:2])               # Prints [1, 2]
+print(list1[2:])               # Prints [3]
+print(list1[:-1])              # Prints [1, 2]</code></pre>
                 <li>Concatenation</li>
                 <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
 list2 = [4, 5, 6]
 list3 = list1 + list2
-print(list3)                 # Prints [1, 2, 3, 4, 5, 6]</code></pre>
+print(list3)                   # Prints [1, 2, 3, 4, 5, 6]</code></pre>
                 <li>Repetition</li>
                 <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
 list2 = list1 * 3
-print(list2)                 # Prints [1, 2, 3, 1, 2, 3, 1, 2, 3]</code></pre>
+print(list2)                   # Prints [1, 2, 3, 1, 2, 3, 1, 2, 3]</code></pre>
                 <li>for loop</li>
-                <pre class="line-numbers"><code class="language-py">list1 = [i for i in range(1, 11)]                # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-list2 = [i for i in range(1, 11) if i % 2 == 0]  # [2, 4, 6, 8, 10]</code></pre>
+                <pre class="line-numbers"><code class="language-py"># Example 1
+list1 = []
+for i in range(1, 11):
+    list1.append(i)
+# The above code can be written as
+list1 = [i for i in range(1, 11)]                # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Example 2
+list2 = []
+for i in range(1, 11):
+    if i % 2 == 0:
+        list2.append(i * 2)
+# The above code can be written as
+list2 = [i for i in range(1, 11) if i % 2 == 0]  
+# [2, 4, 6, 8, 10]
+
+# Example 3
+list3 = []
+for i in range(1, 11):
+    if i % 2 == 0:
+        list3.append(i * 2)
+    else:
+        list3.append(i * 2 - 1)
+# The above code can be written as
+list3 = [i if i%2==0 else (i*2-1) for i in range(1, 11)] # [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
+
+# Example 4
+list4 = []
+for i in range(1, 5):
+    for j in range(1, 5):
+        list4.append(i * j)
+# The above code can be written as
+list4 = [i * j for i in range(1, 5) for j in range(1, 5)] # [1, 2, 3, 4, 2, 4, 6, 8, 3, 6, 9, 12, 4, 8, 12, 16]</code></pre>
                 <li>Length/Count</li>
                 <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
-print(len(list1))            # Prints 3
-print(list1.count(1))        # Prints 1</code></pre>
+print(len(list1))              # Prints 3
+print(list1.count(1))          # Prints 1</code></pre>
                 <li>Sorting</li>
                 <pre class="line-numbers"><code class="language-py">list1 = [3, 1, 2, 0, -2, -3]
-print(list1.sort())                 # Prints [-3, -2, 0, 1, 2, 3]
-print(list1.sort(reverse=True))     # Prints [3, 2, 1, 0, -2, -3]</code></pre>
+print(list1.sort())            # Prints [-3, -2, 0, 1, 2, 3]
+print(list1.sort(reverse=True))# Prints [3, 2, 1, 0, -2, -3]</code></pre>
                 <li>Reverse</li>
                 <pre class="line-numbers"><code class="language-py"># method 1
 list1 = [3, 1, 2, 0, -2, -3]
-print(list1.reverse())       # Prints [-3, -2, -1, 0, 1, 2]
+print(list1.reverse())         # Prints [-3, -2, -1, 0, 1, 2]
 
 # method 2
 list1 = [3, 1, 2, 0, -2, -3]
-print(list1[::-1])           # Prints [3, 1, 2, 0, -2, -3]</code></pre>
+print(list1[::-1])             # Prints [3, 1, 2, 0, -2, -3]</code></pre>
                 <li>List Methods (Basics)</li>
                 <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
-list1.append(4)              # Appends 4 to the end of the list
-print(list1)                 # Prints [1, 2, 3, 4]
+list1.append(4)                # Appends 4 to the end of the list
+print(list1)                   # Prints [1, 2, 3, 4]
 
-list1.insert(0, 0)           # Inserts 0 at the beginning of the list
-print(list1)                 # Prints [0, 1, 2, 3, 4]
+list1.insert(0, 0)             # Inserts 0 at the beginning of the list
+print(list1)                   # Prints [0, 1, 2, 3, 4]
 
-list1.remove(0)              # Removes the first occurrence of 0
-print(list1)                 # Prints [1, 2, 3, 4]
+list1.remove(0)                # Removes the first occurrence of 0
+print(list1)                   # Prints [1, 2, 3, 4]
 
-list1.pop()                  # Removes the last element of the list
-print(list1)                 # Prints [1, 2, 3]
+list1.pop()                    # Removes the last element of the list
+print(list1)                   # Prints [1, 2, 3]
 
-list1.pop(0)                 # Removes the element at index 0
-print(list1)                 # Prints [2, 3]
+list1.pop(0)                   # Removes the element at index 0
+print(list1)                   # Prints [2, 3]
 
-list1.clear()                # Removes all elements from the list
-print(list1)                 # Prints []</code></pre>
+list1.clear()                  # Removes all elements from the list
+print(list1)                   # Prints []</code></pre>
                 <li>List Methods (Advanced)</li>
                 <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
 list2 = [4, 5, 6]
 list3 = list1 + list2
-print(list3)                 # Prints [1, 2, 3, 4, 5, 6]
+print(list3)                   # Prints [1, 2, 3, 4, 5, 6]
 
-list2.extend(list1)          # Adds elememts of list1 to the end of list2
-print(list2)                 # Prints [4, 5, 6, 1, 2, 3]
+list2.extend(list1)            # Adds elememts of list1 to the end of list2
+print(list2)                   # Prints [4, 5, 6, 1, 2, 3]
 
-list2.append(list1)          # Adds list1 (as a list) to the end of list2
-print(list2)                 # Prints [4, 5, 6, 1, 2, 3, [1, 2, 3]]
+list2.append(list1)            # Adds list1 (as a list) to the end of list2
+print(list2)                   # Prints [4, 5, 6, 1, 2, 3, [1, 2, 3]]
 
-list4 = list1.copy()         # Creates a copy of list1
-print(list4)                 # Prints [1, 2, 3]</code></pre>
+list4 = list1.copy()           # Creates a copy of list1
+print(list4)                   # Prints [1, 2, 3]</code></pre>
             </ol>
             <h2 id="tuples">Tuples</h2>
             <p>Tuples are used to store multiple values in a single variable. They are immutable, which means they can't be changed.</p>
             <ol>
                 <li>Declaration</li>
-                <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)           # Direct declaration
-tuple2 = ('a', 'b', 'c')     # Direct declaration
-tuple3 = tuple([1, 2, 3])    # Converting a list
-tuple4 = (1,)                # This is a tuple with one element
-var = (1)                    # This is an integer (not a tuple)</code></pre>
+                <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)              # Direct declaration
+tuple2 = ('a', 'b', 'c')        # Direct declaration
+tuple3 = tuple([1, 2, 3])       # Converting a list
+tuple4 = (1,)                   # This is a tuple with one element
+var = (1)                       # This is an integer (not a tuple)</code></pre>
                 <li>Indexing/Slicing</li>
                 <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)
-print(tuple1[0])             # Prints 1
-print(tuple1[-1])            # Prints 3
-print(tuple1[0:2])           # Prints (1, 2)
-print(tuple1[:2])            # Prints (1, 2)
-print(tuple1[2:])            # Prints (3)
-print(tuple1[:-1])           # Prints (1, 2)</code></pre>
+print(tuple1[0])                # Prints 1
+print(tuple1[-1])               # Prints 3
+print(tuple1[0:2])              # Prints (1, 2)
+print(tuple1[:2])               # Prints (1, 2)
+print(tuple1[2:])               # Prints (3)
+print(tuple1[:-1])              # Prints (1, 2)</code></pre>
                 <li>Concatenation</li>
                 <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)
 tuple2 = (4, 5, 6)
 tuple3 = tuple1 + tuple2
-print(tuple3)                # Prints (1, 2, 3, 4, 5, 6)</code></pre>
+print(tuple3)                   # Prints (1, 2, 3, 4, 5, 6)</code></pre>
                 <li>Repetition</li>
                 <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)
 tuple2 = tuple1 * 3
-print(tuple2)                # Prints (1, 2, 3, 1, 2, 3, 1, 2, 3)</code></pre>
+print(tuple2)                   # Prints (1, 2, 3, 1, 2, 3, 1, 2, 3)</code></pre>
                 <li>for loop</li>
                 <pre class="line-numbers"><code class="language-py">tuple1 = tuple(i for i in range(1, 11))
 tuple2 = tuple(i for i in range(1, 11) if i % 2 == 0)</code></pre>
                 <li>Length/Count</li>
                 <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)
-print(len(tuple1))           # Prints 3
-print(tuple1.count(1))       # Prints 1</code></pre>
+print(len(tuple1))              # Prints 3
+print(tuple1.count(1))          # Prints 1</code></pre>
                 <li>Sorting</li>
                 <pre class="line-numbers"><code class="language-py">tuple1 = (3, 1, 2, 0, -2, -3)
 print(sorted(tuple1))                # Prints [-3, -2, 0, 1, 2, 3]
@@ -387,10 +417,10 @@ tuple1 = (3, 1, 2, 0, -2, -3)
 print(tuple1[::-1])</code></pre>
                 <li>Tuple Methods</li>
                 <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3, 1, 1, 2)
-print(tuple1.index(1))        # Prints 0
-print(tuple1.index(1, 1))     # Prints 3
-print(tuple1.count(1))        # Prints 3
-print(tuple1.count(2))        # Prints 2</code></pre>
+print(tuple1.index(1))          # Prints 0
+print(tuple1.index(1, 1))       # Prints 3
+print(tuple1.count(1))          # Prints 3
+print(tuple1.count(2))          # Prints 2</code></pre>
             </ol>
             <h2 id="dictionaries">Dictionaries</h2>
             <p>Dictionaries are used to store key-value pairs. They are used to store data in a structured way.</p>
@@ -411,9 +441,55 @@ print(dict1.get('key3'))            # Prints None
 print(dict1.get('key3', 'default')) # Prints 'default'</code></pre>
                 <li>Updating</li>
                 <pre class="line-numbers"><code class="language-py">dict1 = {'key1': 'value1', 'key2': 'value2'}
-</code></pre>
+dict1['key1'] = 'new value'
+print(dict1)                # Prints {'key1': 'new value', 'key2': 'value2'}
+dict1.update({'key3': 'value3'})
+print(dict1)                # Prints {'key1': 'new value', 'key2': 'value2', 'key3': 'value3'}
+dict1.update([('key4', 'value4'), ('key1', 'value1')])
+print(dict1)                # Prints {'key1': 'value1', 'key2': 'value2', 'key3': 'value3', 'key4': 'value4'}</code></pre>
+                <li>Deleting</li>
+                <pre class="line-numbers"><code class="language-py">dict1 = {'key1': 'value1', 'key2': 'value2'}
+del dict1['key1']
+print(dict1)                # Prints {'key2': 'value2'}</code></pre>
+                <li>for loop</li>
+                <pre class="line-numbers"><code class="language-py">dict1 = {'key1': 'value1', 'key2': 'value2'}
+dict2 = {k: v for k, v in dict1.items()}
+print(dict2)                # Prints {'key1': 'value1', 'key2': 'value2'}
+# "for i in dict1" will simple iterate through key values</code></pre>
+            </ol>
             <h2 id="sets">Sets</h2>
             <p>Sets are used to store unique values. They are used to store data in a structured way.</p>
+            <ol>
+                <li>Declaration</li>
+                <pre class="line-numbers"><code class="language-py">set1 = {1, 2, 3}
+set2 = set(range(1, 11))
+set3 = set('abc') # {'a', 'b', 'c'}
+set4 = set{1, 1, 2, 2, 2, 3}    # same as set1</code></pre>
+                <li>Accessing</li>
+                <p>There is no indexing in sets</p>
+                <pre class="line-numbers"><code class="language-py">set1 = {1, 2, 3}
+print(set1[0])                         # Prints error</code></pre>
+                <li>Updating</li>
+                <pre class="line-numbers"><code class="language-py">set1 = {1, 2, 3}
+set1.add(4)                            # Adds 4 to set1
+set2 = {5, 6, 7}
+set1.update(set2)                      # Adds set2 to set1
+print(set1)                            # Prints {1, 2, 3, 4, 5, 6, 7}</code></pre>
+                <li>Set Methods</li>
+                <pre class="line-numbers"><code class="language-py">set1 = {1, 2, 3}
+set2 = {2, 3, 4}
+print(set1.intersection(set2))         # Prints {2, 3}
+print(set1.union(set2))                # Prints {1, 2, 3, 4}
+print(set1.difference(set2))           # Prints {1}
+print(set1.symmetric_difference(set2)) # Prints {1, 4}
+print(set1.issubset(set2))             # Prints False
+print(set1.issuperset(set2))           # Prints False
+set1.discard(1)                        # Removes 1 from set1
+print(set1)                            # Prints {2, 3}
+set3 = set1.copy()                     # Copies set1 to set3
+set1.clear()                           # Removes all elements from set1
+set1.add(set3)                         # Adds set3 to set1
+print(set1 - set3)                     # Prints set()</code></pre>
         </div>
         <hr>
 
