@@ -392,6 +392,42 @@ def cos_value(x):
         return b
     else:
         return euclid_division_lemma(b, r)</code></pre>
+            <li>Explicit Euler method for EDO</li>
+            <pre class="line-numbers"><code class="language-py">
+import numpy as np
+def euler_ode(a, b, u0, n_step,  f):
+    """
+    solve the ODE given by : 
+        u'(x) = f(x, u(x))    with  a <= x <= b
+        u(a) = u0
+
+    Parameters
+    ==========
+    a  [float] : starting x value.
+    b [float] : ending x value.
+    u0 [float] : initial condition.
+    n_step : number of step used to compute the result.
+    f [function of 2 parameters] : function describing the ODE as given above.
+    u [function of 1 parameter] 
+
+    Returns 
+    =======
+    np.ndarray : an array of size n_step describing the solution of the ODE in the range [a, b].
+
+    Example
+    =======
+    If we have the simple equation : u'(x) = - u(x) with u(a) = u0,
+    and we want to know the value of u in the range [a,b]
+    We just have to call : euler_edo(a, b, u0, (b-a)*10, lambda x, u : -u)
+    """
+    x, step = np.linspace(a, b, n_step + 1, retstep = True)
+    u = np.zeros(len(x))
+    u[0] = u0
+
+    for i in range(len(x) - 1):
+        u[i+1] = u[i] + step*f(x, u[i])
+
+    return u</code></pre>
             <li>Factorial</li>
             <pre class="line-numbers"><code class="language-py">def factorial(n):
     fact = 1
@@ -1133,14 +1169,13 @@ def caesar(s, k, decode = False):
 #print(caesar(enc, 11, decode = True))</code></pre>
             <li id="flatten-list">Flatten a list</li>
             <pre class="line-numbers"><code class="language-py"># flatten a list
-def flatten(lst):
-    result = []
-    for item in lst:
-        try:
-            for i in item:
-                result.append(i)
-        except TypeError:
-            result.append(item)
+def flatten(arr):
+    try:
+        result = []
+        for item in arr:
+            result.extend(flatten(item))
+    except TypeError: # if nested element is not a list
+        result = [arr]
     return result</code></pre>
             <li id="luhns-algorithm">Luhn's Algorithm</li>
             <pre class="line-numbers"><code class="language-py">def luhns_algorithm(credit_card_number):
