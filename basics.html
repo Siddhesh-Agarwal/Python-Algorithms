@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,503 +11,79 @@
     <meta name="theme-color" content="#1e2327">
     <meta name="color-scheme" content="dark light">
     <title>Python Basics</title>
-    <link href="/manifest.json" rel="manifest" crossorigin="use-credentials">
-    <link href="style.css" rel="stylesheet">
-    <link href="prism.css" rel="stylesheet">
-    <script src="prism.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script src="./js/prism.js"></script>
 </head>
+
 <body>
     <!-- Header -->
     <header>
-        <span class="logo">
-            <img src="img/Python-512x512.png" alt="Python logo" height="50" width="50">
-        </span>
         <div class="content">
-            <a href="">Python Basics</a>
+            <a href="#">Python Basics</a>
         </div>
     </header>
-
-    <!-- Sidebar in Laptop and tablet/Topbar in Mobile -->
-    <div class="sidenav">
-        <a href="index.html" class="active">DSA</a>
-        <a href="#comments">Comments</a>
-        <a href="#variables">Variables</a>
-        <a href="#input-output">Input/Output</a>
-        <a href="#operators">Operators</a>
-        <a href="#data-types">Data Types</a>
-        <a href="#numbers" class="sub">Numbers</a>
-        <a href="#strings" class="sub">Strings</a>
-        <a href="#lists" class="sub">Lists</a>
-        <a href="#tuples" class="sub">Tuples</a>
-        <a href="#dictionaries" class="sub">Dictionaries</a>
-        <a href="#sets" class="sub">Sets</a>
-        <a href="#control-flow">Control Flow</a>
-        <a href="#functions">Functions</a>
-        <a href="#exception-handling">Exception Handling</a>
-    </div>
-
+    <span class="banner">
+        <img src="./img/Python-512x512.png" alt="Python logo" height="50" width="50">
+    </span>
     <!-- Main Content -->
     <div class="container">
-        <h1 id="comments">Comments</h1>
-        <p>Comments are used to explain the code. They are not executed.</p>
-        <ol>
-            <li>Single Line Comments</li>
-            <pre class="line-numbers"><code class="language-py"># This is the preferred method to write single-line comments
-"This is also a single-line comment"
-'This is also a single-line comment'</code></pre>
-            <li>Multi Line Comments</li>
-            <pre class="line-numbers"><code class="language-py">"""This         
-is a 
-multi-line 
-comment"""</code></pre>
-        </ol>
-        <hr>
+        <p>Most Windows and Mac computers come with Python pre-installed. You can check that via a Command Line search.
+            The particular appeal of Python is that you can write a program in any text editor, save it in .py format
+            and then run via a Command-line. But as you learn to write more complex code or venture into data science,
+            you might want to switch to an IDE or IDLE.</p>
 
-        <!-- Variables -->
-        <h1 id="variables">Variables</h1>
-        <p>Variables are used to store values. They are declared using the keyword <code>var</code>.</p>
-        <ol>
-            <li>Declaring Variables</li>
-            <p>Python has no command for declaring a variable. This means that variables are created when you first assign a value to them.</p> 
-            <p>You can assign values to variables using the assignment operator <code>=</code>.</p>
-            <pre class="line-numbers"><code class="language-py">x = 5
-y = "Hello World!"
-z = [1, 2, 3]</code></pre>
-            <li>Type of variables</li>
-            <p>Python supports all data types:</p>
-            <pre class="line-numbers"><code class="language-py">x = 5
-y = "Hello World!"
-z = [1, 2, 3]
-print(type(x)) # class 'int'
-print(type(y)) # class 'str'
-print(type(z)) # class 'list'</code></pre>
-            <li>Changing value in variables</li>
-            <pre class="line-numbers"><code class="language-py">x = 5
-x = "Hello World!" # This is a new value for x
-# Notice both values of x have a different type?
-# This is because python is dynamically typed.</code></pre>
-            <li>Allowed variable names</li>
-            <p>Variable names can contain letters, numbers, and underscores. They cannot start with a number.</p>
-            <pre class="line-numbers"><code class="language-py">x = 5
-y = "Hello World!"
-z = [1, 2, 3]
-# These are valid variable names but it is not a good practice to use 
-# variable names that are reserved words (or single-lettered) in python</code></pre>
-            <li>Variable names cannot contain spaces</li>
-            <p>Variable names cannot contain spaces. This is because spaces are used to identify words in the code.</p>
-            <pre class="line-numbers"><code class="language-py">x y = 5
-# This is not a valid variable name because it contains a space</code></pre>
-            <li>Variable names cannot contain special characters</li>
-            <p>Variable names cannot contain special characters. This is because many special characters are used to denote operations.</p>
-            <pre class="line-numbers"><code class="language-py">x? = 5
-# This is not a valid variable name because it contains a special character</code></pre>
-            <li>Variable names cannot start with numbers</li>
-            <pre class="line-numbers"><code class="language-py">1x = 5
-# This is not a valid variable name because it starts with a number</code></pre>
-        </ol>
-        <hr>
+        <h2>What is IDLE (Integrated Development and Learning Environment)?</h2>
+        <p>IDLE (Integrated Development and Learning Environment) comes installed along with all python installations.
+            It makes use of Text highlight, where it make use of different colours to identify variables, function,
+            commands, etc. This gives an advantage to the developer in findings errors. Python IDLE has a build
+            Automator of some kind that compiles the code, and builds an executable program by adding in any necessary
+            libraries, some of which you may not even be aware of. Those same tools make it easier to organize and
+            include any optional libraries, or ones you’ve created yourself.</p>
+        <p>Shell is the default mode of operation for Python IDLE. In essence, it’s a simple loop that performs that
+            following four steps:</p>
+        <ul>
+            <li>Reads one Python statement.</li>
+            <li>Evaluates the result(s) of it.</li>
+            <li>Prints the result(s) on the screen. (if any)</li>
+            <li>And then loops back to read the next statement.</li>
+        </ul>
+        <p><b>Note:</b> Python shell is a great place to test various small code snippets.</p>
 
-        <!-- Input and Output -->
-        <h1 id="input-output">Input/Output</h1>
-        <p>Input and Output are used to interact with the user. They are used to get and set values.</p>
-        <ol>
-            <li>Input</li>
-            <pre class="line-numbers"><code class="language-py">var01 = input()                                    # Used to input strings
-var02 = input("Enter your name: ")                 # Used to input strings with a prompt
-var03 = int(input("Enter a number: "))             # Used to input numbers with a prompt
-var04 = float(input("Enter a decimal number: "))   # Used to input decimal numbers with a prompt
-var05 = complex(input("Enter a complex number: ")) # Used to input complex numbers with a prompt
-var06 = bool(input("Enter a boolean value: "))     # Used to input boolean values with a prompt
-var07 = list(input("Enter a list: "))              # Used to input lists with a prompt
-var08 = tuple(input("Enter a tuple: "))            # Used to input tuples with a prompt
-var09 = set(input("Enter a set: "))                # Used to input sets with a prompt
-var10 = dict(input("Enter a dictionary: "))        # Used to input dictionaries with a prompt
-var11 = bin(input("Enter a binary number: "))      # Used to input binary numbers with a prompt
-var12 = eval(input("Enter an expression: "))       # Used to input expressions with a prompt</code></pre>
-            <li>Output</li>
-            <pre class="line-numbers"><code class="language-py">print("Hello World!")            # Used to output strings
-print("Hello World!", end="")    # Used to output strings without a new line
-print("Hello World!", end="\n")  # Used to output strings with a new line
-print("Hello World!", end="\t")  # Used to output strings with a tab
-print("Hello World!", end="\r")  # Used to output strings with a carriage return
-print("Hello World!", end="\f")  # Used to output strings with a form feed
-print("Hello World!", end="\a")  # Used to output strings with an alert
-print("Hello World!", end="\b")  # Used to output strings with a backspace
-print("Hello World!", end="\v")  # Used to output strings with a vertical tab
-print(1, 2, 3, sep="-")          # Used to output multiple values with a separator between them</code></pre>
-            <li>Pretty print</li>
-            <pre class="line-numbers"><code class="language-py">from pprint import pprint
-var01 = [1, 2, 3]
-var02 = {1: "one", 2: "two", 3: "three"}
-pprint(var01)  # Used just like the print statement
-pprint(var02)  # It prints the output in a more readable format</code></pre>
-            <li>Input and Output</li>
-            <pre class="line-numbers"><code class="language-py">print(input())                          # Used to output strings
-print(input("Enter your name: "))       # Used to output strings with a prompt</code></pre>
-        </ol>
-        <hr>
-
-        <!-- Operators -->
-        <h1 id="operators">Operators</h1>
-        <p>Operators are used to perform operations on values. They are used to perform arithmetic, relational, logical, and bitwise operations.</p>
-        <ol>
-            <li>Arithmetic Operators</li>
-            <pre class="line-numbers"><code class="language-py">x = 5
-y = 10
-z1 = x + y     # addition
-z2 = x - y     # subtraction
-z3 = x * y     # multiplication
-z4 = x / y     # division
-z5 = x % y     # modulus
-z6 = x ** y    # exponent</code></pre>
-            <li>Relational Operators</li>
-            <pre class="line-numbers"><code class="language-py">x = 5
-y = 10
-z1 = x > y     # greater than
-z2 = x < y     # less than
-z3 = x >= y    # greater than or equal to
-z4 = x <= y    # less than or equal to
-z5 = x == y    # equal to
-z6 = x != y    # not equal to</code></pre>
-            <li>Logical Operators</li>
-            <pre class="line-numbers"><code class="language-py">x = 5
-y = 10
-z1 = x > y and y > x    # and
-z2 = x > y or y > x     # or
-z3 = not x > y          # not</code></pre>
-            <li>Bitwise Operators</li>
-            <pre class="line-numbers"><code class="language-py">x = 5
-y = 10
-z1 = x & y     # bitwise and
-z2 = x | y     # bitwise or
-z3 = x ^ y     # bitwise xor
-z4 = ~x        # bitwise not</code></pre>
-        </ol>
-        <hr>
-
-        <!-- Data Types -->
-        <h1 id="data-types">Data Types</h1>
-        <p>Data types are used to store values. They are used to store numbers, strings, lists, tuples, sets, and dictionaries.</p>
-        <div class="subcontainer">
-            <h2 id="numbers">Numbers</h2>
-            <p>Numbers are used to store integers and decimals.</p>
-            <ol type="i">
-                <li>Integers</li>
-                <pre class="line-numbers"><code class="language-py">x = 5
-print(type(x))  # class 'int'</code></pre>
-                <li>Decimals</li>
-                <pre class="line-numbers"><code class="language-py">x = 5.5
-print(type(x))  # class 'float'</code></pre>
-                <li>Complex numbers</li>
-                <pre class="line-numbers"><code class="language-py">x = 5 + 5j
-print(type(x))  # class 'complex'</code></pre>
-            </ol>
-        
-            <h2 id="strings">Strings</h2>
-            <p>Strings are used to store text.</p>
-            <ol type="i">
-                <li>Declaration</li>
-                <pre class="line-numbers"><code class="language-py">x = 'Hello World!'             # Single quoted strings
-y = "Hello World!"             # Double quotes are used to store text with single quotes
-z = '''Hello World!'''         # Triple quotes allow text for multiple lines</code></pre>
-                <li>Indexing/Slicing</li>
-                <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
-print(x[0])                    # Prints 'H'
-print(x[-1])                   # Prints '!'
-print(x[0:5])                  # Prints 'Hello'
-print(x[:5])                   # Prints 'Hello'
-print(x[5:])                   # Prints ' World!'</code></pre>
-                <li>Concatenation</li>
-                <pre class="line-numbers"><code class="language-py">x = 'Hello'
-y = 'World!'
-z = x + y
-print(z)                       # Prints 'HelloWorld!'</code></pre>
-                <li>Repetition</li>
-                <pre class="line-numbers"><code class="language-py">x = 'Hello'
-y = x * 3
-print(y)                       # Prints 'HelloHelloHello'</code></pre>
-                <li>Formatting</li>
-                <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
-print(x.upper())               # Prints 'HELLO WORLD!'
-print(x.lower())               # Prints 'hello world!'
-print(x.capitalize())          # Prints 'Hello world!'
-print(x.swapcase())            # Prints 'hELLO wORLD!'
-print(x.title())               # Prints 'Hello World!'
-print(x.split())               # Prints ['Hello', 'World!']
-print(x.split(' '))            # Prints ['Hello', 'World!']
-print(x.split('l'))            # Prints ['He', 'o Wor', 'd!']</code></pre>
-                <li>Length/Count</li>
-                <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
-print(len(x))                  # Prints 12
-print(x.count('l'))            # Prints 3</code></pre>
-                <li>Replace</li>
-                <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
-print(x.replace('H', 'J')) # Prints 'Jello World!'</code></pre>
-                <li>String Methods (Basics)</li>
-                <pre class="line-numbers"><code class="language-py">x = 'Hello World!'
-print(x.find('H'))             # Prints 0
-print(x.find('o'))             # Prints 4
-print(x.find('o', 5))          # Prints 7
-print(x.rfind('o'))            # Prints 7
-print(x.rfind('o', 0, 5))      # Prints 4
-print(x.index('o'))            # Prints 4
-print(x.find('B'))             # Throws an error because it can't find 'B'
-print(x.index('B'))            # Prints -1</code></pre>
-                <li>String Methods (Advanced)</li>
-                <pre class="line-numbers"><code class="language-py">x = '   Hello World!   '
-print(x.strip())               # Prints 'Hello World!'
-print(x.rstrip())              # Prints '   Hello World!'
-print(x.lstrip())              # Prints 'Hello World!   '
-print(x.startswith('H'))       # Prints True
-print(x.endswith('!'))         # Prints True
-print(x.isalpha())             # Prints False because it contains a space
-print(x.strip().isalpha())     # Prints True because it doesn't contain a space</code></pre>
-            </ol>
-            <h2 id="lists">Lists</h2>
-            <p>Lists are used to store multiple values in a single variable. They are mutable, and can contain any type of data.</p>
-            <ol type="i">
-                <li>Declaration</li>
-                <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
-list2 = ['a', 'b', 'c']
-list3 = [1, 'a', 2, 'b', 3, 'c']</code></pre>
-                <li>Indexing/Slicing</li>
-                <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
-print(list1[0])                # Prints 1
-print(list1[-1])               # Prints 3
-print(list1[0:2])              # Prints [1, 2]
-print(list1[:2])               # Prints [1, 2]
-print(list1[2:])               # Prints [3]
-print(list1[:-1])              # Prints [1, 2]</code></pre>
-                <li>Concatenation</li>
-                <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
-list2 = [4, 5, 6]
-list3 = list1 + list2
-print(list3)                   # Prints [1, 2, 3, 4, 5, 6]</code></pre>
-                <li>Repetition</li>
-                <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
-list2 = list1 * 3
-print(list2)                   # Prints [1, 2, 3, 1, 2, 3, 1, 2, 3]</code></pre>
-                <li>for loop</li>
-                <pre class="line-numbers"><code class="language-py"># Example 1
-list1 = []
-for i in range(1, 11):
-    list1.append(i)
-# The above code can be written as
-list1 = [i for i in range(1, 11)]                # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-# Example 2
-list2 = []
-for i in range(1, 11):
-    if i % 2 == 0:
-        list2.append(i * 2)
-# The above code can be written as
-list2 = [i for i in range(1, 11) if i % 2 == 0]  
-# [2, 4, 6, 8, 10]
-
-# Example 3
-list3 = []
-for i in range(1, 11):
-    if i % 2 == 0:
-        list3.append(i * 2)
-    else:
-        list3.append(i * 2 - 1)
-# The above code can be written as
-list3 = [i if i%2==0 else (i*2-1) for i in range(1, 11)] # [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
-
-# Example 4
-list4 = []
-for i in range(1, 5):
-    for j in range(1, 5):
-        list4.append(i * j)
-# The above code can be written as
-list4 = [i * j for i in range(1, 5) for j in range(1, 5)] # [1, 2, 3, 4, 2, 4, 6, 8, 3, 6, 9, 12, 4, 8, 12, 16]</code></pre>
-                <li>Length/Count</li>
-                <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
-print(len(list1))              # Prints 3
-print(list1.count(1))          # Prints 1</code></pre>
-                <li>Sorting</li>
-                <pre class="line-numbers"><code class="language-py">list1 = [3, 1, 2, 0, -2, -3]
-print(list1.sort())            # Prints [-3, -2, 0, 1, 2, 3]
-print(list1.sort(reverse=True))# Prints [3, 2, 1, 0, -2, -3]</code></pre>
-                <li>Reverse</li>
-                <pre class="line-numbers"><code class="language-py"># method 1
-list1 = [3, 1, 2, 0, -2, -3]
-print(list1.reverse())         # Prints [-3, -2, -1, 0, 1, 2]
-
-# method 2
-list1 = [3, 1, 2, 0, -2, -3]
-print(list1[::-1])             # Prints [3, 1, 2, 0, -2, -3]</code></pre>
-                <li>List Methods (Basics)</li>
-                <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
-list1.append(4)                # Appends 4 to the end of the list
-print(list1)                   # Prints [1, 2, 3, 4]
-
-list1.insert(0, 0)             # Inserts 0 at the beginning of the list
-print(list1)                   # Prints [0, 1, 2, 3, 4]
-
-list1.remove(0)                # Removes the first occurrence of 0
-print(list1)                   # Prints [1, 2, 3, 4]
-
-list1.pop()                    # Removes the last element of the list
-print(list1)                   # Prints [1, 2, 3]
-
-list1.pop(0)                   # Removes the element at index 0
-print(list1)                   # Prints [2, 3]
-
-list1.clear()                  # Removes all elements from the list
-print(list1)                   # Prints []</code></pre>
-                <li>List Methods (Advanced)</li>
-                <pre class="line-numbers"><code class="language-py">list1 = [1, 2, 3]
-list2 = [4, 5, 6]
-list3 = list1 + list2
-print(list3)                   # Prints [1, 2, 3, 4, 5, 6]
-
-list2.extend(list1)            # Adds elememts of list1 to the end of list2
-print(list2)                   # Prints [4, 5, 6, 1, 2, 3]
-
-list2.append(list1)            # Adds list1 (as a list) to the end of list2
-print(list2)                   # Prints [4, 5, 6, 1, 2, 3, [1, 2, 3]]
-
-list4 = list1.copy()           # Creates a copy of list1
-print(list4)                   # Prints [1, 2, 3]</code></pre>
-            </ol>
-            <h2 id="tuples">Tuples</h2>
-            <p>Tuples are used to store multiple values in a single variable. They are immutable, which means they can't be changed.</p>
-            <ol>
-                <li>Declaration</li>
-                <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)              # Direct declaration
-tuple2 = ('a', 'b', 'c')        # Direct declaration
-tuple3 = tuple([1, 2, 3])       # Converting a list
-tuple4 = (1,)                   # This is a tuple with one element
-var = (1)                       # This is an integer (not a tuple)</code></pre>
-                <li>Indexing/Slicing</li>
-                <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)
-print(tuple1[0])                # Prints 1
-print(tuple1[-1])               # Prints 3
-print(tuple1[0:2])              # Prints (1, 2)
-print(tuple1[:2])               # Prints (1, 2)
-print(tuple1[2:])               # Prints (3)
-print(tuple1[:-1])              # Prints (1, 2)</code></pre>
-                <li>Concatenation</li>
-                <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)
-tuple2 = (4, 5, 6)
-tuple3 = tuple1 + tuple2
-print(tuple3)                   # Prints (1, 2, 3, 4, 5, 6)</code></pre>
-                <li>Repetition</li>
-                <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)
-tuple2 = tuple1 * 3
-print(tuple2)                   # Prints (1, 2, 3, 1, 2, 3, 1, 2, 3)</code></pre>
-                <li>for loop</li>
-                <pre class="line-numbers"><code class="language-py">tuple1 = tuple(i for i in range(1, 11))
-tuple2 = tuple(i for i in range(1, 11) if i % 2 == 0)</code></pre>
-                <li>Length/Count</li>
-                <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3)
-print(len(tuple1))              # Prints 3
-print(tuple1.count(1))          # Prints 1</code></pre>
-                <li>Sorting</li>
-                <pre class="line-numbers"><code class="language-py">tuple1 = (3, 1, 2, 0, -2, -3)
-print(sorted(tuple1))                # Prints [-3, -2, 0, 1, 2, 3]
-print(sorted(tuple1, reverse=True))  # Prints [3, 2, 1, 0, -2, -3]</code></pre>
-                <li>Reverse</li>
-                <pre class="line-numbers"><code class="language-py"># method 1
-tuple1 = (3, 1, 2, 0, -2, -3)
-print(tuple(reversed(tuple1)))
-
-# method 2
-tuple1 = (3, 1, 2, 0, -2, -3)
-print(tuple1[::-1])</code></pre>
-                <li>Tuple Methods</li>
-                <pre class="line-numbers"><code class="language-py">tuple1 = (1, 2, 3, 1, 1, 2)
-print(tuple1.index(1))          # Prints 0
-print(tuple1.index(1, 1))       # Prints 3
-print(tuple1.count(1))          # Prints 3
-print(tuple1.count(2))          # Prints 2</code></pre>
-            </ol>
-            <h2 id="dictionaries">Dictionaries</h2>
-            <p>Dictionaries are used to store key-value pairs. They are used to store data in a structured way.</p>
-            <ol>
-                <li>Declaration</li>
-                <pre class="line-numbers"><code class="language-py">dict1 = {'key1': 'value1', 'key2': 'value2'}           # method 1
-dict2 = dict([('key1', 'value1'), ('key2', 'value2')]) # method 2
-dict3 = dict(key1='value1', key2='value2')             # method 3
-# method 4
-dict4 = {}
-dict4['key1'] = 'value1'
-dict4['key2'] = 'value2'</code></pre>
-                <li>Accessing</li>
-                <pre class="line-numbers"><code class="language-py">dict1 = {'key1': 'value1', 'key2': 'value2'}
-print(dict1['key1'])                # Prints 'value1'
-print(dict1.get('key1'))            # Prints 'value1'
-print(dict1.get('key3'))            # Prints None
-print(dict1.get('key3', 'default')) # Prints 'default'</code></pre>
-                <li>Updating</li>
-                <pre class="line-numbers"><code class="language-py">dict1 = {'key1': 'value1', 'key2': 'value2'}
-dict1['key1'] = 'new value'
-print(dict1)                # Prints {'key1': 'new value', 'key2': 'value2'}
-dict1.update({'key3': 'value3'})
-print(dict1)                # Prints {'key1': 'new value', 'key2': 'value2', 'key3': 'value3'}
-dict1.update([('key4', 'value4'), ('key1', 'value1')])
-print(dict1)                # Prints {'key1': 'value1', 'key2': 'value2', 'key3': 'value3', 'key4': 'value4'}</code></pre>
-                <li>Deleting</li>
-                <pre class="line-numbers"><code class="language-py">dict1 = {'key1': 'value1', 'key2': 'value2'}
-del dict1['key1']
-print(dict1)                # Prints {'key2': 'value2'}</code></pre>
-                <li>for loop</li>
-                <pre class="line-numbers"><code class="language-py">dict1 = {'key1': 'value1', 'key2': 'value2'}
-dict2 = {k: v for k, v in dict1.items()}
-print(dict2)                # Prints {'key1': 'value1', 'key2': 'value2'}
-# "for i in dict1" will simple iterate through key values</code></pre>
-            </ol>
-            <h2 id="sets">Sets</h2>
-            <p>Sets are used to store unique values. They are used to store data in a structured way.</p>
-            <ol>
-                <li>Declaration</li>
-                <pre class="line-numbers"><code class="language-py">set1 = {1, 2, 3}
-set2 = set(range(1, 11))
-set3 = set('abc') # {'a', 'b', 'c'}
-set4 = set{1, 1, 2, 2, 2, 3}    # same as set1</code></pre>
-                <li>Accessing</li>
-                <p>There is no indexing in sets</p>
-                <pre class="line-numbers"><code class="language-py">set1 = {1, 2, 3}
-print(set1[0])                         # Prints error</code></pre>
-                <li>Updating</li>
-                <pre class="line-numbers"><code class="language-py">set1 = {1, 2, 3}
-set1.add(4)                            # Adds 4 to set1
-set2 = {5, 6, 7}
-set1.update(set2)                      # Adds set2 to set1
-print(set1)                            # Prints {1, 2, 3, 4, 5, 6, 7}</code></pre>
-                <li>Set Methods</li>
-                <pre class="line-numbers"><code class="language-py">set1 = {1, 2, 3}
-set2 = {2, 3, 4}
-print(set1.intersection(set2))         # Prints {2, 3}
-print(set1.union(set2))                # Prints {1, 2, 3, 4}
-print(set1.difference(set2))           # Prints {1}
-print(set1.symmetric_difference(set2)) # Prints {1, 4}
-print(set1.issubset(set2))             # Prints False
-print(set1.issuperset(set2))           # Prints False
-set1.discard(1)                        # Removes 1 from set1
-print(set1)                            # Prints {2, 3}
-set3 = set1.copy()                     # Copies set1 to set3
-set1.clear()                           # Removes all elements from set1
-set1.add(set3)                         # Adds set3 to set1
-print(set1 - set3)                     # Prints set()</code></pre>
+        <h2>Main Python Data Types</h2>
+        <p>Everything in python is implemented as an "object". Every "object" has a specific "Data type". The 4
+            most-used datatypes are as follows:</p>
+        <h3>Integer</h3>
+        <p>Integers (int) — an integer number to represent an object such as “number 3”.</p>
+        <div class="row">
+            <div class="col-sm-3"><code class="language-py">&lt;class 'int'&gt;</code></div>
+            <div class="col-sm-5"><code class="language-py">-2, -1, 0, 1, 2, 3, 4, 5</code></div>
         </div>
+        <h3>Floating Point</h3>
+        <div class="row">
+            <div class="col-sm-3"><code class="language-py">&lt;class 'float'&gt;</code></div>
+            <div class="col-sm-5"><code class="language-py">-1.25, -1.0, -0.5, 0.0, 0.5, 1.0, 1.25</code></div>
+        </div>
+        <h3>Strings</h3>
+        <p>Encode a sequence of characters using a string. For example, the word “hello”. In Python 3, strings are
+            immutable. If you already defined one, you cannot change it later on.</p>
+        <p>While you can modify a string with commands such as replace() or join(), they will create a copy of a string
+            and apply modification to it, rather than rewrite the original one.</p>
+        <div class="row">
+            <div class="col-sm-3"><code class="language-py">&lt;class 'str'&gt;</code></div>
+            <div class="col-sm-5"><code class="language-py">'Yo!', 'Hey', "what's up?", "Ola!!!"</code></div>
+        </div>
+        <h3>Lists</h3>
+        <p>A list is a sequence of objects. It is a mutable sequence. It can be defined as a list of objects, or a list
+            of lists. For example, the list of numbers 1, 2, 3, 4, 5.</p>
+        <div class="row">
+            <div class="col-sm-3"><code class="language-py">&lt;class 'list'&gt;</code></div>
+            <div class="col-sm-5"><code class="language-py">[-2, 0, 1, 3.1415, 'Hello, world!']</code></div>
+        </div>
+        <p>NOTE: There are more data types like sets, Dictionaries, complex numbers, tuples, boolean.</p>
         <hr>
-
-        <!-- Control Flow -->
-        <h1 id="control-flow">Control Flow</h1>
-        <hr>
-
-        <!-- Functions -->
-        <h1 id="functions">Functions</h1>
-        <hr>
-
-        <!-- Exception handling -->
-        <h1 id="exception-handling">Exception Handling</h1>
-    </div>
-
-    <div class="arrow">
-        <button><a href="">Top</a></button>
     </div>
 </body>
+
 </html>
