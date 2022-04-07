@@ -253,3 +253,19 @@ header .content a{
         margin-left: 4px;
     }
 }
+
+
+/* Styling for buttons */
+
+.primary-btn {
+    padding: 10px 22px;
+    color: white !important;
+    background: rgb(88,101,242);
+    text-decoration: none !important;
+}
+
+
+.primary-btn:hover {
+    color: black !important;
+}
+
