@@ -1,53 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Python Algorithms">
-    <meta name="keywords" content="python, algorithms">
-    <meta name="author" content="Siddhesh Agarwal">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1e2327">
-    <meta name="color-scheme" content="dark light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Python Algorithms" />
+    <meta name="keywords" content="python, algorithms" />
+    <meta name="author" content="Siddhesh Agarwal" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1e2327" />
+    <meta name="color-scheme" content="dark light" />
     <title>Python Algorithms</title>
-    <link href="/manifest.json" rel="manifest" crossorigin="use-credentials">
-    <link href="style.css" rel="stylesheet">
-    <link href="prism.css" rel="stylesheet">
+    <link href="/manifest.json" rel="manifest" crossorigin="use-credentials" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="prism.css" rel="stylesheet" />
     <script src="prism.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header>
-        <span class="logo">
-            <img src="img/Python-512x512.png" alt="Python logo" height="50" width="50">
-        </span>
-        <div class="content">
-            <a href="">Python Algorithms</a>
-        </div>
+      <span class="logo">
+        <img
+          src="img/Python-512x512.png"
+          alt="Python logo"
+          height="50"
+          width="50"
+        />
+      </span>
+      <div class="content">
+        <a href="">Python Algorithms</a>
+      </div>
     </header>
 
     <!-- Sidebar -->
     <div class="sidenav">
-        <a href="basics.html" class="active">Python Basics</a>
-        <a href="#base-conversions">Base Conversions</a>
-        <a href="#data-structures">Data Structures</a>
-        <a href="#math">Math</a>
-        <a href="#one-liners">One Liners</a>
-        <a href="#primes">Primes</a>
-        <a href="#regex">Regex</a>
-        <a href="#searching-techniques">Searching Techniques</a>
-        <a href="#sorting-techniques">Sorting Techniques</a>
-        <a href="#statistics">Statistics</a>
-        <a href="#misc">Miscellaneous</a>
+      <a class="primary-btn" href="basics.html">Python Basics</a>
+      <a href="#base-conversions">Base Conversions</a>
+      <a href="#data-structures">Data Structures</a>
+      <a href="#math">Math</a>
+      <a href="#one-liners">One Liners</a>
+      <a href="#primes">Primes</a>
+      <a href="#regex">Regex</a>
+      <a href="#searching-techniques">Searching Techniques</a>
+      <a href="#sorting-techniques">Sorting Techniques</a>
+      <a href="#statistics">Statistics</a>
+      <a href="#misc">Miscellaneous</a>
     </div>
 
     <!-- Content -->
     <div class="container">
-        <!-- Base Conversions-->
-        <h1 id="base-conversions">Base Conversions</h1>
-        <ol>
-            <li>Decimal to Binary</li>
-            <pre class="line-numbers"><code class="language-py"># convert decimal numbers to binary numbers
+      <!-- Base Conversions-->
+      <h1 id="base-conversions">Base Conversions</h1>
+      <ol>
+        <li>Decimal to Binary</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py"># convert decimal numbers to binary numbers
 def decimal_to_binary(decimal_number):
     binary_number = ''
     while decimal_number > 0:
@@ -57,8 +64,10 @@ def decimal_to_binary(decimal_number):
 
 # Alternative method - built-in function
 bin(decimal_number)</code></pre>
-            <li>Decimal to Octal</li>
-            <pre class="line-numbers"><code class="language-py"># convert decimal numbers to octal numbers
+        <li>Decimal to Octal</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py"># convert decimal numbers to octal numbers
 def decimal_to_octal(decimal_number):
     octal_number = ''
     while decimal_number > 0:
@@ -68,8 +77,10 @@ def decimal_to_octal(decimal_number):
 
 # Alternative method - built-in function
 oct(decimal_number)</code></pre>
-            <li>Decimal to Hexadecimal</li>
-            <pre class="line-numbers"><code class="language-py"># convert decimal numbers to hexadecimal numbers
+        <li>Decimal to Hexadecimal</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py"># convert decimal numbers to hexadecimal numbers
 def decimal_to_hexadecimal(decimal_number):
     hexadecimal_number = ''
     hexadecimal_number_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
@@ -81,8 +92,10 @@ def decimal_to_hexadecimal(decimal_number):
 # Alternative method - built-in function
 hex(decimal_number)
 </code></pre>
-            <li>Binary to Decimal</li>
-            <pre class="line-numbers"><code class="language-py"># convert binary numbers to decimal numbers
+        <li>Binary to Decimal</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py"># convert binary numbers to decimal numbers
 def binary_to_decimal(binary_number):
     decimal_number = 0
     power = 0
@@ -93,8 +106,10 @@ def binary_to_decimal(binary_number):
 
 # Alternative method - built-in function
 int(binary_number, 2)</code></pre>
-            <li>Octal to Decimal</li>
-            <pre class="line-numbers"><code class="language-py"># convert octal numbers to decimal numbers
+        <li>Octal to Decimal</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py"># convert octal numbers to decimal numbers
 def octal_to_decimal(octal_number):
     decimal_number = 0
     power = 0
@@ -105,8 +120,10 @@ def octal_to_decimal(octal_number):
 
 # Alternative method - built-in function
 int(octal_number, 8)</code></pre>
-            <li>Hexadecimal to Decimal</li>
-            <pre class="line-numbers"><code class="language-py"># convert hexadecimal numbers to decimal numbers
+        <li>Hexadecimal to Decimal</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py"># convert hexadecimal numbers to decimal numbers
 def hexadecimal_to_decimal(hexadecimal_number):
     decimal_number = 0
     hexadecimal_number_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
@@ -118,14 +135,14 @@ def hexadecimal_to_decimal(hexadecimal_number):
 
 # Alternative method - built-in function
 int(hexadecimal_number, 16)</code></pre>
-        </ol>
-        <hr>
-        
-        <!-- Data Structures -->
-        <h1 id="data-structures">Data Structures</h1>
-        <ol>
-            <li>Binary tree</li>
-            <pre class="line-numbers"><code class="language-py">class Node:
+      </ol>
+      <hr />
+
+      <!-- Data Structures -->
+      <h1 id="data-structures">Data Structures</h1>
+      <ol>
+        <li>Binary tree</li>
+        <pre class="line-numbers"><code class="language-py">class Node:
     def __init__(self, data):
         self.data = data
         self.left: Node | None = None
@@ -159,8 +176,8 @@ int(hexadecimal_number, 16)</code></pre>
             res.append(root.data)
             res = res + self.inorderTraversal(root.right)
         return res</code></pre>
-            <li>Linked list</li>
-            <pre class="line-numbers"><code class="language-py">class Node:
+        <li>Linked list</li>
+        <pre class="line-numbers"><code class="language-py">class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
@@ -221,8 +238,8 @@ class LinkedList:
             previous_node = node
 
         raise Exception(f"Node with data '{target_node_data}' not found")</code></pre>
-            <li>Queue</li>
-            <pre class="line-numbers"><code class="language-py">class Queue:
+        <li>Queue</li>
+        <pre class="line-numbers"><code class="language-py">class Queue:
     def __init__(self):
         self.items = []
  
@@ -263,8 +280,8 @@ class LinkedList:
         """Reverses the order of the elements in the queue"""
         self.items.reverse()
         return self.items</code></pre>
-            <li>Stack</li>
-            <pre class="line-numbers"><code class="language-py">class Stack:
+        <li>Stack</li>
+        <pre class="line-numbers"><code class="language-py">class Stack:
     def __init__(self, size):
         self.size = size
         self.stack = []
@@ -319,14 +336,16 @@ class LinkedList:
     def clear(self):
         """Removes all items from the stack"""
         self.stack = []</code></pre>
-        </ol>
-        <hr>
+      </ol>
+      <hr />
 
-        <!-- Math -->
-        <h1 id="math">Math</h1>
-        <ol>
-            <li>Calculating the value of e</li>
-            <pre class="line-numbers"><code class="language-py"># Brother's formula of calculating e
+      <!-- Math -->
+      <h1 id="math">Math</h1>
+      <ol>
+        <li>Calculating the value of e</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py"># Brother's formula of calculating e
 def e_value():
     """Calculates the value of e"""
     e0, e, n, fact = 0, 2, 0, 1
@@ -340,8 +359,8 @@ def e_value():
 #print("Computed e = ", e_value())
 #from math import e
 #print("Math library e = ", e)</code></pre>
-            <li>Calculating the value of pi</li>
-            <pre class="line-numbers"><code class="language-py">from math import sin
+        <li>Calculating the value of pi</li>
+        <pre class="line-numbers"><code class="language-py">from math import sin
 
 # Newtons method of calculating pi
 def pi_value():
@@ -356,8 +375,10 @@ def pi_value():
 #print("Computed pi = ", pi_value())
 #from math import pi
 #print("Math library pi = ", pi)</code></pre>
-            <li>Calculating the value of sin(x)</li>
-            <pre class="line-numbers"><code class="language-py">from math import factorial
+        <li>Calculating the value of sin(x)</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">from math import factorial
 
 # Taylor series of sin(x)
 def sin_value(x):
@@ -370,8 +391,10 @@ def sin_value(x):
 #sin_value(0)
 #from math import sin
 #sin(0)</code></pre>
-            <li>Calculating the value of cos(x)</li>
-            <pre class="line-numbers"><code class="language-py">from math import factorial
+        <li>Calculating the value of cos(x)</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">from math import factorial
 
 def cos_value(x):
     """Calculates the value of cosine of a given number."""
@@ -383,8 +406,10 @@ def cos_value(x):
 #cos_value(0)
 #from math import cos
 #cos(0)</code></pre>
-            <li>Euclid's Division Lemma</li>
-            <pre class="line-numbers"><code class="language-py">def euclid_division_lemma(a, b):
+        <li>Euclid's Division Lemma</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def euclid_division_lemma(a, b):
     if b > a:
         a, b = b, a
     r = a % b
@@ -392,8 +417,8 @@ def cos_value(x):
         return b
     else:
         return euclid_division_lemma(b, r)</code></pre>
-            <li>Explicit Euler method for EDO</li>
-            <pre class="line-numbers"><code class="language-py">
+        <li>Explicit Euler method for EDO</li>
+        <pre class="line-numbers"><code class="language-py">
 import numpy as np
 def euler_ode(a, b, u0, n_step,  f):
     """
@@ -428,8 +453,8 @@ def euler_ode(a, b, u0, n_step,  f):
         u[i+1] = u[i] + step*f(x, u[i])
 
     return u</code></pre>
-            <li>Factorial</li>
-            <pre class="line-numbers"><code class="language-py">def factorial(n):
+        <li>Factorial</li>
+        <pre class="line-numbers"><code class="language-py">def factorial(n):
     fact = 1
     for i in range(2, n + 1):
         fact = fact * i
@@ -438,8 +463,8 @@ def euler_ode(a, b, u0, n_step,  f):
 #factorial(n)
 #import math
 #math.factorial(n)</code></pre>
-            <li>Fibonacci</li>
-            <pre class="line-numbers"><code class="language-py">def fibonacci(n):
+        <li>Fibonacci</li>
+        <pre class="line-numbers"><code class="language-py">def fibonacci(n):
     """returns n terms from the series of Fibonacci numbers"""
     a, b = 0, 1
     arr = []
@@ -447,9 +472,9 @@ def euler_ode(a, b, u0, n_step,  f):
         arr.append(a)
         a, b = b, a + b
     return arr</code></pre>
-            
-            <li>Greatest Common Divisor / Highest Common Factor</li>
-            <pre class="line-numbers"><code class="language-py">def gcd(a, b):
+
+        <li>Greatest Common Divisor / Highest Common Factor</li>
+        <pre class="line-numbers"><code class="language-py">def gcd(a, b):
     """returns the Greatest Common Divisor (GCD) of 2 numbers."""
     while b:
         a, b = b, a % b
@@ -458,12 +483,14 @@ def euler_ode(a, b, u0, n_step,  f):
 #gcd(a, b)
 #import math
 #math.gcd(a, b)</code></pre>
-            <li>Least Common Multiple</li>
-            <pre class="line-numbers"><code class="language-py">def lcm(a, b):
+        <li>Least Common Multiple</li>
+        <pre class="line-numbers"><code class="language-py">def lcm(a, b):
     """Returns the Lowest Common Multiple (LCM) of 2 numbers."""
     return (a * b // gcd(a, b))</code></pre>
-            <li>Pascal's Triangle</li>
-            <pre class="line-numbers"><code class="language-py"># returns nth row of Pascal's triangle
+        <li>Pascal's Triangle</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py"># returns nth row of Pascal's triangle
 def pascals_triangle(n):
     if n == 0:
         return [1]
@@ -472,53 +499,75 @@ def pascals_triangle(n):
     else:
         prev = pascals_triangle(n - 1)
         return [1] + [prev[i] + prev[i + 1] for i in range(len(prev) - 1)] + [1]</code></pre>
-        </ol>
-        <hr>
+      </ol>
+      <hr />
 
-        <!--One liners-->
-        <h1 id="one-liners">One Liners</h1>
-        <ol>
-            <li>Converting Decimal code (R, G, B) to hex code</li>
-            <pre class="line-numbers"><code class="language-py">rgb_to_hex = lambda rgb: '%02x%02x%02x' % rgb</code></pre>
-            <li>Converting Hex code to Decimal code (R, G, B)</li>
-            <pre class="line-numbers"><code class="language-py">hex_to_rgb = lambda h: tuple(int(h[i: i+2], 16) for i in (0, 2, 4))</code></pre>
-            <li>Current date (DD-MM-YY) and time</li>
-            <pre class="line-numbers"><code class="language-py">import datetime from datetime
+      <!--One liners-->
+      <h1 id="one-liners">One Liners</h1>
+      <ol>
+        <li>Converting Decimal code (R, G, B) to hex code</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">rgb_to_hex = lambda rgb: '%02x%02x%02x' % rgb</code></pre>
+        <li>Converting Hex code to Decimal code (R, G, B)</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">hex_to_rgb = lambda h: tuple(int(h[i: i+2], 16) for i in (0, 2, 4))</code></pre>
+        <li>Current date (DD-MM-YY) and time</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">import datetime from datetime
 now = lambda: datetime.now().strftime('%d-%m-%y %H:%M:%S')</code></pre>
-            <li>Fibonacci</li>
-            <pre class="line-numbers"><code class="language-py">fibonacci = lambda x: x if x<=1 else fibonacci(x-1) + fibonacci(x-2)
+        <li>Fibonacci</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">fibonacci = lambda x: x if x<=1 else fibonacci(x-1) + fibonacci(x-2)
 # >>> fibonacci(10)
 # 55</code></pre>
-            <li>Find if string is a palindrome</li>
-            <pre class="line-numbers"><code class="language-py">is_palindrome = lambda s: s == s[::-1]
+        <li>Find if string is a palindrome</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">is_palindrome = lambda s: s == s[::-1]
 # >>> is_palindrome("abdba")
 # True</code></pre>
-            <li>Flatten a list</li>
-            <a href="#flatten-list">See here for better solution</a>
-            <pre class="line-numbers"><code class="language-py">[i for sublist in lst for i in sublist]
+        <li>Flatten a list</li>
+        <a href="#flatten-list">See here for better solution</a>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">[i for sublist in lst for i in sublist]
 #works only if all elements are iterables
 # works with [[1], [2, 3], [4, 5, 6]]
 # but not [1, [2, 3], [4, 5, 6]]</code></pre>
-            <li>Input space seperated integers</li>
-            <pre class="line-numbers"><code class="language-py">list(map(int, input().split()))</code></pre>
-            <li>Sum of all the numbers in a list</li>
-            <pre class="line-numbers"><code class="language-py">from functools import reduce
+        <li>Input space seperated integers</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">list(map(int, input().split()))</code></pre>
+        <li>Sum of all the numbers in a list</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">from functools import reduce
 list_sum = lambda arr: reduce(lambda x, y: x + y, arr)
 # >>> list_sum([2, 38, 267, 82])
 # 389</code></pre>
-            <li>Read a file, line by line</li>
-            <pre class="line-numbers"><code class="language-py">print([line.strip() for line in open("readFile.py")])</code></pre>
-            <li>Reverse a string/list</li>
-            <pre class="line-numbers"><code class="language-py">reverse = lambda s: s[::-1]
+        <li>Read a file, line by line</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">print([line.strip() for line in open("readFile.py")])</code></pre>
+        <li>Reverse a string/list</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">reverse = lambda s: s[::-1]
 #reverse("Hello, world!")</code></pre>
-        </ol>
-        <hr>
+      </ol>
+      <hr />
 
-        <!-- Primes -->
-        <h1 id="primes">Primes</h1>
-        <ol>
-            <li>Fermat's prime</li>
-            <pre class="line-numbers"><code class="language-py"># A prime number of the form (2^2^n) + 1 for some non-negative integer n.
+      <!-- Primes -->
+      <h1 id="primes">Primes</h1>
+      <ol>
+        <li>Fermat's prime</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py"># A prime number of the form (2^2^n) + 1 for some non-negative integer n.
 # The first few fermat numbers are 3, 5, 17, 257, 65537, 4294967297, 18446744073709551617
   
 def factors(x):
@@ -547,8 +596,10 @@ for i in range(10):
         print(f"F{chr(i + 0x2080)} -> IS PRIME")
     else:
         print(f"F{chr(i + 0x2080)} -> FACTORS: {fac}")</code></pre>
-            <li>Mersene Primes</li>
-            <pre class="line-numbers"><code class="language-py">def is_prime(num: int):
+        <li>Mersene Primes</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def is_prime(num: int):
 	i = 2
 	while i ** 2 <= num:
 		if 	num % i == 0:
@@ -573,8 +624,10 @@ def mersenne_prime(num):
         power += 1
         value = 2 ** power - 1
     return arr</code></pre>
-            <li>Palindrome Primes</li>
-            <pre class="line-numbers"><code class="language-py">def is_palindrome(num):
+        <li>Palindrome Primes</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def is_palindrome(num):
     num = str(num)
     return num == num[::-1]
 
@@ -599,8 +652,10 @@ def palindrome_prime(num):
         if (prime[p] and is_palindrome(p)):
             arr.append(p)
     return arr</code></pre>
-                <li>Sieve of Eratosthenes</li>
-            <pre class="line-numbers"><code class="language-py">def sieve_of_eratosthenese(num):
+        <li>Sieve of Eratosthenes</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def sieve_of_eratosthenese(num):
     """Returns a list of prime numbers less than or equal to the given number."""
     sieve = [i for i in range(2, num + 1)]
     key = 0
@@ -658,8 +713,10 @@ def primes235(limit):
                 ci += 1
     for i in range(lmtbf - 6 + (ndxs[(limit - 7) % 30])):                 # adjust for extras
         if buf[i]: yield (30 * (i >> 3) + modPrms[i & 7])</code></pre>
-            <li>Sophie Germain Primes</li>
-            <pre class="line-numbers"><code class="language-py">def sophie_germain_prime(num):
+        <li>Sophie Germain Primes</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def sophie_germain_prime(num):
     """Returns all Sophie Germain Prime numbers less than or equal to the given number.
     A prime number p is called Sophie Germain Prime number if (2*p + 1) is also prime.
     >>> sophie_germain_prime(25)
@@ -673,22 +730,22 @@ def primes235(limit):
         if i in prime and (2 * i + 1) in prime:
             arr.append(i)
     return arr</code></pre>
-        </ol>
-        <hr>
+      </ol>
+      <hr />
 
-        <!-- Regex -->
-        <h1 id="regex">Regex</h1>
-        <ol>
-            <li>Address Validation</li>
-            <pre class="line-numbers"><code class="language-py">import regex as re
+      <!-- Regex -->
+      <h1 id="regex">Regex</h1>
+      <ol>
+        <li>Address Validation</li>
+        <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for address validation
 def address_validation(address):
     regex = r'^[a-zA-Z0-9\s,.-]{2,}$'
     return bool(re.search(regex, address))</code></pre>
-            <li>Credit Card Validation</li>
-            <a href="#luhns-algorithm">See here for better solution</a>
-            <pre class="line-numbers"><code class="language-py">import regex as re
+        <li>Credit Card Validation</li>
+        <a href="#luhns-algorithm">See here for better solution</a>
+        <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for credit card validation - American Express
 def credit_card_validation_american_express(credit_card):
@@ -795,63 +852,65 @@ def credit_card_validation(credit_card):
             return key
     else:
         return 'Unknown'</code></pre>
-            <li>Date Validation</li>
-            <pre class="line-numbers"><code class="language-py">import regex as re
+        <li>Date Validation</li>
+        <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for date validation (DD/MM/YYYY)
 def date_validation(date):
     regex = r'^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/[0-9]{4}$'
     return bool(re.fullmatch(regex, date))</code></pre>
-            <li>Email Validation</li>
-            <pre class="line-numbers"><code class="language-py">import regex as re
+        <li>Email Validation</li>
+        <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for email validation
 def email_validation(email):
     regex = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
     return bool(re.fullmatch(regex, email))</code></pre>
-            <li>Password Validation</li>
-            <pre class="line-numbers"><code class="language-py">import regex as re
+        <li>Password Validation</li>
+        <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for password validation
 def password_validation(password):
     regex = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
     return bool(re.fullmatch(regex, password))</code></pre>
-            <li>Phone Number Validation</li>
-            <pre class="line-numbers"><code class="language-py">import regex as re
+        <li>Phone Number Validation</li>
+        <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for phone number validation
 def phone_validation(phone):
     regex = r'^[0-9]{10}$'
     return bool(re.fullmatch(regex, phone))</code></pre>
-            <li>Time Validation</li>
-            <pre class="line-numbers"><code class="language-py">import regex as re
+        <li>Time Validation</li>
+        <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for time validation HH:MM:SS
 def time_validation(time):
     regex = r'^([0-1]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$'
     return bool(re.fullmatch(regex, time))</code></pre>
-            <li>URL Validation</li>
-            <pre class="line-numbers"><code class="language-py">import regex as re
+        <li>URL Validation</li>
+        <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for url validation
 def URL_validation(url):
     regex = r'^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&\'\(\)\*\+,;=.]+$'
     return bool(re.fullmatch(regex, url))</code></pre>
-            <li>IP Address Validation</li>
-            <pre class="line-numbers"><code class="language-py">import regex as re
+        <li>IP Address Validation</li>
+        <pre class="line-numbers"><code class="language-py">import regex as re
 
 # regex for IP address validation IPv4
 def IP_validation(IP):
     regex = r'(\b25[0-5]|\b2[0-4][0-9]|\b[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}'
     return bool(re.fullmatch(regex, IP))</code></pre>
-        </ol>
-        <hr>
+      </ol>
+      <hr />
 
-        <!-- Searching -->
-        <h1 id="searching-techniques">Searching Techniques</h1>
-        <ol>
-            <li>Binary search</li>
-            <pre class="line-numbers"><code class="language-py"># Binary Search - time complexity: O(log(n))
+      <!-- Searching -->
+      <h1 id="searching-techniques">Searching Techniques</h1>
+      <ol>
+        <li>Binary search</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py"># Binary Search - time complexity: O(log(n))
 # NOTE: This works only for sorted arrays
 # Iterative method
 def binary_search(l, value):
@@ -885,8 +944,10 @@ def binary_search(l, value, LOW = 0, TOP = -1):
         return binary_search(l, value, MID+1, TOP)
     else:
         return MID</code></pre>
-                <li>Jump search</li>
-                <pre class="line-numbers"><code class="language-py"># Jump Search - time complexity: O(n^1/2)
+        <li>Jump search</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py"># Jump Search - time complexity: O(n^1/2)
 def jump_search(arr, element):
     n = len(arr)
     step = int(math.floor(math.sqrt(n)))
@@ -904,21 +965,23 @@ def jump_search(arr, element):
     if arr[prev] == element:
         return prev
     return -1</code></pre>
-                <li>Linear search</li>
-                <pre class="line-numbers"><code class="language-py"># Linear Search - time complexity: O(n)
+        <li>Linear search</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py"># Linear Search - time complexity: O(n)
 def linear_search(arr, element):
     for i in range(len(arr)):
         if arr[i] == element:
             return i
     return -1</code></pre>
-        </ol>
-        <hr>
+      </ol>
+      <hr />
 
-        <!-- Sorting -->
-        <h1 id="sorting-techniques">Sorting Techniques</h1>
-        <ol>
-            <li>Bead sort</li>
-            <pre class="line-numbers"><code class="language-py">def bead_sort(arr):
+      <!-- Sorting -->
+      <h1 id="sorting-techniques">Sorting Techniques</h1>
+      <ol>
+        <li>Bead sort</li>
+        <pre class="line-numbers"><code class="language-py">def bead_sort(arr):
     if any(not isinstance(x, int) or x < 0 for x in arr):
         raise TypeError("Sequence must be list of non-negative integers")
     for _ in range(len(arr)):
@@ -927,14 +990,16 @@ def linear_search(arr, element):
                 arr[i] -= rod_upper - rod_lower
                 arr[i + 1] += rod_upper - rod_lower
     return arr</code></pre>
-            <li>Bubble sort</li>
-            <pre class="line-numbers"><code class="language-py">def bubble_sort(arr):
+        <li>Bubble sort</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def bubble_sort(arr):
     for iter_num in range(len(arr) - 1, 0, -1):
         for i in range(iter_num):
             if arr[i] > arr[i + 1]:
                 arr[i], arr[i + 1] = arr[i + 1], arr[i]</code></pre>
-            <li>Cocktail sort</li>
-            <pre class="line-numbers"><code class="language-py">def cocktailSort(A):
+        <li>Cocktail sort</li>
+        <pre class="line-numbers"><code class="language-py">def cocktailSort(A):
     up = range(len(A)-1)
     while True:
         for indices in (up, reversed(up)):
@@ -945,8 +1010,10 @@ def linear_search(arr, element):
                     swapped = True
             if not swapped:
                 return</code></pre>
-            <li>Counting sort</li>
-            <pre class="line-numbers"><code class="language-py">def counting_sort(arr):
+        <li>Counting sort</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def counting_sort(arr):
     maxEl = max(arr)
     countArrayLength = maxEl+1
     countArray = [0] * countArrayLength
@@ -968,8 +1035,10 @@ def linear_search(arr, element):
         i -= 1
 
     return outputArray</code></pre>
-            <li>Heap sort</li>
-            <pre class="line-numbers"><code class="language-py">def siftdown(lst, start, end):
+        <li>Heap sort</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def siftdown(lst, start, end):
     root = start
     while True:
         child = root * 2 + 1
@@ -992,8 +1061,10 @@ def heapsort(lst):
         lst[end], lst[0] = lst[0], lst[end]
         siftdown(lst, 0, end - 1)
     return lst</code></pre>
-            <li>Insertion sort</li>
-            <pre class="line-numbers"><code class="language-py">def insertion_sort(arr):
+        <li>Insertion sort</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def insertion_sort(arr):
     for i in range(1, len(arr)):                  
         key = arr[i]
         j = i - 1
@@ -1001,8 +1072,8 @@ def heapsort(lst):
             arr[j + 1] = arr[j]
             j -= 1
         arr[j + 1] = key</code></pre>
-            <li>merge sort</li>
-            <pre class="line-numbers"><code class="language-py">def merge_sort(arr):
+        <li>merge sort</li>
+        <pre class="line-numbers"><code class="language-py">def merge_sort(arr):
     def merge(left, right):
         def _merge():
             while left and right:
@@ -1016,8 +1087,8 @@ def heapsort(lst):
         return arr
     mid = len(arr) // 2
     return merge(merge_sort(arr[:mid]), merge_sort(arr[mid:]))</code></pre>
-            <li>quick sort</li>
-            <pre class="line-numbers"><code class="language-py">def quick_sort(arr):
+        <li>quick sort</li>
+        <pre class="line-numbers"><code class="language-py">def quick_sort(arr):
     if len(arr) < 2:
         return arr
     pivot = arr.pop()
@@ -1026,8 +1097,8 @@ def heapsort(lst):
     for element in arr:
         (greater if element > pivot else lesser).append(element)
     return quick_sort(lesser) + [pivot] + quick_sort(greater)</code></pre>
-            <li>shell sort</li>
-            <pre class="line-numbers"><code class="language-py">def shell_sort(arr):
+        <li>shell sort</li>
+        <pre class="line-numbers"><code class="language-py">def shell_sort(arr):
     gap = len(arr) // 2
     while gap > 0:
         for i in range(gap, len(arr)):
@@ -1038,33 +1109,41 @@ def heapsort(lst):
                 j -= gap
             arr[j] = temp
         gap = gap//2</code></pre>
-        </ol>
-        <hr>
+      </ol>
+      <hr />
 
-        <!-- Statistics -->
-        <h1 id="statistics">Statistics</h1>
-        <ol>
-            <li>Absolute value</li>
-            <pre class="line-numbers"><code class="language-py">def abs(x):
+      <!-- Statistics -->
+      <h1 id="statistics">Statistics</h1>
+      <ol>
+        <li>Absolute value</li>
+        <pre class="line-numbers"><code class="language-py">def abs(x):
     if isinstance(x, [int, float]):
         return x if x >= 0 else -x
     else:
         raise TypeError(f"x must be an integer or float not {type(x)}")
 # abs() is also an in-built function in Python</code></pre>
-            <li>Arithmetic Mean</li>
-            <pre class="line-numbers"><code class="language-py">def arithmetic_mean(arr):
+        <li>Arithmetic Mean</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def arithmetic_mean(arr):
     """Returns the Arithmetic mean of a list of numbers"""
     return sqrt(sum(n*n for n in num)/len(num))</code></pre>
-            <li>Geometric Mean</li>
-            <pre class="line-numbers"><code class="language-py">def geometric_mean(arr):
+        <li>Geometric Mean</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def geometric_mean(arr):
     """Returns the geometric mean of a list of numbers"""
     return reduce(mul, num, 1) ** (1 / len(num))</code></pre>
-            <li>Harmonic Mean</li>
-            <pre class="line-numbers"><code class="language-py">def harmonic_mean(arr):
+        <li>Harmonic Mean</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def harmonic_mean(arr):
     """Returns the harmonic mean of a list of numbers"""
     return len(arr) / sum(1 / x for x in arr)</code></pre>
-            <li>Quadratic mean / Root mean square</li>
-            <pre class="line-numbers"><code class="language-py">from math import sqrt
+        <li>Quadratic mean / Root mean square</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">from math import sqrt
 
 def quadratic_mean(array):
     """calculate the root mean square of an array."""
@@ -1074,24 +1153,26 @@ def quadratic_mean(array):
         sum += array[i] ** 2
         length += 1
     return sqrt(sum / length)</code></pre>
-            <li>Circular mean</li>
-            <pre class="line-numbers"><code class="language-py">def circular_mean(arr):
+        <li>Circular mean</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def circular_mean(arr):
     """Calculate the circular mean of a list of numbers."""
     total = 0
     for i in arr:
         total += i
     total %= 360
     return total / len(arr)</code></pre>
-            <li>Median</li>
-            <pre class="line-numbers"><code class="language-py">def median(arr):
+        <li>Median</li>
+        <pre class="line-numbers"><code class="language-py">def median(arr):
     """Returns the median of a list of numbers"""
     arr.sort()
     if len(arr) % 2 == 0:
         return (arr[len(arr) // 2] + arr[len(arr) // 2 - 1]) / 2
     else:
         return arr[len(arr) // 2]</code></pre>
-            <li>Mode</li>
-            <pre class="line-numbers"><code class="language-py">def mode(arr):
+        <li>Mode</li>
+        <pre class="line-numbers"><code class="language-py">def mode(arr):
     """Returns the mode of a list of numbers"""
     arr.sort()
     mode = arr[0]
@@ -1106,13 +1187,13 @@ def quadratic_mean(array):
             mode = arr[i]
             frequency = count
     return mode</code></pre>
-            <li>Range</li>
-            <pre class="line-numbers"><code class="language-py">def range(arr):
+        <li>Range</li>
+        <pre class="line-numbers"><code class="language-py">def range(arr):
     """Returns the range of a list of numbers"""
     arr.sort()
     return arr[-1] - arr[0]</code></pre>
-            <li>Variance</li>
-            <pre class="line-numbers"><code class="language-py">def variance(arr):
+        <li>Variance</li>
+        <pre class="line-numbers"><code class="language-py">def variance(arr):
     """Returns the variance of a list of numbers"""
     mean = mean(arr)
     total = 0
@@ -1121,12 +1202,16 @@ def quadratic_mean(array):
         total += (i - mean) ** 2
         length += 1
     return total / length</code></pre>
-            <li>Standard deviation</li>
-            <pre class="line-numbers"><code class="language-py">def standard_deviation(arr):
+        <li>Standard deviation</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def standard_deviation(arr):
     """Returns the standard deviation of a list of numbers"""
     return variance(arr) ** 0.5</code></pre>
-            <li>Second smallest</li>
-            <pre class="line-numbers"><code class="language-py">def second_smallest(numbers):
+        <li>Second smallest</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def second_smallest(numbers):
     """Find the second smallest number in a list of numbers"""
     smallest = None
     second_smallest = None
@@ -1136,8 +1221,10 @@ def quadratic_mean(array):
         elif second_smallest is None or number < second_smallest:
             second_smallest = number
     return second_smallest</code></pre>
-            <li>Second largest</li>
-            <pre class="line-numbers"><code class="language-py">def second_largest(numbers):
+        <li>Second largest</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def second_largest(numbers):
     """Find the second largest number in a list of numbers."""
     largest = None
     second_largest = None
@@ -1147,14 +1234,14 @@ def quadratic_mean(array):
         elif second_largest is None or number > second_largest:
             second_largest = number
     return second_largest</code></pre>
-        </ol>
-        <hr>
+      </ol>
+      <hr />
 
-        <!-- Miscellaneous -->
-        <h1 id="misc">Miscellaneous</h1>
-        <ol>
-            <li>Caesar cipher</li>
-            <pre class="line-numbers"><code class="language-py">import string
+      <!-- Miscellaneous -->
+      <h1 id="misc">Miscellaneous</h1>
+      <ol>
+        <li>Caesar cipher</li>
+        <pre class="line-numbers"><code class="language-py">import string
 def caesar(s, k, decode = False):
     if decode:
         k = 26 - k
@@ -1167,8 +1254,8 @@ def caesar(s, k, decode = False):
 #enc = caesar(msg, 11)
 #print(enc)
 #print(caesar(enc, 11, decode = True))</code></pre>
-            <li id="flatten-list">Flatten a list</li>
-            <pre class="line-numbers"><code class="language-py"># flatten a list
+        <li id="flatten-list">Flatten a list</li>
+        <pre class="line-numbers"><code class="language-py"># flatten a list
 def flatten(arr):
     try:
         result = []
@@ -1177,8 +1264,10 @@ def flatten(arr):
     except TypeError: # if nested element is not a list
         result = [arr]
     return result</code></pre>
-            <li id="luhns-algorithm">Luhn's Algorithm</li>
-            <pre class="line-numbers"><code class="language-py">def luhns_algorithm(credit_card_number):
+        <li id="luhns-algorithm">Luhn's Algorithm</li>
+        <pre
+          class="line-numbers"
+        ><code class="language-py">def luhns_algorithm(credit_card_number):
     """Checks if a credit card number is valid"""
     # convert the credit card number to a list of ints
     credit_card_number_list = [int(x) for x in str(credit_card_number)]
@@ -1198,15 +1287,16 @@ def flatten(arr):
         total = total + credit_card_number_list[i]
     # if the total is a multiple of 10 the number is valid
     return True if total % 10 == 0 else False</code></pre>
-        </ol>
+      </ol>
     </div>
 
     <div class="arrow">
-        <button><a href="">Top</a></button>
+      <button><a href="">Top</a></button>
     </div>
 
     <footer>
-        <p>lorem ipsum</p>
+      <p>lorem ipsum</p>
     </footer>
-</body>
+    <script src="./app.js"></script>
+  </body>
 </html>
