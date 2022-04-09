@@ -107,21 +107,14 @@ header .content a{
     border: 1px solid #444C56;
 }
 
-.arrow a {
-    color:#ADBAC7;
-    font-size: 20px;
-    line-height: 30px;
-    display: inline-block;
-    padding-inline: 4px;
+.arrow {
+    padding: 8px 10px;
+    background: white;
+    border-radius: 50%;
 }
 
 .arrow:hover {
-    background-color: #2D333B;
-}
-
-.arrow a:hover {
-    color: #539BF5;
-    text-decoration: underline solid #539BF5;
+    opacity: 0.8;
 }
 
 /* Style for the Main Content */
