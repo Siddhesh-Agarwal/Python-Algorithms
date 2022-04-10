@@ -1,157 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Python Basics" />
-    <meta name="keywords" content="python, basics, introduction" />
-    <meta name="author" content="Siddhesh Agarwal" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#1e2327" />
-    <meta name="color-scheme" content="dark light" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Python Basics">
+    <meta name="keywords" content="python, basics, introduction">
+    <meta name="author" content="Siddhesh Agarwal">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e2327">
+    <meta name="color-scheme" content="dark light">
     <title>Python Basics</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <script src="js/prism.js"></script>
+</head>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./css/prism.css" />
-    <script src="./prism.js"></script>
-  </head>
-
-  <body>
+<body>
     <!-- Header -->
     <header>
-      <span class="logo">
-        <img
-          src="img/Python-512x512.png"
-          alt="Python logo"
-          height="50"
-          width="50"
-        />
-      </span>
-      <div class="content">
-        <a href="">Python Basics</a>
-      </div>
+        <span class="logo">
+            <img src="img/Python-512x512.png" alt="Python logo" height="50" width="50" />
+        </span>
+        <div class="content">
+            <a href="#">Python Basics</a>
+        </div>
     </header>
     <span class="banner">
-      <img
-        src="./img/Python-512x512.png"
-        alt="Python logo"
-        height="50"
-        width="50"
-      />
+        <img src="./img/Python-512x512.png" alt="Python logo" height="50" width="50" />
     </span>
     <!-- Main Content -->
     <div class="container">
-      <div class="button-holder">
-        <a class="btn btn-dark px-4" href="./index.html">Back</a>
-      </div>
-      <p>
-        Most Windows and Mac computers come with Python pre-installed. You can
-        check that via a Command Line search. The particular appeal of Python is
-        that you can write a program in any text editor, save it in .py format
-        and then run via a Command-line. But as you learn to write more complex
-        code or venture into data science, you might want to switch to an IDE or
-        IDLE.
-      </p>
+        <div class="button-holder">
+            <a class="btn btn-dark px-4" href="./index.html">Back</a>
+        </div>
+        <p>Most Windows and Mac computers come with Python pre-installed. You can check that via a Command Line search.
+            The particular appeal of Python is that you can write a program in any text editor, save it in .py format
+            and then run via a Command-line. But as you learn to write more complex code or venture into data science,
+            you might want to switch to an IDE or IDLE.
+        </p>
 
-      <h2>What is IDLE (Integrated Development and Learning Environment)?</h2>
-      <p>
-        IDLE (Integrated Development and Learning Environment) comes installed
-        along with all python installations. It makes use of Text highlight,
-        where it make use of different colours to identify variables, function,
-        commands, etc. This gives an advantage to the developer in findings
-        errors. Python IDLE has a build Automator of some kind that compiles the
-        code, and builds an executable program by adding in any necessary
-        libraries, some of which you may not even be aware of. Those same tools
-        make it easier to organize and include any optional libraries, or ones
-        you’ve created yourself.
-      </p>
-      <p>
-        Shell is the default mode of operation for Python IDLE. In essence, it’s
-        a simple loop that performs that following four steps:
-      </p>
-      <ul>
-        <li>Reads one Python statement.</li>
-        <li>Evaluates the result(s) of it.</li>
-        <li>Prints the result(s) on the screen. (if any)</li>
-        <li>And then loops back to read the next statement.</li>
-      </ul>
-      <p>
-        <b>Note:</b> Python shell is a great place to test various small code
-        snippets.
-      </p>
+        <h2>What is IDLE (Integrated Development and Learning Environment)?</h2>
+        <p>IDLE (Integrated Development and Learning Environment) comes installed along with all python installations.
+            It makes use of Text highlight, where it make use of different colours to identify variables, function,
+            commands, etc. This gives an advantage to the developer in findings errors. Python IDLE has a build
+            Automator of some kind that compiles the code, and builds an executable program by adding in any necessary
+            libraries, some of which you may not even be aware of. Those same tools make it easier to organize and
+            include any optional libraries, or ones you've created yourself.
+        </p>
+        <p>
+            Shell is the default mode of operation for Python IDLE. In essence, it's a simple loop that performs that
+            following four steps:
+        </p>
+        <ul>
+            <li>Reads one Python statement.</li>
+            <li>Evaluates the result(s) of it.</li>
+            <li>Prints the result(s) on the screen. (if any)</li>
+            <li>And then loops back to read the next statement.</li>
+        </ul>
+        <p><b>Note:</b> Python shell is a great place to test various small code snippets.</p>
 
-      <h2>Main Python Data Types</h2>
-      <p>
-        Everything in python is implemented as an "object". Every "object" has a
-        specific "Data type". The 4 most-used datatypes are as follows:
-      </p>
-      <h3>Integer</h3>
-      <p>
-        Integers (int) — an integer number to represent an object such as
-        “number 3”.
-      </p>
-      <div class="row">
-        <div class="col-sm-3">
-          <code class="language-py">&lt;class 'int'&gt;</code>
+        <h2>Main Python Data Types</h2>
+        <p>
+            Everything in python is implemented as an "object". Every "object" has a
+            specific "Data type". The 4 most-used datatypes are as follows:
+        </p>
+        <h3>Integer</h3>
+        <p>Integers (int) — an integer number to represent an object such as "number 3".</p>
+        <div class="row">
+            <div class="col-sm-3">
+                <code class="language-py">&lt;class 'int'&gt;</code>
+            </div>
+            <div class="col-sm-5">
+                <code class="language-py">-2, -1, 0, 1, 2, 3, 4, 5</code>
+            </div>
         </div>
-        <div class="col-sm-5">
-          <code class="language-py">-2, -1, 0, 1, 2, 3, 4, 5</code>
+        <h3>Floating Point</h3>
+        <div class="row">
+            <div class="col-sm-3">
+                <code class="language-py">&lt;class 'float'&gt;</code>
+            </div>
+            <div class="col-sm-5">
+                <code class="language-py">-1.25, -1.0, -0.5, 0.0, 0.5, 1.0, 1.25</code>
+            </div>
         </div>
-      </div>
-      <h3>Floating Point</h3>
-      <div class="row">
-        <div class="col-sm-3">
-          <code class="language-py">&lt;class 'float'&gt;</code>
+        <h3>Strings</h3>
+        <p>Encode a sequence of characters using a string. For example, the word “hello”. In Python 3, strings are
+            immutable. If you already defined one, you cannot change it later on.
+        </p>
+        <p>
+            While you can modify a string with commands such as replace() or join(), they will create a copy of a string
+            and apply modification to it, rather than rewrite the original one.
+        </p>
+        <div class="row">
+            <div class="col-sm-3">
+                <code class="language-py">&lt;class 'str'&gt;</code>
+            </div>
+            <div class="col-sm-5">
+                <code class="language-py">'Yo!', 'Hey', "what's up?", "Ola!!!"</code>
+            </div>
         </div>
-        <div class="col-sm-5">
-          <code class="language-py"
-            >-1.25, -1.0, -0.5, 0.0, 0.5, 1.0, 1.25</code
-          >
+        <h3>Lists</h3>
+        <p>A list is a sequence of objects. It is a mutable sequence. It can be defined as a list of objects, or a list
+            of lists. For example, the list of numbers 1, 2, 3, 4, 5.
+        </p>
+        <div class="row">
+            <div class="col-sm-3">
+                <code class="language-py">&lt;class 'list'&gt;</code>
+            </div>
+            <div class="col-sm-5">
+                <code class="language-py">[-2, 0, 1, 3.1415, 'Hello, world!']</code>
+            </div>
         </div>
-      </div>
-      <h3>Strings</h3>
-      <p>
-        Encode a sequence of characters using a string. For example, the word
-        “hello”. In Python 3, strings are immutable. If you already defined one,
-        you cannot change it later on.
-      </p>
-      <p>
-        While you can modify a string with commands such as replace() or join(),
-        they will create a copy of a string and apply modification to it, rather
-        than rewrite the original one.
-      </p>
-      <div class="row">
-        <div class="col-sm-3">
-          <code class="language-py">&lt;class 'str'&gt;</code>
-        </div>
-        <div class="col-sm-5">
-          <code class="language-py">'Yo!', 'Hey', "what's up?", "Ola!!!"</code>
-        </div>
-      </div>
-      <h3>Lists</h3>
-      <p>
-        A list is a sequence of objects. It is a mutable sequence. It can be
-        defined as a list of objects, or a list of lists. For example, the list
-        of numbers 1, 2, 3, 4, 5.
-      </p>
-      <div class="row">
-        <div class="col-sm-3">
-          <code class="language-py">&lt;class 'list'&gt;</code>
-        </div>
-        <div class="col-sm-5">
-          <code class="language-py">[-2, 0, 1, 3.1415, 'Hello, world!']</code>
-        </div>
-      </div>
-      <p>
-        NOTE: There are more data types like sets, Dictionaries, complex
-        numbers, tuples, boolean.
-      </p>
+        <p>NOTE: There are more data types like sets, Dictionaries, complex numbers, tuples, boolean.</p>
     </div>
-  </body>
+</body>
+
 </html>
