@@ -103,15 +103,12 @@ header .content a {
     bottom: 72px;
     right: 40px;
     z-index: 2;
-    background-color: #22272E;
-    border: 1px solid #444C56;
-}
-
-.arrow {
     padding: 8px 12px;
-    background: #ADBAC7;
-    border-radius: 50%;
     color: #1C2128;
+    background: #ADBAC7;
+    border: 1px solid #444C56;
+    border-radius: 50%;
+    font-weight: bold;
 }
 
 .arrow:hover {
