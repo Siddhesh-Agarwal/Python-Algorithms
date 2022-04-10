@@ -97,8 +97,8 @@ header .content a {
 
 /* Style for Scroll-to-up Button */
 .arrow {
-    width: 48px;
-    height: 48px;
+    width: auto; /* 54px works in desktop site but breaks in mobile*/
+    height: auto;
     position: fixed;
     bottom: 72px;
     right: 40px;
