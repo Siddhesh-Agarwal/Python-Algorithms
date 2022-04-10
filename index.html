@@ -938,7 +938,8 @@ def linear_search(arr, element):
     for iter_num in range(len(arr) - 1, 0, -1):
         for i in range(iter_num):
             if arr[i] > arr[i + 1]:
-                arr[i], arr[i + 1] = arr[i + 1], arr[i]</code></pre>
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+    return arr</code></pre>
             <li>Cocktail sort</li>
             <pre class="line-numbers"><code class="language-py">def cocktailSort(A):
     up = range(len(A)-1)
@@ -975,29 +976,29 @@ def linear_search(arr, element):
 
     return outputArray</code></pre>
             <li>Heap sort</li>
-            <pre class="line-numbers"><code class="language-py">def siftdown(lst, start, end):
+            <pre class="line-numbers"><code class="language-py">def siftdown(arr, start, end):
     root = start
     while True:
         child = root * 2 + 1
         if child > end:
             break
-        if child + 1 <= end and lst[child] < lst[child + 1]:
+        if child + 1 <= end and arr[child] < arr[child + 1]:
             child += 1
-        if lst[root] < lst[child]:
-            lst[root], lst[child] = lst[child], lst[root]
+        if arr[root] < arr[child]:
+            arr[root], arr[child] = arr[child], arr[root]
             root = child
         else:
             break
 
-def heapsort(lst):
+def heapsort(arr):
     # in pseudo-code, heapify only called once, so inline it here
-    for start in range((len(lst)-2)/2, -1, -1):
-        siftdown(lst, start, len(lst)-1)
+    for start in range((len(arr)-2)/2, -1, -1):
+        siftdown(arr, start, len(arr)-1)
     
-    for end in range(len(lst)-1, 0, -1):
-        lst[end], lst[0] = lst[0], lst[end]
-        siftdown(lst, 0, end - 1)
-    return lst</code></pre>
+    for end in range(len(arr)-1, 0, -1):
+        arr[end], arr[0] = arr[0], arr[end]
+        siftdown(arr, 0, end - 1)
+    return arr</code></pre>
             <li>Insertion sort</li>
             <pre class="line-numbers"><code class="language-py">def insertion_sort(arr):
     for i in range(1, len(arr)):                  
@@ -1006,8 +1007,9 @@ def heapsort(lst):
         while j >= 0 and key < arr[j] :
             arr[j + 1] = arr[j]
             j -= 1
-        arr[j + 1] = key</code></pre>
-            <li>merge sort</li>
+        arr[j + 1] = key
+    return arr</code></pre>
+            <li>Merge sort</li>
             <pre class="line-numbers"><code class="language-py">def merge_sort(arr):
     def merge(left, right):
         def _merge():
@@ -1022,17 +1024,16 @@ def heapsort(lst):
         return arr
     mid = len(arr) // 2
     return merge(merge_sort(arr[:mid]), merge_sort(arr[mid:]))</code></pre>
-            <li>quick sort</li>
-            <pre class="line-numbers"><code class="language-py">def quick_sort(arr):
-    if len(arr) < 2:
-        return arr
-    pivot = arr.pop()
-    greater: list[int] = []
-    lesser: list[int] = []
-    for element in arr:
-        (greater if element > pivot else lesser).append(element)
-    return quick_sort(lesser) + [pivot] + quick_sort(greater)</code></pre>
-            <li>shell sort</li>
+            <li>Selection sort</li>
+            <pre class="line-numbers"><code class="language-py">def selection_sort(arr):
+    for i in range(len(arr)):
+        min_idx = i
+        for j in range(i+1, len(arr)):
+            if arr[min_idx] > arr[j]:
+                min_idx = j          
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr</code></pre>
+            <li>Shell sort</li>
             <pre class="line-numbers"><code class="language-py">def shell_sort(arr):
     gap = len(arr) // 2
     while gap > 0:
@@ -1043,9 +1044,20 @@ def heapsort(lst):
                 arr[j] = arr[j - gap]
                 j -= gap
             arr[j] = temp
-        gap = gap//2</code></pre>
+        gap = gap//2
+    return arr</code></pre>
+            <li>Quick sort</li>
+            <pre class="line-numbers"><code class="language-py">def quick_sort(arr):
+    if len(arr) < 2:
+        return arr
+    pivot = arr.pop()
+    greater: list[int] = []
+    lesser: list[int] = []
+    for element in arr:
+        (greater if element > pivot else lesser).append(element)
+    return quick_sort(lesser) + [pivot] + quick_sort(greater)</code></pre>
         </ol>
-        <hr />
+        <hr>
 
         <!-- Statistics -->
         <h1 id="statistics">Statistics</h1>
