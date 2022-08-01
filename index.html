@@ -1072,7 +1072,8 @@ def heapsort(arr):
             <li>Arithmetic Mean</li>
             <pre class="line-numbers"><code class="language-py">def arithmetic_mean(arr):
     """Returns the Arithmetic mean of a list of numbers"""
-    return sqrt(sum(n*n for n in num)/len(num))</code></pre>
+    mu = sum(arr) / len(arr)
+    return mu</code></pre>
             <li>Geometric Mean</li>
             <pre class="line-numbers"><code class="language-py">def geometric_mean(arr):
     """Returns the geometric mean of a list of numbers"""
@@ -1108,6 +1109,7 @@ def quadratic_mean(array):
         return (arr[len(arr) // 2] + arr[len(arr) // 2 - 1]) / 2
     else:
         return arr[len(arr) // 2]</code></pre>
+        
             <li>Mode</li>
             <pre class="line-numbers"><code class="language-py">def mode(arr):
     """Returns the mode of a list of numbers"""
@@ -1124,11 +1126,13 @@ def quadratic_mean(array):
             mode = arr[i]
             frequency = count
     return mode</code></pre>
+
             <li>Range</li>
             <pre class="line-numbers"><code class="language-py">def range(arr):
     """Returns the range of a list of numbers"""
     arr.sort()
     return arr[-1] - arr[0]</code></pre>
+
             <li>Variance</li>
             <pre class="line-numbers"><code class="language-py">def variance(arr):
     """Returns the variance of a list of numbers"""
@@ -1139,10 +1143,32 @@ def quadratic_mean(array):
         total += (i - mean) ** 2
         length += 1
     return total / length</code></pre>
+    
             <li>Standard deviation</li>
-            <pre class="line-numbers"><code class="language-py">def standard_deviation(arr):
+            <pre class="line-numbers"><code class="language-py">def standard_deviation(arr, mu=None):
     """Returns the standard deviation of a list of numbers"""
-    return variance(arr) ** 0.5</code></pre>
+    if not mu:
+        mu = mean(arr)
+    return sum((x-mu) ** 2 for x in arr) ** 0.5</code></pre>
+
+            <li>Probability Distribution Function</li>
+            <pre class="line-numbers"><code class="language-py">from math import pi, e
+
+def PDF(x, mean=0, std_dev=1):
+    p = 1.0 / (std_dev * ((2 * pi) ** 0.5))
+    p *= e ** (-0.5 * ((x - mean)/std_dev)**2)
+    return p</code></pre>
+
+            <li>Cummulative Distribution Function</li>
+            <pre class="line-numbers"><code class="language-py">def CDF(mean=0, std_dev=1, x_left=-5, x_right=5, width=0.0001):
+    CDF = 0
+    x = x_left + width / 2
+    while x < x_right:
+        panel = PDF(x, mean, std_dev) * width
+        CDF += panel
+        x += width
+    return CDF</code></pre>
+
             <li>Second smallest</li>
             <pre class="line-numbers"><code class="language-py">def second_smallest(numbers):
     """Find the second smallest number in a list of numbers"""
